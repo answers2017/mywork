@@ -1,0 +1,477 @@
+html {
+    font-size: 62.5%;
+    font-family: PorscheNextWLa, arial, sans-serif;
+}
+
+/*layer自定义弹窗样式*/
+body .demo-class .layui-layer-title {
+    background: #b4b4b4;
+    color: #020202;
+    border: none;
+}
+
+body .demo-class .layui-layer-btn {
+    border-top: 1px solid #E9E7E7
+}
+
+body .demo-class .layui-layer-btn a {
+    background: #b4b4b4;
+    border-color: #b5b4b4;
+}
+
+body .demo-class .layui-layer-btn .layui-layer-btn1 {
+    background: #ffffff;
+    border-color: #e2e2e2;
+}
+body .demo-class.layui-layer-btn .layui-layer-btn0{
+    border-color: #333;
+}
+/*@media (min-width: 768px) {*/
+/*.container {*/
+/*width: 886px;*/
+/*}*/
+
+/*}*/
+
+/*@media (min-width: 992px) {*/
+/*.container {*/
+/*width: 992px;*/
+/*}*/
+
+/*}*/
+
+/*@media (min-width: 1200px) {*/
+/*.container {*/
+/*width: 1268px;*/
+/*}*/
+
+/*}*/
+
+/*公共样式*/
+.mg-b {
+    margin-bottom: 1rem;
+}
+
+.swiper-box {
+    border-bottom: 1px solid #b6b6b6;
+    padding: 0 8rem;
+}
+
+.panel-left {
+    width: 58%;
+    background: white;
+    position: fixed;
+    z-index: 9;
+    padding-top: 4rem;
+}
+
+.content-left {
+    position: fixed;
+    left: 5.5%;
+    width: 59%;
+    top: 7rem;
+    z-index: 2;
+    box-sizing: border-box;
+    display: flex;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    flex-direction: column;
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
+}
+
+.content-right {
+    position: relative;
+    box-sizing: border-box;
+    width: 29%;
+    margin-left: 65.5%;
+    overflow: hidden;
+    padding-top: 8rem;
+}
+
+
+/*右侧侧列表页*/
+.top-a {
+    font-size: 1.6rem;
+}
+
+.nav-item {
+    margin-bottom: 2rem;
+}
+
+.nav-more {
+    float: right;
+    margin-right: 20px;
+    font-size: 12px;
+    transition: transform .3s;
+}
+.list-content{
+    display: flex;
+    display: -webkit-flex;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #d0d3d4;
+}
+.list-left{
+    width: 20%;
+}
+.list-right{
+    padding-left: 2rem;
+}
+.layui-form-radio i{
+    font-size: 2.6rem;
+}
+.layui-form-checkbox[lay-skin=primary] i{
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    border: 1px solid #999;
+    font-size: 20px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .swiper-box {
+        border-bottom: 1px solid #b6b6b6;
+        padding: 0 2rem;
+        margin-top: 2rem;
+    }
+    .list-left{
+        width: 25%;
+    }
+}
+
+@media only screen and  (max-width: 968px) {
+    .content-left {
+        position: fixed;
+        left: 5.5%;
+        width: 59%;
+        top: 2rem;
+        z-index: 2;
+        box-sizing: border-box;
+        display: flex;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        flex-direction: column;
+        -ms-flex-direction: column;
+        -webkit-flex-direction: column;
+    }
+
+    .content-right {
+        position: relative;
+        box-sizing: border-box;
+        width: 29%;
+        margin-left: 65.5%;
+        overflow: hidden;
+        padding-top: 8rem;
+    }
+
+    .swiper-box {
+        border-bottom: 1px solid #b6b6b6;
+        padding: 0 2rem;
+        margin-top: 4rem;
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+    .content-left {
+        bottom: auto;
+        width: 89%;
+        z-index: 1;
+        top: 3rem;
+        background-color: #fff;
+        -webkit-transition: top .2s linear;
+        -moz-transition: top .2s linear;
+        -o-transition: top .2s linear;
+        transition: top .2s linear;
+    }
+
+    .content-right {
+        width: 89%;
+        margin-left: 5.5%;
+        margin-right: 5.5%;
+        padding-top: 55%;
+        -webkit-transition: margin-left 1s linear;
+        -moz-transition: margin-left 1s linear;
+        -o-transition: margin-left 1s linear;
+        transition: margin-left 1s linear;
+        -webkit-transition: padding-top .2s linear;
+        -moz-transition: padding-top .2s linear;
+        -o-transition: padding-top .2s linear;
+        transition: padding-top .2s linear;
+    }
+
+    .swiper-box {
+        border-bottom: 1px solid #b6b6b6;
+        padding: 0;
+        margin-top: 0;
+    }
+    .list-left{
+        width: 25%;
+    }
+    .list-right{
+        padding-left: 1rem;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .panel-left {
+        width: 90%;
+        padding-top: 1rem;
+        margin-left: 5%;
+    }
+
+    .swiper-box {
+        border-bottom: 1px solid #b6b6b6;
+        padding: 0;
+        margin-top: 1rem;
+    }
+
+    .panel-right {
+        padding-top: 88%;
+    }
+
+}
+
+/*横屏*/
+@media all and (orientation: landscape) {
+
+    .content-left {
+        position: fixed;
+        left: 5.5%;
+        width: 59%;
+        top: 7rem;
+        box-sizing: border-box;
+        display: flex;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        flex-direction: column;
+        -ms-flex-direction: column;
+        -webkit-flex-direction: column;
+    }
+
+    .content-right {
+        position: relative;
+        box-sizing: border-box;
+        width: 29%;
+        margin-left: 65.5%;
+        overflow: hidden;
+        padding-top: 8rem;
+    }
+
+}
+
+/*竖屏 */
+@media all and (orientation: portrait) {
+    .content-left {
+        bottom: auto;
+        width: 89%;
+        z-index: 1;
+        top: 5rem;
+        background-color: #fff;
+        -webkit-transition: top .2s linear;
+        -moz-transition: top .2s linear;
+        -o-transition: top .2s linear;
+        transition: top .2s linear;
+    }
+
+    .content-right {
+        width: 89%;
+        margin-left: 5.5%;
+        margin-right: 5.5%;
+        padding-top: 60%;
+        margin-top: 6.938rem;
+        -webkit-transition: margin-left 1s linear;
+        -moz-transition: margin-left 1s linear;
+        -o-transition: margin-left 1s linear;
+        transition: margin-left 1s linear;
+        -webkit-transition: padding-top .2s linear;
+        -moz-transition: padding-top .2s linear;
+        -o-transition: padding-top .2s linear;
+        transition: padding-top .2s linear;
+    }
+
+    .s_quicksum {
+        display: none;
+    }
+
+}
+
+.accordion-title {
+    height: 40px;
+    line-height: 40px;
+    background: #e7e9ea;
+    padding-left: 10px;
+
+}
+
+.accordion-title a {
+    display: block;
+    text-decoration: none;
+    width: 100%
+}
+
+.tip-top {
+    height: 30px;
+    line-height: 30px;
+    padding-left: .5rem;
+}
+
+.com {
+    padding-top: 10px;
+}
+
+.navbar-color {
+    background-color: #222427;
+}
+
+.navbar-color a {
+    color: #fff;
+    /*opacity: .8;*/
+    cursor: pointer;
+    font-weight: 300;
+
+}
+
+.navbar-color .navbar-toggle {
+    border: none;
+}
+
+.navbar-color .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+
+.navbar-color .navbar-nav > .active > a, .navbar-color .navbar-nav > .active > a:hover, .navbar-color .navbar-nav > .active > a:focus {
+    color: #fff;
+    background-color: #c00;
+}
+
+.navbar-color a {
+    transition: .6s all;
+}
+
+.navbar-color a:hover {
+    color: #c00;
+}
+
+.banner-box {
+    text-align: center;
+}
+
+.navbar {
+    border-radius: 0;
+    border: none;
+}
+
+.layui-form-radio span {
+    font-size: 1.4rem;
+}
+
+/*分页器*/
+
+.swiper-pagination-bullet {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 5px;
+    background: #aaa;
+    margin: 0 5px;
+    cursor: pointer;
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+    background: #ff6b20;
+}
+
+.desc h1 {
+    font-size: 2rem;
+    padding: 10px 10px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.desc a {
+    text-decoration: none;
+    color: #ff3e17;
+    float: right;
+    font-weight: 300;
+    font-size: 1.4rem;
+}
+
+.panel-list {
+    margin-bottom: 20px;
+}
+
+/*结算价格*/
+.s_quicksum {
+    font-size: 1.4rem;
+    box-sizing: border-box;
+    height: 5em;
+    text-align: right;
+    float: right;
+    padding-top: 1.25em;
+    width: 100%;
+}
+
+/*点击图片放大*/
+
+.shade-box {
+    position: fixed;
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: black;
+    opacity: .6;
+    display: none;
+}
+
+.swiper-box-lg {
+    position: fixed;
+    width: 80%;
+    left: 10%;
+    top: 2rem;
+    z-index: 10;
+}
+
+.swiper-box-lg .swiper-slide {
+    width: 100%;  !important;
+}
+
+/* 此处为导航右侧箭头 如果自定义iconfont 也需要替换*/
+.nav-more::after {
+    content: "\e621"
+}
+
+.nav-show .nav-more {
+    transform: rotate(90deg);
+}
+
+.nav-show > a:before, .nav-item > a:hover:before {
+    opacity: 1;
+}
+
+.panel-nav .nav-icon {
+    font-size: 20px;
+    position: absolute;
+    margin-left: -1px;
+}
+
+.nav-item .accordion-li {
+    display: none;
+}
+
+.nav-item.nav-show.accordion-li {
+    display: block;
+
+}
+
+.nav-show {
+    background: #71757e;
+}
+
+.nav-show a {
+    color: rgba(2, 0, 0, 1);
+}

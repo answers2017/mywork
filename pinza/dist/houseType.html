@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>品宅-户型</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="msapplication-tap-highlight" content="no">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        (function (doc, win) {
+            // 取得html的引用
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth
+                    if (!clientWidth) return
+                    clientWidth = (clientWidth > 2800) ? 2800 : clientWidth
+                    clientWidth = (clientWidth < 768) ? 768 : clientWidth
+                    docEl.style.fontSize = 100 * (clientWidth / 1024) + 'px'
+                }
+            if (!doc.addEventListener) return
+            win.addEventListener(resizeEvt, recalc, false)
+            recalc()
+
+        })(document, window)
+    </script>
+</head>
+<body>
+    <!--header-->
+    <header>
+        <a href="index.html"><img src="images/logo.png" class="fl" alt=""></a>
+        <div class="menu fr">
+            <span>王刚，你好</span>
+        </div>
+    </header>
+
+    <!--section-->
+    <section class="prod-wrapper">
+        <div class="ui-scroller">
+            <ul>
+                <li>
+                    <div class="img">
+                        <img src="images/prod.jpg" width="80%" alt="">
+                    </div>
+                    <p class="f20 bold">93户型方案一（舒适型）</p>
+                    <p class="f14 t-c c6 pad15">
+                        本案是围绕“梦回唐朝”为主题，将古典与现在相结合，以简洁明快的设计风格为主调
+                    </p>
+                </li>
+                <li>
+                    <div class="img">
+                        <img src="images/prod.jpg" width="80%" alt="">
+                    </div>
+                    <p class="f20">93户型方案一（舒适型）</p>
+                    <p class="f14 t-c c6 pad15">
+                        轻古典的家装风格摒弃了简约的呆板和单调，也没有古典风格中的繁锁和严肃，让人感觉庄重和恬静，适度的装饰也
+                    </p>
+                </li>
+                <li>
+                    <div class="img">
+                        <img src="images/prod.jpg" width="80%" alt="">
+                    </div>
+                    <p class="f20">93户型方案一（舒适型）</p>
+                    <p class="f14 t-c c6 pad15">
+                        本案是围绕“梦回唐朝”为主题，将古典与现在相结合，以简洁明快的设计风格为主调
+                    </p>
+                </li>
+                <li>
+                    <div class="img">
+                        <img src="images/prod.jpg" width="80%" alt="">
+                    </div>
+                    <p class="f20">93户型方案一（舒适型）</p>
+                    <p class="f14 t-c c6 pad15">
+                        轻古典的家装风格摒弃了简约的呆板和单调，也没有古典风格中的繁锁和严肃，让人感觉庄重和恬静，适度的装饰也
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!--footer-->
+    <footer> Copyright© 2016 上海品宅装饰科技有限公司   2015-2016，All Rights Reserved   </footer>
+
+    <!--js-->
+    <script src="lib/frozenui/lib/zepto.min.js"></script>
+    <script src="lib/frozenui/js/frozen.js"></script>
+    <script src="js/houseType.js"></script>
+</body>
+</html>

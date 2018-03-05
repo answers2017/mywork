@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>品宅-个人中心</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="msapplication-tap-highlight" content="no">
+    <link rel="stylesheet" href="lib/frozenui/css/frozen.css">
+    <link rel="stylesheet" href="lib/datePicker.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        (function (doc, win) {
+            // 取得html的引用
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth
+                    if (!clientWidth) return
+                    clientWidth = (clientWidth > 2800) ? 2800 : clientWidth
+                    clientWidth = (clientWidth < 768) ? 768 : clientWidth
+                    docEl.style.fontSize = 100 * (clientWidth / 1024) + 'px'
+                }
+            if (!doc.addEventListener) return
+            win.addEventListener(resizeEvt, recalc, false)
+            recalc()
+
+        })(document, window)
+    </script>
+</head>
+<body>
+    <!--header-->
+    <header>
+        <a href="index.html"><img src="images/logo.png" class="fl" alt=""></a>
+        <div class="menu fr">
+            <a href="quickBuy.html"><i class="icon icon-order"></i>快速下单</a>
+            <a href="cart.html">
+                <i class="icon icon-cart"></i>
+                <i class="cart-total">2</i>
+                购物清单
+            </a>
+            <a href="my.html"><i class="icon icon-user"></i>个人中心</a>
+        </div>
+    </header>
+
+    <!--section-->
+    <section class="my-wrapper">
+        <div class="title">个人中心</div>
+        <!--查询表单-->
+        <div class="query-form">
+            <form>
+                <div class="ui-row-flex ui-whitespace">
+                    <div class="ui-col ui-col">
+                        <label>订单编号</label>
+                        <div class="input">
+                            <input type="text" name="" placeholder="请输入订单编号">
+                        </div>
+                    </div>
+                    <div class="ui-col ui-col">
+                        <label>项目名称</label>
+                        <div class="input">
+                            <select>
+                                <option value ="0">请选择项目</option>
+                                <option value ="1">项目1</option>
+                                <option value ="2">项目2</option>
+                                <option value="3">项目3</option>
+                                <option value="4">项目4</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="ui-col ui-col">
+                        <label>开始时间</label>
+                        <div class="input">
+                            <input type="text" name="" placeholder="开始时间" id="startTime" value="2016-01-01" readonly>
+                        </div>
+                    </div>
+                    <div class="ui-col ui-col">
+                        <label>结束时间</label>
+                        <div class="input">
+                            <input type="text" name="" placeholder="开始时间" id="endTime" value="2016-01-02" readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui-row-flex ui-whitespace">
+                    <div class="ui-col ui-col">
+                        <label>销售员</label>
+                        <div class="input">
+                            <input type="text" name="" placeholder="请输入销售员">
+                        </div>
+                    </div>
+                    <div class="ui-col ui-col">
+                        <label>楼栋</label>
+                        <div class="input">
+                            <input type="text" name="" placeholder="请输入楼栋">
+                        </div>
+                    </div>
+                    <div class="ui-col ui-col">
+                        <label>单元</label>
+                        <div class="input">
+                            <input type="text" name="" placeholder="请输入单元">
+                        </div>
+                    </div>
+                    <div class="ui-col ui-col">
+                        <label>房间号</label>
+                        <div class="input">
+                            <input type="text" name="" placeholder="请输入房间">
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-wrap">
+                    <button type="button" class="btn btn-primary">查询</button>
+                    <button type="reset" class="btn btn-reset">重置</button>
+                </div>
+            </form>
+        </div>
+        <!--表格-->
+        <table>
+            <thead>
+                <tr>
+                    <th>销售员订单号</th>
+                    <th>销售员</th>
+                    <th>提交日期</th>
+                    <th>项目名称</th>
+                    <th>房屋</th>
+                    <th>业主</th>
+                    <th>订单金额</th>
+                    <th>选装金额</th>
+                    <th>已付金额</th>
+                    <th>订单状态</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>CP000068</td>
+                    <td>王小明</td>
+                    <td>2017/08/22</td>
+                    <td>万科</td>
+                    <td>卧室</td>
+                    <td>李红</td>
+                    <td class="primary">¥30000</td>
+                    <td class="primary">¥30000</td>
+                    <td class="primary">¥30000</td>
+                    <td>审核中</td>
+                    <td>
+                        <div class="handle">
+                            <!--添加收款弹框-->
+                            <p><span class="receive-money">收款</span><span>查看</span></p>
+                            <p><span>删除</span></p>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>CP000068</td>
+                    <td>王小明</td>
+                    <td>2017/08/22</td>
+                    <td>万科</td>
+                    <td>卧室</td>
+                    <td>李红</td>
+                    <td class="primary">¥30000</td>
+                    <td class="primary">¥30000</td>
+                    <td class="primary">¥30000</td>
+                    <td>审核中</td>
+                    <td>
+                        <div class="handle">
+                            <p><span>查看</span><span>打印</span></p>
+                            <p><span>删除</span><span>退单</span></p>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>CP000068</td>
+                    <td>王小明</td>
+                    <td>2017/08/22</td>
+                    <td>万科</td>
+                    <td>卧室</td>
+                    <td>李红</td>
+                    <td class="primary">¥30000</td>
+                    <td class="primary">¥30000</td>
+                    <td class="primary">¥30000</td>
+                    <td>审核中</td>
+                    <td>
+                        <div class="handle">
+                            <p><span>查看</span><span>打印</span></p>
+                            <p><span>删除</span><span>退单</span></p>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!--分页-->
+        <div class="pagination-box">
+        </div>
+    </section>
+    <!--收款弹框-->
+    <div class="ui-dialog receive-dialog">
+        <div class="ui-dialog-cnt">
+            <header class="ui-dialog-hd ui-border-b">
+                <h3>收款</h3>
+                <i class="ui-dialog-close" data-role="button"></i>
+            </header>
+            <div class="ui-dialog-bd">
+                <form id="money-form">
+                    <ul class="has-label">
+                        <li>
+                            <label>第一次收款金额</label>
+                            <div class="input">
+                                <input type="text" name="money" placeholder="请输入收款金额">
+                            </div>
+                        </li>
+                        <li>
+                            <label>上传付款凭证</label>
+                            <div class="input">
+                                <div class="img">
+                                    <span class="add">+</span>
+                                    <!--<img src="images/login-logo.png" alt="">-->
+                                    <input id="file" type="file" name="">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <label>&nbsp;</label>
+                            <div class="input">
+                                <button class="btn btn-primary" type="button" id="btn-submit">确认</button>
+                            </div>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--footer-->
+    <footer> Copyright© 2016 上海品宅装饰科技有限公司   2015-2016，All Rights Reserved   </footer>
+
+    <!--js-->
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/pagination/script/jquery.pagination.js"></script>
+    <script>var jq=$.noConflict();</script>
+    <script src="lib/frozenui/lib/zepto.min.js"></script>
+    <script src="lib/frozenui/js/frozen.js"></script>
+    <script src="lib/iscroll.js"></script>
+    <script src="lib/datePicker.js"></script>
+    <script src="js/my.js"></script>
+</body>
+</html>

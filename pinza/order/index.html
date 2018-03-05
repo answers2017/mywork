@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>订单查找</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no" />
+    <link rel="stylesheet" href="lib/layer/css/layui.css" media="all">
+    <link rel="stylesheet" href="css/login.css" media="all">
+
+    <style>
+        .layui-form-pane {
+            padding: 10px;
+        }
+
+        .layui-form-item {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="form-content">
+    <div class="layui-form-item">
+        <div class="select-span" style="">业主姓名</div>
+        <div class="select-fr">
+            <input class="select-control" value="请输入姓名">
+        </div>
+    </div>
+
+    <div class="select dowebok ">
+        <div class="select-span" style="">项目</div>
+
+        <div class="select-fr">
+            <select class="select-control">
+                <option value="">请选择项目</option>
+                <option value="0">城中公园</option>
+                <option value="1">苏州</option>
+                <option value="2">青浦</option>
+            </select>
+        </div>
+
+        <div style="clear: both"></div>
+    </div>
+
+    <div class="select dowebok">
+        <span class="select-span" style="">楼栋号</span>
+
+
+        <div class="select-fr">
+            <select class="select-control">
+                <option value="">请选择楼栋号</option>
+                <option value="0">一号楼</option>
+                <option value="1">二号楼</option>
+                <option value="2">三号楼</option>
+            </select>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+
+    <div class="select dowebok">
+        <span class="select-span" style="">单元号</span>
+        <div class="select-fr">
+            <select class="select-control">
+                <option value="">请选择单元号</option>
+                <option value="0">一单元</option>
+                <option value="1">二单元</option>
+                <option value="2">三单元</option>
+            </select>
+        </div>
+
+        <div style="clear: both"></div>
+    </div>
+
+    <div class="select dowebok">
+        <span class="select-span" style="">房号</span>
+
+        <div class="select-fr">
+            <select class="select-control">
+                <option value="">请选择房号</option>
+                <option value="0">101</option>
+            </select>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+    <div class="btn-serch">
+        <div class="input-group">
+            <button id="submit" type="button" class="load-btn" data-type="reload">搜索</button>
+        </div>
+    </div>
+    <div class="table-box btn-acceptance" style="display: none">
+        <table class="layui-table">
+            <thead>
+            <tr>
+                <th>订单号</th>
+                <th>日期</th>
+                <th>明细</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>10000</td>
+                <td>2016-11-29</td>
+                <td><a href="details.html">查看明细</a></td>
+            </tr>
+            <tr>
+                <td>10000</td>
+                <td>2016-11-28</td>
+                <td><a href="details.html">查看明细</a></td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="layui-table">
+            <thead>
+            <tr>
+                <th>退单号</th>
+                <th>日期</th>
+                <th>明细</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>10000</td>
+                <td>2016-11-29</td>
+                <td><a href="details.html">查看明细</a></td>
+            </tr>
+            <tr>
+                <td>10000</td>
+                <td>2016-11-28</td>
+                <td><a href="details.html">查看明细</a></td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="layui-btn layui-btn-primary" style="float: right">
+            <a href="acceptance.html">合并验收</a>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+<script src="lib/layer/layui.all.js" charset="utf-8"></script>
+<script src="js/jquery.min.js" charset ="utf-8"></script>
+<script>
+    $(".btn-serch").click(function () {
+        $(".btn-acceptance").show()
+    })
+</script>
+
+
+<script>
+    layui.use('table', function () {
+        var table = layui.table;
+
+
+        table.render({
+            elem: '#test'
+            , url: 'data.json'
+            , type: 'json'
+            , cellMinWidth: 80 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+            , cols: [[
+                {field: 'id', title: '订单号'}
+                , {field: 'date', title: '日期'}
+                , {field: 'sex', event: 'setSign', title: '明细', templet: '#usernameTpl'}
+
+            ]]
+            ,id: 'testReload'
+
+        });
+        table.render({
+            elem: '#test-back'
+            , url: 'data-back.json'
+            , type: 'json'
+            , cellMinWidth: 80 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+            , cols: [[
+                {field: 'id', title: '退单号'}
+                , {field: 'date', title: '日期'}
+                , {field: 'sex', event: 'setSign', title: '明细', templet: '#usernameTpl'}
+
+            ]]
+            ,id: 'testReload'
+
+        });
+
+        var $ = layui.$, active = {
+            reload: function(){
+                var demoReload = $('#demoReload');
+
+                //执行重载
+                table.reload('testReload', {
+                    page: {
+                        curr: 1 //重新从第 1 页开始
+                    }
+                    ,where: {
+                        key: {
+                            id: demoReload.val()
+                        }
+                    }
+                });
+            }
+        };
+
+        $('.demoTable .layui-btn').on('click', function(){
+            var type = $(this).data('type');
+            active[type] ? active[type].call(this) : '';
+        });
+    });
+
+
+</script>
+
+
+</body>
+</html>
+

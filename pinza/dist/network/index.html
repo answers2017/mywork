@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+
+    <style>
+
+        body, body * {
+            padding: 0;
+            margin: 0;
+            font-family: PingFangSC-Light,PingFangSC-Regular;
+        }
+        .topbg {
+            position: relative;
+            width: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+            max-height: 600px;
+            background: #F6F6F6;
+        }
+        .topbg video {
+            position: relative;
+            width: 100%;
+            top: 0;
+            vertical-align: middle;
+            background: #F6F6F6;
+        }
+
+        @media only screen and (min-width: 1200px) {
+            .topbg video {
+                margin-top: -80px;
+            }
+        }
+        .swiper{
+            position: relative;
+            top: -160px;
+            width: 680px;
+            height: 300px;
+            z-index: 20;
+            margin: 0 auto;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="topbg">
+    <video id="bgvideo" class="masthead-video" autoplay="" loop="" muted="">
+        <source src="pinza.mp4" type="video/mp4">
+    </video>
+</div>
+
+<div class="swiper" id="swiperwrap">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">Slide 1</div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
+<script src="../js/jquery-1.11.3.min.js"></script>
+<script src="../lib/bootstrap/bootstrap.min.js"></script>
+<script src="../js/swiper.min.js"></script>
+
+<!--图片轮播-->
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        var mySwiper2 = new Swiper('.swiper-container', {
+            autoplay: 2500,
+//            loop: true,
+            pagination: '.pagination',
+            autoplayDisableOnInteraction: false,
+            paginationClickable: true,
+        });
+        var jj = document.getElementsByClassName('swiper-slide')
+        var gg = jj.length;
+        if (gg == 1) {
+            mySwiper2.lockSwipes();
+            mySwiper2.stopAutoplay();
+        }
+
+        $('.swiper-container').mouseover(function () {
+            mySwiper2.stopAutoplay();//停止轮播
+        });
+        $('.swiper-container').mouseout(function () {
+            if (gg == 1) {
+                mySwiper2.lockSwipes();//阻止左右滑动
+                mySwiper2.stopAutoplay();
+            } else {
+                mySwiper2.startAutoplay();//释放轮播
+                }
+        });
+    })
+</script>
+

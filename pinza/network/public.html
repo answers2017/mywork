@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>订单查找</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no" />
+    <link rel="stylesheet" href="css/mobiscroll-2.13.2.full.min.css" media="all">
+    <link rel="stylesheet" href="css/public.css" media="all">
+
+
+</head>
+<body>
+<div class="form-content">
+
+    <div class="select dowebok ">
+
+        <div class="input-control">
+            <input class="select-control" placeholder="请输入关键字">
+        </div>
+
+    </div>
+
+    <div class="select dowebok">
+        <div class="select-fr fl">
+            <input class="select-control" id="dateinput" placeholder="选择起始时间">
+
+        </div>
+
+        <div class="select-fr fr">
+            <input class="select-control" id="dateinputb" placeholder="选择结束时间">
+        </div>
+        <div style="clear: both"></div>
+
+    </div>
+
+
+
+    <div class="select dowebok">
+
+        <div class="select-se">
+            <select class="select-control">
+                <option value="">选择公告类型</option>
+                <option value="0">公司新闻</option>
+                <option value="1">公告新闻</option>
+            </select>
+        </div>
+    </div>
+    <div class="btn-serch">
+        <div class="input-group">
+            <button id="submit" type="button" class="load-btn" data-type="reload">筛选</button>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+<div class="content">
+    <div class="content-box">
+        <div class="content_img">
+            <img src="img/notice.jpg">
+        </div>
+        <div class="content_text">
+            <p>关于报销系统上线及培训的通知关于报销系统上线及培训的通知额</p>
+            <p><span>上海品宅装饰科技有限公司</span><span style="margin-left: 5px">2018-1-26</span></p>
+        </div>
+    </div>
+    <div class="content-box">
+        <div class="content_img">
+            <img src="img/notice.jpg">
+        </div>
+        <div class="content_text">
+            <p>关于报销系统上线及培训的通知关于报销系统上线及培训的通知的</p>
+            <p><span>上海品宅装饰科技有限公司</span><span  style="margin-left: 5px">2018-1-26</span></p>
+        </div>
+    </div>
+
+</div>
+
+
+<script src="js/jquery.min.js" charset ="utf-8"></script>
+<script src="js/mobiscroll-2.13.2.full.min.js" charset ="utf-8"></script>
+<script>
+    $(".btn-serch").click(function () {
+        $(".btn-acceptance").show()
+    })
+</script>
+
+<script type="text/javascript">
+    $(function () {
+        var nowData=new Date();
+        var opt= {
+            theme:'ios7', //设置显示主题
+            mode:'scroller', //设置日期选择方式，这里用滚动
+            display:'bottom', //设置控件出现方式及样式
+            preset : 'date', //日期:年 月 日 时 分
+            // minDate: nowData,
+            maxDate:new Date(nowData.getFullYear(),nowData.getMonth(),nowData.getDate()),
+             dateFormat: 'yy-mm-dd', // 日期格式
+             // dateOrder: 'yymmdd', //面板中日期排列格式
+//             stepMinute: 5, //设置分钟步长
+            yearText:'年',
+            monthText:'月',
+            dayText:'日',
+            hourText:'时',
+            minuteText:'分',
+            startYear: (new Date()).getFullYear()-3, //开始年份
+            lang:'zh' //设置控件语言};
+
+        };
+        $('#dateinput').mobiscroll(opt);
+        $('#dateinputb').mobiscroll(opt);
+    });
+</script>
+
+
+</body>
+</html>
+

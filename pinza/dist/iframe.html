@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>iframe</title>
+    <link rel="stylesheet" href="lib/layer/css/layui.css">
+    <style>
+        body {
+            padding: 10px;
+            font-size: 14px;
+            background: #fff;
+            width: 95%;
+            margin: 0 auto;
+            font-size: 14px;
+            line-height: 20px;
+            overflow: hidden;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        input {
+            border: 1px solid #999;
+            padding: 5px 10px;
+            margin: 0 10px 10px 0;
+        }</style>
+</head>
+<body>
+<div>
+
+</div>
+
+</div>
+<pre style="height: 180px;overflow-y: auto;">
+<span class="run">
+</span>
+</pre>
+
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="lib/layer/layui.all.js"></script>
+
+<script type="text/javascript">
+    $('#transmit').on('click', function () {
+        parent.$('#parentIframe').text('我被改变了');
+        parent.layer.tips('Look here', '#parentIframe', {time: 5000});
+        parent.layer.close(index);
+    });
+
+</script>
+</body>
+</html>
+

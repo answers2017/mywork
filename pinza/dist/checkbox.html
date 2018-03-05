@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>layui.form小例子</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <style>
+        .box {
+            overflow: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        input[type='radio'] {
+            background: #fff;
+            border-color: #c5c5c5;
+            -webkit-box-shadow: none;
+            width: 16px;
+            height: 16px;
+        }
+
+        input[type='radio'] {
+            -webkit-box-shadow: inset 0 1px 2px white, 0 1px 2px rgba(0, 0, 0, .2);
+            -webkit-appearance: none;
+            -webkit-margin-start: 0;
+            -webkit-margin-end: 3px;
+            -webkit-transition: border 500ms;
+            background: -webkit-linear-gradient(#fafafa, #dcdcdc);
+            border-radius: 100%;
+            border: 1px solid #a0a0a0;
+            display: inline-block;
+            height: 15px;
+            margin-bottom: 0;
+            position: relative;
+            top: 3px;
+            vertical-align: baseline;
+            width: 15px;
+        }
+
+
+
+
+        input[type='radio']:checked::before {
+            -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+            -webkit-margin-start: 4px;
+            background: #808080;
+            border-radius: 10px;
+            content: '';
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 400;
+            height: 5px;
+            left: 0;
+            margin-top: 4px;
+            opacity: 1;
+            position: absolute;
+            top: 0;
+            vertical-align: top;
+            width: 5px;
+        }
+        input[type="radio"]:checked::before {
+            background: #62acff;
+            width: 6px;
+            height: 6px;
+        }
+
+
+
+        input[type='checkbox'] {
+            background: #fff;
+            border-color: #c4c4c4;
+            -webkit-box-shadow: none;
+        }
+
+        input[type='checkbox'] {
+            -webkit-box-shadow: inset 0 1px 2px white, 0 1px 2px rgba(0, 0, 0, .2);
+            -webkit-appearance: none;
+            -webkit-margin-start: 0;
+            -webkit-margin-end: 3px;
+            background: -webkit-linear-gradient(#fafafa, #dcdcdc);
+            border-radius: 3px;
+            border: 1px solid #a0a0a0;
+            display: inline-block;
+            height: 16px;
+            margin-bottom: 0;
+            margin-top: 0;
+            position: relative;
+            top: 3px;
+            vertical-align: baseline;
+            width: 16px;
+        }
+
+        input[type='checkbox']:checked::before {
+            color: #808080;
+            content: url(../images/checkmark.png);
+            font-size: 13px;
+            height: 16px;
+            left: 2px;
+            position: absolute;
+        }
+
+        input[type='checkbox']:checked::before {
+            content: url(../images/checkmark_2.png);
+            top: -1px;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+<body class="box">
+
+<input type="radio" name="radio" title="单选"/>
+<input type="checkbox" name="checbox" title="多选"/>
+
+</body>
+<script src="lib/layer/layui.all.js"></script>
+<script>
+    var overscroll = function (el) {
+        el.addEventListener('touchstart', function () {
+            var top = el.scrollTop
+                , totalScroll = el.scrollHeight
+                , currentScroll = top + el.offsetHeight;
+            if (top === 0) {
+                el.scrollTop = 1;
+            } else if (currentScroll === totalScroll) {
+                el.scrollTop = top - 1;
+            }
+        });
+
+        el.addEventListener('touchmove', function (evt) {
+            if (el.offsetHeight < el.scrollHeight)
+                evt._isScroller = true;
+        });
+    }
+
+    overscroll(document.querySelector('.scroll'));
+    document.body.addEventListener('touchmove', function (evt) {
+        if (!evt._isScroller) {
+            evt.preventDefault();
+        }
+    });
+</script>

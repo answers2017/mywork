@@ -1,0 +1,1104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <jsp:include page="inc_web.jsp"></jsp:include>
+    <link href="${ctx}/js/bootstrap/bootstrap-glyphicons.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="${ctx}/js/jquery/jquery.fs.boxer.css">
+    <link href="${ctx}/style/iCheck/flat/red.css" rel="stylesheet" type="text/css">
+    <link href="${ctx}/style/iCheck/square/orange.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="${ctx}/style/iCheck/icheck.js"></script>
+    <script type="text/javascript" src="${ctx}/js/jquery/jquery.fs.boxer.min.js"></script>
+    <script type="text/javascript" src="${ctx}/js/jquery/jquery.fs.boxer.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+
+    <script type="text/javascript" src="lib/bootstrap/bootstrap.min.js"></script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>品宅定制</title>
+    <style>
+        .headSelct{
+            color: #ffffff;
+            background-color: #9e9e9e;
+            border-color: #ffffff;
+            padding: 10px 15px;
+            display: block;
+            font-family: Arial;
+            font-weight:bold;
+        }
+        .headSelct1{
+            color: #000000;
+            background-color: #ffffff;
+            border-color: #ffffff;
+            padding: 10px 15px;
+            display: block;
+            font-family: Arial;
+            font-weight:bold;
+        }
+        .programHead{
+            color: #ffffff;
+            background-color: #f5f5f5;
+            border-color: #ffffff;
+            padding: 10px 15px;
+            display: block;
+            font-family: Arial;
+            font-weight:bold;
+            width: 100%;
+        }
+        #btn_close{
+            width: 30px;
+            height: 30px;
+            border: 0;
+            display: inline-block;
+            overflow: hidden;
+            vertical-align: middle;
+            line-height: 30px;
+            font-size: 16px;
+            font-weight: 700;
+            color: #ffffff;
+            background: #ff5815;
+            border-radius: 3px;
+            cursor: pointer;
+            zoom: 1;
+            float:right;
+            _position:relative;
+
+        }
+        .ck {
+            background-image:url("${ctx}/image/custom/max.png");
+            position: absolute;
+            display:block;
+            opacity: 0.8;
+            bottom:20px;
+            right: 20px;
+            background-repeat:no-repeat;
+            width: 26px;
+            height: 26px;
+            text-align: right;
+        }
+
+        @font-face {font-family: "iconfont";
+            src: url('${ctx}/style/iconfont/iconfont.eot?t=1477279920'); /* IE9*/
+            src: url('${ctx}/style/iconfont/iconfont.eot?t=1477279920#iefix') format('embedded-opentype'), /* IE6-IE8 */
+            url('${ctx}/style/iconfont/iconfont.woff?t=1477279920') format('woff'), /* chrome, firefox */
+            url('${ctx}/style/iconfont/iconfont.ttf?t=1477279920') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+            url('${ctx}/style/iconfont/iconfont.svg?t=1473732471#iconfont') format('svg'); /* iOS 4.1- */
+        }
+
+        .iconfont {
+            font-family:"iconfont" !important;
+            font-size:16px;
+            font-style:normal;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-stroke-width: 0.2px;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .collapse-down:after {
+            font-family:"iconfont" !important;
+            font-size:16px;
+            font-style:normal;
+            content: "\e65f";
+            position: absolute;
+            cursor: pointer;
+            right: 30px;
+        }
+        .collapse-up:after {
+            font-family:"iconfont" !important;
+            font-size:16px;
+            font-style:normal;
+            content: "\e65b";
+            position: absolute;
+            cursor: pointer;
+            right: 30px;
+
+        }
+        .box-shadow-3{
+            position: fixed;
+            background-color: white;
+            z-index:1
+        }
+        .icheckbox_square-orange{
+            float: left;
+            margin-left: 20px;
+        }
+
+        .titleRow{
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        div{
+            font-family: Arial,sans-serif;
+        }
+
+        .productName{
+            color:#666666;
+            font-size:
+                    small;
+            overflow:
+                    hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp:2;
+            -webkit-box-orient: vertical;
+            height:35px
+        }
+
+        .fff{
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 100%;
+            line-height: 1.75rem;
+            background-color: #fff;
+            color: #222427;
+            height: 1.75rem;
+            width: 1.75rem;
+            text-align: center;
+            cursor: pointer;
+            font-family: inherit;
+        }
+        .ff4f:before {
+            content: "\e617";
+            font-size: 1.4em;
+        }
+
+        .toSummery{
+            width: 100px;
+            height: 40px;
+            border: 0;
+            display: inline-block;
+            overflow: hidden;
+            vertical-align: middle;
+            line-height: 40px;
+            font-size: 16px;
+            font-weight: 700;
+            color: #ffffff;
+            background: #ff5815;
+            cursor: pointer;
+            zoom: 1;
+            text-align: center;
+            margin-left:175px;
+        }
+
+        .carousel-control.right{
+            margin-top:88px;
+            margin-bottom:88px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, .0001) 100%, rgba(153, 153, 153, 0.5) 100%);
+        }
+        .carousel-control.left{
+            margin-top:88px;
+            margin-bottom:88px;
+            background-image: linear-gradient(to right, rgba(153, 153, 153, .5) 0,
+            rgba(0, 0, 0, .0001) 0);
+        }
+
+        .glyphicon:hover{color:red;}
+
+        .colorli{
+            display: inline-block;
+            margin-right: .2857em;
+            margin-top: .18em;
+            position: relative;
+            cursor: pointer;
+        }
+        .colorBlock
+        {
+            width: 1.5rem;height: 1.5rem;
+            display: block;
+            opacity:0.4;
+            border:1.5px solid black;
+        }
+
+        .select{
+            opacity:1.0;
+            border:2.5px solid black;
+        }
+
+        .ul{
+            list-style: none;
+            width: 100px;
+            height: 200px;
+            position: absolute;
+            margin: 0;
+            padding: 0;
+            line-height:60px;
+            text-align:center;
+            z-index:222;
+        }
+
+        .li:after{
+            font-family: 'iconfont';
+            content: "\e655";
+            padding-right: .85714285714285714285714285714286em;
+            vertical-align: bottom;
+        }
+
+        .ul .li{
+            width: 200px;
+            background: #ffffff;
+            height: 60px;
+            position: relative;
+            border-right:1px solid white;
+            border-bottom:1px solid grey;
+            z-index:222;
+        }
+        .ul .li:hover{
+            background: #cc0000;
+        }
+        .li>.ul{
+            height: 260px;
+            position: absolute;
+            left: 200px;
+            top: 0px;
+            display: none;
+            z-index:222;
+        }
+        .first{
+            display: none;
+        }
+        .li:nth-child(2n){
+            background: WHITE;
+        }
+
+        .activeTool{
+            background-color: #cc0000;
+        }
+        .activeTool:before{
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+            left: 50%;
+            border-color: transparent transparent #fff;
+            border-style: solid;
+            border-width: .575em;
+            bottom: -1px;
+            margin-left: -0.575em;
+        }
+        .navbar-inverse .navbar-nav>li>a:hover{
+            color:#c00;
+        }
+        .activeTool:hover{
+            background-color: #cc0000;
+            color:#ffffff;
+        }
+        .navbar-inverse .navbar-nav>li>a{
+            color:#ffffff
+        }
+
+        .breadcrumb{
+            background-color: #ffffff
+        }
+        .breadcrumb>li>a{
+            color:#000000;
+            text-decoration: none;
+        }
+
+        .breadcrumb>li>a:before{
+            font-family: 'iconfont';
+            content: "\e655";
+            padding-right: .85714285714285714285714285714286em;
+            vertical-align: bottom;
+        }
+
+
+
+        .breadcrumb>li>a:hover{
+            color:#cc0000;
+        }
+
+        .breadcrumb>li+li:before{
+            content: "|";
+        }
+
+        .mask{
+
+            position:fixed;
+
+            left:0;
+
+            top:53px;
+
+            right:0;
+
+            bottom:0;
+
+            z-index:1;
+
+            background:black;
+
+            opacity:0.6;
+
+            filter:alpha(opacity=60)
+
+        }
+        .modal_wrapper{
+            display: table;
+            height: 100%;
+            margin: 0px auto;
+        }
+        .modal-dialog{
+            display: table-cell;
+            vertical-align: middle;
+        }
+    </style>
+    <script>
+        var urlJson;
+        $(function() {
+            $('.ck').boxer();
+            $('input').iCheck({
+                checkboxClass: 'icheckbox_square-orange',
+                radioClass: 'iradio_square-orange'
+            });
+            $('input').on('ifChecked', function(event){
+                console.log($(event.currentTarget).trigger("select"));
+            });
+            $('input').on('ifUnchecked', function(event){
+                console.log($(event.currentTarget).trigger("click"));
+            });
+
+            var groupUrl = '${groupUrl}';
+            urlJson = eval("("+groupUrl+")");
+        });
+
+        function formatCurrency(num)
+        {
+            if(num||num==0)
+            {
+                //将num中的$,去掉，将num变成一个纯粹的数据格式字符串
+                num = num.toString().replace(/\$|\,/g,'');
+                //如果num不是数字，则将num置0，并返回
+                if(''==num || isNaN(num)){return 'Not a Number ! ';}
+                //如果num是负数，则获取她的符号
+                var sign = num.indexOf("-")> 0 ? '-' : '';
+                //如果存在小数点，则获取数字的小数部分
+                var cents = num.indexOf(".")> 0 ? num.substr(num.indexOf(".")) : '';
+                cents = cents.length>1 ? cents : '' ;//注意：这里如果是使用change方法不断的调用，小数是输入不了的
+                //获取数字的整数数部分
+                num = num.indexOf(".")>0 ? num.substring(0,(num.indexOf("."))) : num ;
+                //如果没有小数点，整数部分不能以0开头
+                if('' == cents){ if(num.length>1 && '0' == num.substr(0,1)){return 'Not a Number ! ';}}
+                //如果有小数点，且整数的部分的长度大于1，则整数部分不能以0开头
+                else{if(num.length>1 && '0' == num.substr(0,1)){return 'Not a Number ! ';}}
+                //针对整数部分进行格式化处理，这是此方法的核心，也是稍难理解的一个地方，逆向的来思考或者采用简单的事例来实现就容易多了
+                /*
+			                  也可以这样想象，现在有一串数字字符串在你面前，如果让你给他家千分位的逗号的话，你是怎么来思考和操作的?
+			                  字符串长度为0/1/2/3时都不用添加
+			                  字符串长度大于3的时候，从右往左数，有三位字符就加一个逗号，然后继续往前数，直到不到往前数少于三位字符为止
+                 */
+                for (var i = 0; i < Math.floor((num.length-(1+i))/3); i++)
+                {
+                    num = num.substring(0,num.length-(4*i+3))+','+num.substring(num.length-(4*i+3));
+                }
+                //将数据（符号、整数部分、小数部分）整体组合返回
+                return (sign + num + cents);
+            }
+
+        }
+
+        function selectChoice(price,amount,pid){
+            var oldTotal = parseFloat($('#totalChoice-'+pid).text().replace(/,/g,''));
+            var selecttotal = parseFloat(price*amount);
+            $('#totalChoice-'+pid).text(formatCurrency(oldTotal+selecttotal));
+            //合计价格计算
+            var oldSummery= parseFloat($('#summeryPrice').text().replace(/,/g,''));
+            var addPrice= parseFloat($('#addPrice').text().replace(/,/g,''));
+            $('#addPrice').text(formatCurrency(addPrice+selecttotal));
+            $('#summeryPrice').text(formatCurrency(oldSummery+selecttotal));
+        }
+        function unSelectChoice(price,amount,pid){
+            var oldTotal = parseFloat($('#totalChoice-'+pid).text().replace(/,/g,''));
+            var selecttotal = parseFloat(price*amount);
+            $('#totalChoice-'+pid).text(formatCurrency(oldTotal-selecttotal));
+            //合计价格计算
+            var oldSummery= parseFloat($('#summeryPrice').text().replace(/,/g,''));
+            var addPrice= parseFloat($('#addPrice').text().replace(/,/g,''));
+            $('#addPrice').text(formatCurrency(addPrice-selecttotal));
+            $('#summeryPrice').text(formatCurrency(oldSummery-selecttotal));
+        }
+
+        function selectMultiple(price,amount,pid,gid,cid){
+            $('input[groupId='+gid+']').each(function(rs){
+                if(cid!=$(this).val()){
+                    if($(this).is(':checked')){
+                        $(this).click();
+                        $(this).attr('checked',false);
+                        $(this).parent().removeClass('checked');
+                    }
+                }
+            });
+            var oldTotal = parseFloat($('#totalMultiple-'+pid).text().replace(/,/g,''));
+
+            var selecttotal = parseFloat(price*amount);
+            $('#totalMultiple-'+pid).text(formatCurrency(oldTotal+selecttotal));
+            //合计价格计算
+            var oldSummery= parseFloat($('#summeryPrice').text().replace(/,/g,''));
+            var addPrice= parseFloat($('#addPrice').text().replace(/,/g,''));
+            $('#addPrice').text(formatCurrency(addPrice+selecttotal));
+            $('#summeryPrice').text(formatCurrency(oldSummery+selecttotal));
+        }
+
+        function unSelectMultiple(price,amount,pid){
+
+            var oldTotal = parseFloat($('#totalMultiple-'+pid).text().replace(/,/g,''));
+            var selecttotal = parseFloat(price*amount);
+            $('#totalMultiple-'+pid).text(formatCurrency(oldTotal-selecttotal));
+            //合计价格计算
+            var oldSummery= parseFloat($('#summeryPrice').text().replace(/,/g,''));
+            var addPrice= parseFloat($('#addPrice').text().replace(/,/g,''));
+            $('#addPrice').text(formatCurrency(addPrice-selecttotal));
+            $('#summeryPrice').text(formatCurrency(oldSummery-selecttotal));
+        }
+
+        function summery(){
+            var spCodesTemp = "";
+            var selectColor = "";
+            $('input:checkbox[name=selectProduct]:checked').each(function(i){
+                if(0==i){
+                    spCodesTemp = $(this).val();
+                }else{
+                    spCodesTemp += (","+$(this).val());
+                }
+            });
+            $(".select").each(function(i){
+                if(0==i){
+                    selectColor = $(this).attr("selectValue");
+                }else{
+                    selectColor += (","+$(this).attr("selectValue"));
+                }
+            });
+            var url = '${ctx}/web/custom/customSummery?ids='+spCodesTemp+'&programId='+${id}+"&selectColor="+selectColor;
+            if($("[name='salesOrderNo']").val()!=''){
+                url += '&salesOrderNo='+$("[name='salesOrderNo']").val();
+            }
+            if($("#ownerId").val()!=''){
+                url += '&ownerId='+$("#ownerId").val();
+            }
+            if($("#houseId").val()!=''){
+                url += '&houseId='+$("#houseId").val();
+            }
+            $('#toSummery').attr('href',url);
+            $('#toSummeryBtn').attr('href',url);
+            return true;
+        }
+
+        function collapseFun(value){
+            var groupNo = $(value).attr("groupNo");
+            switchGroupUrl(groupNo);
+            var values = $('.panel-heading');
+            for (var i=0;i<values.length;i++)
+            {
+                var a = values[i];
+                $(a).removeClass('collapse-up');
+                $(a).addClass('collapse-down');
+                if(i==(values.length-1)){
+                    if($(value).attr('class').indexOf('collapsed')==-1){
+                        $(value).removeClass('collapse-up');
+                        $(value).addClass('collapse-down');
+                    }else{
+                        $(value).removeClass('collapse-down');
+                        $(value).addClass('collapse-up');
+                    }
+                }
+            }
+
+        }
+
+        function switchGroupUrl(groupNo){
+            for (var i=0;i<urlJson.length;i++){
+                if(urlJson[i].groupNo==groupNo){
+                    if(urlJson[i].urls.length>0){
+                        $("#indicators").empty();
+                        $("#inner").empty();
+                        for(var j=0;j<urlJson[i].urls.length;j++){
+                            var indic = '<li ';
+                            if(j==0){
+                                indic +=' class="active" ';
+                            }
+                            indic += ' data-slide-to=' + j + ' data-target="#carousel-910584" > </li> '
+                            $("#indicators").append(indic);
+
+                            var inn = '<div ';
+                            if(j==0){
+                                inn +=' class="item active" ';
+                            }
+                            inn +=' class="item" style="height: 100% !important;"> ';
+                            inn +='  <a class="ck" href="'+urlJson[i].urls[j].url+'"></a> ';
+                            inn +=' <img style="height: 100% !important; margin:auto" src="'+ urlJson[i].urls[j].url +'" /></div> ';
+                            $("#inner").append(inn);
+                        }
+                    }
+                    break;
+                }
+            }
+            $('.ck').boxer();
+        }
+
+        function changeSize(){
+            if($("#col_pic").attr('class').indexOf('col-xs-4')==-1){
+                $("#col_pic").addClass('col-xs-4');
+                $("#col_pic").removeClass('col-xs-8');
+                $("#col_con").addClass('col-xs-8');
+                $("#col_con").removeClass('col-xs-4');
+            }else{
+                $("#col_pic").addClass('col-xs-8');
+                $("#col_pic").removeClass('col-xs-4');
+                $("#col_con").addClass('col-xs-4');
+                $("#col_con").removeClass('col-xs-8');
+            }
+
+        }
+        function addSelect(id){
+            $("#inp-"+id).iCheck('check');
+            //	$("#inp-"+id).attr('checked',true);
+        }
+
+        function collapse(pid,ele){
+            var f= $("#panel-element-"+pid).prev();
+            if(f.hasClass("collapse-down")){
+                f.click();
+            }
+            $(".activeTool").each(function(){
+                $(this).removeClass('activeTool');
+            });
+            $(ele).parent().addClass('activeTool');
+            //	$("#panel-element-"+pid).addClass("in");
+        }
+
+        function choooseColor(oneClass,curr){
+            //console.log($("req-"+oneClass));
+            $(".req-"+oneClass).removeClass('select');
+            $(curr).addClass('select');
+        }
+
+    </script>
+</head>
+
+<body style="overflow: scroll;">
+<div class="container" style="min-width: 1080px;">
+    <div id="mask"></div>
+    <div class="row clearfix" style="position:fixed;top:0;left:0;right:0;z-index:1">
+        <div class="col-xs-12 column">
+            <nav class="navbar navbar-default navbar-inverse" role="navigation">
+                <div class="navbar-header" style="margin-left:100px">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" style="color: #ffffff" href="${ctx}">定制家</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav" style="padding: 0 1.4286em;">
+                        <li id="firstLi">
+                            <a href="#" class="cart">户型选择</a>
+                            <ul class="first ul">
+                                <c:forEach items="${hList}" var="h">
+                                    <li class="li">
+                                        ${h.housesTypeName }
+                                        <ul class="ul">
+                                            <c:forEach items="${h.wHouseTypeMxDtos}" var="m">
+                                                <li class="li">${m.housesTypeName }
+                                                    <ul class="ul">
+                                                        <c:forEach items="${m.pList}" var="p">
+                                                            <li class="li">${p.programName}
+                                                                <c:if test="${not empty p.colors}">
+                                                                    <ul class="ul">
+                                                                        <c:forEach items="${p.colorMaps}" var="co">
+                                                                            <li class="li" style="text-align:justify;">
+                                                                                <a href="${ctx}/web/custom/customHouse?id=${p.id}&housesTypeNo=${housesTypeNo}&programColor=${co.key}&programNo=${p.programNo}&ownerId=${param.ownerId}&houseId=${param.houseId}" style="height: 100%;position: absolute;width: 100%;text-align: center;color:black">${co.value}</a>
+                                                                            </li>
+                                                                        </c:forEach>
+                                                                    </ul>
+                                                                </c:if>
+                                                            </li>
+
+                                                        </c:forEach>
+                                                    </ul>
+                                                </li>
+                                            </c:forEach>
+                                        </ul>
+
+                                    </li>
+                                </c:forEach>
+                            </ul>
+                        </li>
+                        <c:forEach items="${productGroups}" var="pg" varStatus="s">
+                            <li >
+                                <a <c:if test="${s.index==0}"> class="activeTool"</c:if> href="#" onclick="collapse(${pg.id},this)">${s.index+1}. ${pg.groupName}</a>
+                            </li>
+                            <c:set var="count" value="${s.index+2}" />
+                        </c:forEach>
+                        <li>
+                            <a id="toSummery" href="#" onclick="return summery();">${count}. 汇总</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div  class="clearfix">
+        <div id="col_pic" style="position:fixed;top:53px;left:100px;right:550px;bottom:120px">
+            <div class="row clearfix">
+                <div class="col-xs-12 column" style="margin-top:10px">
+                    <h3 style="margin-top:0px;font-size: 30px;font-family:黑体;font-weight: bolder;">
+                        ${programDto.housesTypeName }
+                    </h3>
+                    <ul class="breadcrumb">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#myModal-base">基础配置</a>
+                        </li>
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#myModal-spe">特色亮点</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="carousel slide" id="carousel-910584" style="position:fixed;top:153px;left:100px;right:550px;bottom:120px">
+                <ol class="carousel-indicators" id="indicators">
+                    <c:forEach items="${picUrls}" var="p" varStatus="s">
+                        <li <c:if test="${s.index==0}">class="active"</c:if> data-slide-to="${s.index}" data-target="#carousel-910584" > </li>
+                    </c:forEach>
+                </ol>
+                <div class="carousel-inner" style="height: 100% !important;text-align:center;" id="inner">
+                    <c:forEach items="${picUrls}" var="p" varStatus="s">
+                        <div <c:if test="${s.index==0}">class="item active"</c:if> class="item" style="height: 100% !important;">
+                        <a class="ck" href="${p}"></a>
+                        <img style="height: 100% !important; margin:auto" src="${p}" />
+                </div>
+                </c:forEach>
+            </div>
+            <div style="height:100%;">
+                <a class="left carousel-control" href="#carousel-910584" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+            </div>
+            <div style="height:100%;margin-top:88px;margin-bottom:88px;">
+
+                <a class="right carousel-control" data-slide="next" href="#carousel-910584">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+            </div>
+        </div>
+
+    </div>
+    <div style="position:fixed;left:100px;right:550px;bottom:5px">
+        <hr/>
+        <div style=" color:black;float:right; _position:relative;font-size:14px ; width:250px">
+            <div style="margin-top: 0px;"><span>基础价格：  </span><span style="padding-left: 50px;">${programDto.totalPriceStr}</span>¥</div>
+            <div style="margin-top: 5px;"><span>设备价格： </span><span style="padding-left: 50px;" id="addPrice" >${programDto.addPriceStr}</span>¥</div>
+            <div style="margin-top: 5px;font-weight:600"><span>总价*：</span><span style="padding-left: 75px;" id="summeryPrice" >${programDto.summeryPriceStr}</span>¥</div>
+        </div>
+    </div>
+
+    <div id="col_con"  style="position:absolute;top:53px;right:50px;width:450px !important;">
+        <div class="panel panel-default">
+            <div class="headSelct">
+                <a class="panel-title" data-toggle="collapse" href="#panel-868828">设备选择</a>
+            </div>
+        </div>
+        <div class="panel-group" id="panel-868828">
+            <c:forEach items="${productGroups}" var="p" varStatus="s">
+                <div class="panel panel-default">
+                    <div groupNo="${p.groupNo}" class="panel-heading <c:if test='${s.index==0}'>collapse-up</c:if><c:if test='${s.index!=0}'>collapse-down</c:if>" onclick="collapseFun(this)" aria-expanded="true" data-toggle="collapse" data-parent="#panel-868828" href="#panel-element-${p.id}">
+                        ${p.groupName}
+                    </div>
+
+                    <div id="panel-element-${p.id}" <c:if test="${s.index==0}">class="panel-collapse collapse in"</c:if> <c:if test="${s.index!=0}">class="panel-collapse collapse"</c:if>>
+                    <div class="panel-body">
+
+                        <c:forEach items="${p.requires}" var="require" varStatus="s">
+                            <c:if test="${s.index==0}">
+                                <div class="programHead" title="简介">
+                                    <span style=" color:black;align-items: center">基础选择（必选）</span><span style=" color:black;float:right; _position:relative; "> 合计：¥<span style="color:red;"> ${p.totalRequireStr}</span></span>
+                                </div>
+                            </c:if>
+                            <div class="row titleRow">
+                                <input name="selectProduct" checked type="checkbox" value="${require.id}" class="col-xs-1" disabled="disabled"/>
+                                <div class="col-xs-9">【${require.brand}】${require.productName}</div>
+                                <a href='#' data-toggle="modal"  title="显示更多信息" data-target="#myModal-${require.id}"><div class="fff">i</div></a>
+                            </div>
+                            <div class="row">
+                                <a href="#">
+                                    <img class="col-xs-4" src="${require.picPath}" style="width: 150px;height: 80px;"/>
+                                </a>
+
+                                <div class="col-xs-7">
+                                    <div  class="productName">
+                                        <div>${require.xlxh} ${require.productName}</div>
+                                    </div>
+                                    <div style="color:#C7C7C7;font-size: small;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp:2;-webkit-box-orient: vertical;">
+                                        使用位置（${require.usePosition}）
+                                    </div>
+                                    <div>
+                                        <ul style="padding:0px; margin:0px;">
+                                            <c:forEach items="${require.colors}" var="co">
+                                                <li class="colorli">
+                                                    <span  selectValue="${require.id}-${co}"
+                                                    <c:choose>
+                                                        <c:when test="${programColor==co }">class="colorBlock req-${require.id} select"</c:when>
+                                                        <c:when test="${require.color==co }">class="colorBlock req-${require.id} select"</c:when>
+                                                        <c:otherwise>class="colorBlock req-${require.id}"</c:otherwise></c:choose>
+                                                    onclick="choooseColor(${require.id},this)" style="background-color: #${co}"></span>
+                                                </li>
+                                            </c:forEach>
+                                        </ul>
+                                    </div>
+                                    <div style="width:65%;">
+                                        <div >
+                                            <span style="color:#C7C7C7;"><span style="color:black;">¥ ${require.priceStr}</span> X${require.amount}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="modal fade" id="myModal-${require.id}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal_wrapper">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content" style="width: 800px;">
+                                            <div class="modal-header" style="background-color: #9d9d9d">
+                                                <button id="btn_close" type="button" data-dismiss="modal" aria-hidden="true" style="">&times;</button>
+                                                <h4 class="modal-title" id="myModalLabel">【${require.brand}】${require.productName}</h4>
+                                            </div>
+                                            <div class="modal-body" style="height:425px">
+                                                <div class="carousel slide" id="carousel-${require.id}" style="height: 100% !important;">
+                                                    <ol class="carousel-indicators">
+                                                        <c:forEach items="${require.picPaths}" var="pic" varStatus="s">
+                                                            <li <c:if test="${s.index==0}">class="active"</c:if> data-slide-to="${s.index}" data-target="#carousel-${require.id}" > </li>
+                                                        </c:forEach>
+                                                    </ol>
+                                                    <div class="carousel-inner" style="height: 100% !important;text-align:center;">
+                                                        <c:forEach items="${require.picPaths}" var="pic" varStatus="s">
+                                                            <div <c:if test="${s.index==0}">class="item active"</c:if> class="item" style="height: 100% !important;">
+                                                            <img style="height: 100% !important;margin:auto" src="${pic}" />
+                                                    </div>
+                        </c:forEach>
+                    </div>
+                    <div style="height:100%;">
+                        <a class="left carousel-control" href="#carousel-${require.id}" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                    </div>
+                    <div style="height:100%;margin-top:88px;margin-bottom:88px;">
+
+                        <a class="right carousel-control" data-slide="next" href="#carousel-${require.id}">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
+                    </div>
+                </div>
+        </div>
+        <div class="modal-footer">
+            <div style="text-align: left;">
+                <span style="color:#666666;font-size: 20px;">${require.content}</span>
+            </div>
+            <div style="text-align: left;">
+                <span style="color:#C7C7C7;"><span style="color:black;">¥ ${require.priceStr}</span> X${require.amount}</span>
+            </div>
+            <button type="button" class="btn btn-default" data-dismiss="modal" style="background-color:firebrick;color: #ffffff">已经在选择中</button>
+        </div>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal -->
+</div>
+</div>
+</c:forEach>
+
+
+<c:forEach items="${p.choices}" var="choice" varStatus="status">
+    <c:if test="${status.index==0}">
+        <div class="programHead">
+            <span style=" color:black;align-items: center">可选</span><span style=" color:black;float:right; _position:relative; "> 合计：¥<span id="totalChoice-${p.id}" style="color:red;"> ${p.totalChoiceStr}</span></span>
+        </div>
+    </c:if>
+    <div class="row titleRow">
+        <input id="inp-${choice.id}" <c:if test="${choice.checkFlag}">checked</c:if> type="checkbox" name="selectProduct" onselect="selectChoice(${choice.price},${choice.amount},${p.id})" onclick="unSelectChoice(${choice.price},${choice.amount},${p.id})" value="${choice.id}" class="col-xs-1" />
+        <div class="col-xs-9">【${choice.brand}】${choice.productName}</div>
+        <a href='#' data-toggle="modal" data-target="#myModal-${choice.id}"><div class="fff">i</div></a>
+    </div>
+    <div class="row">
+        <a href="#">
+            <img class="col-xs-4" src="${choice.picPath}" style="width: 150px;height: 80px;"/>
+        </a>
+
+        <div class="col-xs-7">
+
+            <div  class="productName">
+                <div href="#">${choice.xlxh} ${choice.productName}</div>
+            </div>
+            <div style="color:#C7C7C7;font-size: small;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp:2;-webkit-box-orient: vertical;">
+                使用位置（${choice.usePosition}）
+            </div>
+            <div>
+                <ul style="padding:0px; margin:0px;">
+                    <c:forEach items="${choice.colors}" var="co">
+                        <li class="colorli">
+                            <span selectValue="${choice.id}-${co}" <c:choose>
+                            <c:when test="${programColor==co }">class="colorBlock req-${choice.id} select"</c:when>
+                            <c:when test="${choice.color==co }">class="colorBlock req-${require.id} select"</c:when>
+                            <c:otherwise>class="colorBlock req-${choice.id}"</c:otherwise></c:choose>
+                            onclick="choooseColor(${choice.id},this)" style="background-color: #${co}"></span>
+                        </li>
+                    </c:forEach>
+                </ul>
+            </div>
+            <div style="width:65%;">
+                <div >
+                    <span style="color:#C7C7C7;"><span style="color:black;">¥ ${choice.priceStr}</span> X${choice.amount}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="modal fade" id="myModal-${choice.id}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal_wrapper">
+            <div class="modal-dialog">
+                <div class="modal-content" style="width: 800px">
+                    <div class="modal-header" style="background-color: #9d9d9d">
+                        <button id="btn_close" type="button" data-dismiss="modal" aria-hidden="true" style="">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">【${choice.brand}】${choice.productName}</h4>
+                    </div>
+                    <div class="modal-body" style="height:425px">
+                        <div class="carousel slide" id="carousel-${choice.id}" style="height: 100% !important;">
+                            <ol class="carousel-indicators">
+                                <c:forEach items="${choice.picPaths}" var="pic" varStatus="s">
+                                    <li <c:if test="${s.index==0}">class="active"</c:if> data-slide-to="${s.index}" data-target="#carousel-${choice.id}" > </li>
+                                </c:forEach>
+                            </ol>
+                            <div class="carousel-inner" style="height: 100% !important;text-align: center;">
+                                <c:forEach items="${choice.picPaths}" var="pic" varStatus="s">
+                                    <div <c:if test="${s.index==0}">class="item active"</c:if> class="item" style="height: 100% !important;">
+                                    <img style="height: 100% !important;margin:auto" src="${pic}" />
+                            </div>
+</c:forEach>
+</div>
+<div style="">
+    <a class="left carousel-control" href="#carousel-${choice.id}" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+</div>
+<div style="">
+
+    <a class="right carousel-control" data-slide="next" href="#carousel-${choice.id}">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+</div>
+</div>
+</div>
+<div class="modal-footer">
+    <div style="text-align: left;">
+        <span style="color:#666666;font-size: 20px;">${choice.content}</span>
+    </div>
+    <div style="text-align: left;">
+        <span style="color:#C7C7C7;"><span style="color:black;">¥ ${choice.priceStr}</span> X${choice.amount}</span>
+    </div>
+    <button type="button" onclick="addSelect(${choice.id})" class="btn btn-default" data-dismiss="modal" style="background-color:firebrick;color: #ffffff">添加到选择中</button>
+</div>
+</div><!-- /.modal-content -->
+</div><!-- /.modal -->
+</div>
+</div>
+</c:forEach>
+
+<c:forEach items="${p.groupSelects}" var="g" varStatus="status">
+    <c:if test="${status.index==0}">
+        <div class="programHead">
+            <span style=" color:black;align-items: center">组选</span><span style=" color:black;float:right; _position:relative; "> 合计：¥<span id="totalMultiple-${p.id}" style="color:red;"> ${p.totalMultipleStr}</span></span>
+        </div>
+    </c:if>
+
+    <div style="border:1px solid #f5f5f5;">
+        <div style="background-color: #f3e9e9;padding-left: 12px;color: burlywood;">分组(${g.groupId})</div>
+        <c:forEach items="${g.multiples}" var="choice" varStatus="s">
+            <c:if test="${s.index!=0}">
+                <hr />
+            </c:if>
+            <div class="row titleRow">
+                <input groupId="${g.groupId}" id="inp-${choice.id}" <c:if test="${choice.checkFlag}">checked</c:if> type="checkbox" name="selectProduct"
+                onselect="selectMultiple(${choice.price},${choice.amount},${p.id},${g.groupId},${choice.id})" onclick="unSelectMultiple(${choice.price},${choice.amount},${p.id})" value="${choice.id}" class="col-xs-1" />
+                <div class="col-xs-9">【${choice.brand}】${choice.productName}</div>
+                <a href='#' data-toggle="modal" data-target="#myModal-${choice.id}"><div class="fff">i</div></a>
+            </div>
+            <div class="row">
+                <a href="#">
+                    <img class="col-xs-4" src="${choice.picPath}" style="width: 150px;height: 80px;"/>
+                </a>
+                <div class="col-xs-7">
+                    <div  class="productName">
+                        <div href="#">${choice.xlxh} ${choice.productName}</div>
+                    </div>
+                    <div style="color:#C7C7C7;font-size: small;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp:2;-webkit-box-orient: vertical;">
+                        使用位置（${choice.usePosition}）
+                    </div>
+                    <div>
+                        <ul style="padding:0px; margin:0px;">
+                            <c:forEach items="${choice.colors}" var="co">
+                                <li class="colorli">
+                                    <span selectValue="${choice.id}-${co}" <c:choose>
+                                    <c:when test="${programColor==co }">class="colorBlock req-${choice.id} select"</c:when>
+                                    <c:when test="${choice.color==co }">class="colorBlock req-${require.id} select"</c:when>
+                                    <c:otherwise>class="colorBlock req-${choice.id}"</c:otherwise></c:choose>
+                                    onclick="choooseColor(${choice.id},this)" style="background-color: #${co}"></span>
+                                </li>
+                            </c:forEach>
+                        </ul>
+                    </div>
+                    <div style="width:65%;">
+                        <div >
+                            <span style="color:#C7C7C7"><span style="color:black">¥ ${choice.priceStr}</span> X${choice.amount}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="myModal-${choice.id}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal_wrapper">
+                    <div class="modal-dialog">
+                        <div class="modal-content" style="width: 800px">
+                            <div class="modal-header" style="background-color: #9d9d9d">
+                                <button id="btn_close" type="button" data-dismiss="modal" aria-hidden="true" style="">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">【${choice.brand}】${choice.productName}</h4>
+                            </div>
+                            <div class="modal-body" style="height:425px">
+                                <div class="carousel slide" id="carousel-${choice.id}" style="height: 100% !important;">
+                                    <ol class="carousel-indicators">
+                                        <c:forEach items="${choice.picPaths}" var="pic" varStatus="s">
+                                            <li <c:if test="${s.index==0}">class="active"</c:if> data-slide-to="${s.index}" data-target="#carousel-${choice.id}" > </li>
+                                        </c:forEach>
+                                    </ol>
+                                    <div class="carousel-inner" style="height: 100% !important;text-align: center;">
+                                        <c:forEach items="${choice.picPaths}" var="pic" varStatus="s">
+                                            <div <c:if test="${s.index==0}">class="item active"</c:if> class="item" style="height: 100% !important;">
+                                            <img style="height: 100% !important;margin:auto" src="${pic}" />
+                                    </div>
+        </c:forEach>
+    </div>
+    <div style="">
+        <a class="left carousel-control" href="#carousel-${choice.id}" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+    </div>
+    <div style="">
+
+        <a class="right carousel-control" data-slide="next" href="#carousel-${choice.id}">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div>
+    </div>
+    </div>
+    <div class="modal-footer">
+        <div style="text-align: left;">
+            <span style="color:#666666;font-size: 20px;">${choice.content}</span>
+        </div>
+        <div style="text-align: left;">
+            <span style="color:#C7C7C7;"><span style="color:black;">¥ ${choice.priceStr}</span> X${choice.amount}</span>
+        </div>
+        <button type="button" onclick="addSelect(${choice.id})" class="btn btn-default" data-dismiss="modal" style="background-color:firebrick;color: #ffffff">添加到选择中</button>
+    </div>
+    </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+    </div>
+    </div>
+</c:forEach>
+</div>
+</c:forEach>
+</div>
+</div>
+</div>
+</c:forEach>
+</div>
+<a id="toSummeryBtn" class="toSummery" href="#" onclick="return summery();">显示汇总</a>
+</div>
+</div>
+</div>
+
+<input type="hidden" name="salesOrderNo" value="${param.salesOrderNo}" />
+<input type="hidden" id="ownerId" value="${param.ownerId}" />
+<input type="hidden" id="houseId" value="${param.houseId}" />
+<div class="modal fade" id="myModal-spe" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal_wrapper">
+        <div class="modal-dialog">
+            <div class="modal-content" style="width: 800px">
+                <div class="modal-header" style="background-color: #9d9d9d">
+                    <button id="btn_close" type="button" data-dismiss="modal" aria-hidden="true" style="">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">特色亮点：${programDto.programName}</h4>
+                </div>
+                <div class="modal-body" style="height:500px">
+                    <div style="height:100% !important;overflow: auto;">
+                        ${programDto.content}
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+</div>
+<div class="modal fade" id="myModal-base" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal_wrapper">
+        <div class="modal-dialog">
+            <div class="modal-content" style="width: 800px">
+                <div class="modal-header" style="background-color: #9d9d9d">
+                    <button id="btn_close" type="button" data-dismiss="modal" aria-hidden="true" style="">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">基础配置：${programDto.projectName}</h4>
+                </div>
+                <div class="modal-body" style="height:500px">
+                    <div style="height:100% !important;overflow: auto;">
+                        ${programDto.projectContent}
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+    var cart=document.getElementsByClassName("cart")[0];
+    var first=document.getElementsByClassName("first")[0];
+    var lis=document.getElementsByClassName("li");
+    cart.onmouseenter=function(e){
+        first.style.display="block";
+        $("#mask").addClass("mask");
+    }
+    cart.onmouseleave=function(e){
+        if(first.style.display=="block"){
+        }else{
+            first.style.display="none";
+            $("#mask").removeClass("mask");
+        }
+
+    }
+    for(var i=0;i<lis.length;i++){
+        lis[i].onclick=function(e){
+            var ev=e||window.event;
+            ev.cancelBubble=true;
+        }
+        lis[i].onmouseenter=function(e){
+            var children=this.children;
+            if(children.length>0){
+                if(children[0].tagName=="UL"){
+
+                    children[0].style.display="block";
+                }
+            }
+        }
+        lis[i].onmouseleave=function(e){
+            var children=this.children;
+            if(children.length>0){
+                if(children[0].tagName=="UL"){
+                    children[0].style.display="none";
+                }
+            }
+        }
+    }
+    first.onmouseleave=function(){
+        first.style.display="none";
+        $("#mask").removeClass("mask");
+    }
+    $("#firstLi").mouseleave(function(e){
+        first.style.display="none";
+        $("#mask").removeClass("mask");
+    } )
+</script>
+</html>

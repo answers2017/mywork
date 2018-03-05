@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <title>Title</title>
+</head>
+<style>
+    /**
+      *放置input的div盒子
+      *1.此处应我的项目需要，加了些特别的设置，如字体、背景色等，按需添加；
+      *2.内层input不加边框，看起来效果会自然一点，所以外层div设置了边框和圆角
+    */
+    .box {
+        background-color: #ffffff;
+        border: 1px solid #eeeeee;
+        border-radius: 6px;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    /**
+      *label标签样式 放在.box下，不至于影响其他的label
+      *采取绝对定位，位置根据需求确定
+    */
+    .box label {
+        z-index: 2;
+        position: absolute;
+        left: 50%;
+        margin-left: -8%;
+        color: #B2B2B2;
+        top: 4.8rem;
+        font-weight: normal;
+    }
+
+    /**
+      *input标签样式
+      *宽度适应外层div
+      *隐藏边框
+      *这里有个小技巧，height与line-height值相等，可保证文字垂直居中；但我发现文字比图标略偏下，进行了微调；
+    */
+    .box input {
+        text-indent: 10px;
+        height: 1.8rem;
+        line-height: 1.9rem;
+        width: 100%;
+        border: none;
+        outline: none;
+    }
+
+    /**
+      *图标样式
+      *绝对定位，自定义颜色
+    */
+    .box i {
+        position: absolute;
+        top: 4.8rem;
+        left: 50%;
+        margin-left: -15%;
+        color: #B2B2B2;
+    }
+
+    /*baidu*/
+    body, h1, h2, h3, p, div, ol, ul, input, button {
+        margin: 0;
+        padding: 0;
+    }
+    input, button, textarea {
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        -webkit-appearance: none;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    button,input {
+        outline: 0;
+    }
+
+    .searchbox-exp #index-form {
+        margin: 0 16px;
+        height: 44px;
+        background: #fff;
+        border: 1px solid #363636;
+        -webkit-box-shadow: initial;
+        box-shadow: initial;
+        -webkit-border-radius: 0;
+        border-radius: 0;
+    }
+
+    #index-form {
+        margin: 0 16px;
+        height: 44px;
+        background: #fff;
+        border: 1px solid #d2d2d2;
+        -webkit-box-shadow: 0 2px 0 0 rgba(0, 0, 0, .03);
+        box-shadow: 0 2px 0 0 rgba(0, 0, 0, .03);
+        -webkit-border-radius: 2px;
+        border-radius: 2px;
+    }
+
+    #index-form .con-wrap {
+        display: -moz-box;
+        display: -webkit-box;
+        width: 100%;
+    }
+    #index-card .se-input {
+        height: 44px;
+    }
+    #index-card .se-input {
+        -webkit-border-radius: 0;
+        border-radius: 0;
+        margin: 0;
+        padding: 7px 42px 7px 6px;
+        height: 44px;
+        line-height: 28px;
+        resize: none;
+        overflow: hidden;
+        font-family: Arial,Helvetica,sans-serif;
+    }
+    #index-card .se-inner {
+        width: 82px;
+        position: relative;
+    }
+    #index-card .se-input, #index-card .se-encode {
+        -webkit-appearance: none;
+        display: block;
+        -moz-box-flex: 1;
+        -webkit-box-flex: 1;
+        box-flex: 1;
+        margin: 2px 0;
+        padding: 6px 35px 6px 6px;
+        font-size: 18px;
+        line-height: 24px;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+    }
+    /*默认的X*/
+  /*  input[type="search"]::-webkit-search-cancel-button{
+        display: none;
+    }*/
+    #index-cross {
+        position: absolute;
+        top: 0;
+        left: -35px;
+        width: 35px;
+        height: 42px;
+        display: none;
+        background: url(//m.baidu.com/static/search/clear.png) no-repeat center;
+        -webkit-background-size: 16px;
+        background-size: 16px;
+        z-index: 2;
+    }
+    .searchbox-exp #index-bn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 60px;
+        height: 44px;
+        line-height: 46px;
+        padding: 0 10px;
+        font-size: 16px;
+        border: 0;
+        border-left: 1px solid #e8e8e8;
+        background: #fff;
+        color: #38f;
+        white-space: nowrap;
+        letter-spacing: -1px;
+        -webkit-user-select: none;
+        user-select: none;
+        box-sizing: inherit;
+        -webkit-border-top-right-radius: initial;
+        border-top-right-radius: initial;
+        -webkit-border-bottom-right-radius: initial;
+        border-bottom-right-radius: initial;
+        text-shadow: none;
+    }
+    #index-bn {
+        position: absolute;
+        top: -1px;
+        right: -1px;
+        width: 82px;
+        height: 44px;
+        background: #38f;
+        color: #fff;
+        white-space: nowrap;
+        line-height: 44px;
+        letter-spacing: -1px;
+        font-size: 16px;
+        border-top: 1px solid #38f;
+        border-bottom: 1px solid #38f;
+        box-sizing: inherit;
+        -webkit-border-top-right-radius: 2px;
+        border-top-right-radius: 2px;
+        -webkit-border-bottom-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-shadow: none;
+    }
+
+
+
+</style>
+<body>
+<div id="index-card">
+<div id="" class="searchbox-exp">
+    <form data-formposition="i" class="se-form focus" id="index-form"
+          action="" method="get" autocomplete="off">
+        <div class="con-wrap">
+            <input type="search" autocomplete="off" autocorrect="off" maxlength="64" id="index-kw"
+                   name="word" class="se-input" data-placeholder="" data-sug="1" placeholder="请输入关键字">
+            <div class="se-inner">
+                <div id="index-cross" class="cross" style="display: none;"></div>
+                <div class="callicon-wrap" style="display: block;">
+                    <div class="baiduapp-icon"></div>
+                    <div class="baiduappcall-wrap">
+                        <div class="voice call" data-ac="active"></div>
+                        <div class="qrcode call" data-ac="active"></div>
+                    </div>
+                    <button id="index-bn" class="se-bn" type="submit">搜索</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+</div>
+
+
+<!--<div class="box">
+    <label for="q" id="q_label">请输入关键字</label>
+    <input id="q"  type="text">
+    <i class="am-icon-search search" id="q_i"></i>
+</div>-->
+</body>
+
+</html>
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript">
+    /**
+     * Created by lixj on 2015/8/14.
+     *  js判断input输入框中是否有值，以此来判断是否隐藏默认提示信息
+     *  使用keyup事件
+     */
+    $(function () {
+        $('#q').on('keyup', function () {
+            var len = document.getElementById('q').value;
+            if (len == '') {
+                $('#q_label').show();
+                $('#q_i').show();
+            } else {
+                $('#q_label').hide();
+                $('#q_i').hide();
+            }
+        });
+    })
+</script>

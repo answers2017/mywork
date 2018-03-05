@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo</title>
+    <script src="js/jquery.min.js"></script>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+</head>
+<body>
+<select>
+    <option value="">请选择项目</option>
+    <option value="0">城中公园</option>
+    <option value="1">苏州</option>
+    <option value="2">青浦</option>
+</select>
+<div id="app">
+    {{message }}<br>
+    <button v-on:click="showData">测试jquery加载数据</button>
+    <table border="1">
+        <tr v-for="data in datas">
+            <td>{{data.Name}}</td>
+            <td>{{data.Url}}</td>
+            <td>{{data.Country}}</td>
+        </tr>
+    </table>
+</div>
+
+
+<script src="js/app.js"></script>
+</body>
+</html>
+<script>
+    var vum=new Vue({
+        el: "#app",
+        data: {
+            message: "",
+            datas: "",
+
+        },
+        methods:{
+            showData:function () {
+                jQuery.ajax({
+                    type: 'Get',
+                    url: "ts.json",
+                    success: function (data) {
+                        vum.datas = data.sites;
+                    }
+                })
+            }
+        }
+    })
+
+
+    //使用jquery
+    jQuery(function () {
+        // jQuery("#btn_1").bind("click", function () {
+        //   alert(jQuery("#name").val());
+        // });
+        loadData();
+    })
+    //jquery加载数据
+    function loadData() {
+        jQuery.ajax({
+            type: 'Get',
+            url: "/ts.json",
+            success: function (data) {
+                vum.message = data.sites[0].Name;
+            }
+        })
+    }
+</script>

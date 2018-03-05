@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>品宅-首页</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="msapplication-tap-highlight" content="no">
+    <link rel="stylesheet" href="lib/frozenui/css/frozen.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        (function (doc, win) {
+            // 取得html的引用
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth
+                    if (!clientWidth) return
+                    clientWidth = (clientWidth > 2800) ? 2800 : clientWidth
+                    clientWidth = (clientWidth < 768) ? 768 : clientWidth
+                    docEl.style.fontSize = 100 * (clientWidth / 1024) + 'px'
+                }
+            if (!doc.addEventListener) return
+            win.addEventListener(resizeEvt, recalc, false)
+            recalc()
+
+        })(document, window)
+    </script>
+</head>
+<body>
+    <!--index-->
+    <section class="index-wrapper">
+        <!--<img src="images/index-bg.png" width="100%" alt="">-->
+        <div class="nav">
+            <img src="images/index-logo.png" height="100%" alt="">
+            <a class="nav-r" id="login">登录</a>
+            <span class="nav-r" id="username"></span>
+        </div>
+        <div class="watchword">
+            <img src="images/watchword.png" width="100%" alt="">
+        </div>
+        <div class="custom-made">
+            <div class="input">
+                <select name="city">
+                    <option value ="">请选择城市</option>
+                    <option value ="1">城市1</option>
+                    <option value ="2">城市2</option>
+                </select>
+            </div>
+            <div class="input">
+                <select name="program">
+                    <option value ="">请选择项目</option>
+                    <option value ="1">项目1</option>
+                    <option value ="2">项目2</option>
+                    <option value="3">项目3</option>
+                    <option value="4">项目4</option>
+                </select>
+            </div>
+            <div class="input">
+                <select name="building">
+                    <option value ="">请选择楼栋</option>
+                    <option value ="1">楼栋1</option>
+                    <option value ="2">楼栋2</option>
+                    <option value="3">楼栋3</option>
+                    <option value="4">楼栋4</option>
+                </select>
+            </div>
+            <div class="input">
+                <select name="unit">
+                    <option value ="">请选择单元</option>
+                    <option value ="1">单元1</option>
+                    <option value ="2">单元2</option>
+                    <option value="3">单元3</option>
+                    <option value="4">单元4</option>
+                </select>
+            </div>
+            <div class="input">
+                <select name="room">
+                    <option value ="">请选择室号</option>
+                    <option value ="1">单元1</option>
+                    <option value ="2">单元2</option>
+                    <option value="3">单元3</option>
+                    <option value="4">单元4</option>
+                </select>
+            </div>
+            <div class="btn-wrap">
+                <button class="btn btn-primary" id="btn-made">定制</button>
+            </div>
+        </div>
+    </section>
+    <!--登录弹框-->
+    <div class="ui-dialog login-dialog">
+        <div class="ui-dialog-cnt">
+            <header class="ui-dialog-hd ui-border-b">
+                <h3>登录</h3>
+                <i class="ui-dialog-close" data-role="button"></i>
+            </header>
+            <div class="ui-dialog-bd">
+                <form>
+                    <ul>
+                        <li><input type="text" name="name" placeholder="请输入账号"></li>
+                        <li><input type="password" name="password" placeholder="请输入密码"></li>
+                        <li><button class="btn btn-primary" type="button" id="btn-login">登录</button></li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--js-->
+    <script src="lib/frozenui/lib/zepto.min.js"></script>
+    <script src="lib/frozenui/js/frozen.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

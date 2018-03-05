@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>详情页面</title>
+    <link href="style/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="style/shopdetail.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <!--header部分-->
+    <div class="header">
+        <div class="top_bg">
+            <div class="container">
+                <div class="header_top-sec">
+                    <div class="top_right">
+                        <ul>
+                            <li><a href="#">上海品宅装饰科技有限公司物料库</a></li>
+                        </ul>
+                    </div>
+                    <div class="top_left">
+                        <ul>
+                            <li class="top_link"><a href="#"> 让装修更简单</a></li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--header结束-->
+    <!--标题部分-->
+    <div class="crumb">
+        <div class="links">
+            <a href="#">首页</a><span>></span>
+            <a href="#">物料详情</a><span>></span>
+            <a href="#">乐静系列垃圾处理器</a>
+            <a href="table.html" style="float: right">打印</a>
+        </div>
+    </div>
+    <!--商品详情部分-->
+    <div class="shopdetails container">
+        <!--放大镜-->
+        <div id="leftbox">
+            <div id="showbox">
+                <img src="images/img01.png" width="418" height="418" />
+                <img src="images/img02.png" width="418" height="418" />
+                <img src="images/img03.png" width="418" height="418" />
+                <img src="images/img04.png" width="418" height="418" />
+                <img src="images/img05.png" width="418" height="418" />
+                <img src="images/img01.png" width="418" height="418" />
+            </div>
+            <!--展示图片盒子-->
+            <div id="showsum"></div>
+            <!--展示图片里边-->
+            <p class="showpage">
+                <a href="javascript:void(0);" id="showlast">
+                    < </a>
+                        <a href="javascript:void(0);" id="shownext"> > </a>
+            </p>
+        </div>
+        <!--右边-->
+        <div class="centerbox">
+            <div class="pib-title" slot="">
+                <p class="pinzab-title-detail">乐静系列垃圾处理器</p>
+                <p class="goods-description-title"><span>编号：</span><span>PAY1560P/HP</span></p>
+            </div>
+            <div class="pib-content">
+                <p class="">参考价格</p>
+                <p class="pib-price">
+                    <i> ¥</i>
+                    <span>8888</span>
+                </p>
+            </div>
+            <div class="summary-line"></div>
+            <div class="pib-attr-box ">
+                <p style="font-size: 14px;font-weight: 500">产品规格</p>
+                <p><span class="icon-dot"></span>品牌：<span>摩恩</span></p>
+                <p><span class="icon-dot"></span>型号：<span>LSS3300+PJW1001+PJW1007</span></p>
+                <p><span class="icon-dot"></span>单位：<span>个</span></p>
+                <p><span class="icon-dot"></span>产品线：<span></span></p>
+                <p><span class="icon-dot"></span>备注：<span></span></p>
+            </div>
+            <div class="summary-line"></div>
+            <div class="pib-attr-box ">
+                <p style="font-size: 14px;font-weight: 500">说明</p>
+                <p style="line-height: 20px">规格尺寸：高：1770mm；宽：540mm；进深：545mm；能效等级：A+；总容积：285L；可更换开门方向（出厂为右开）； 气候带类型：SN/T ；年能耗：306kWh；冷冻能力：5.0kg/24h；冷藏区容积：203L；自动除霜功能；Super-Cool （超凉）快速冷却功能；不锈钢瓶架；5个玻璃搁架；一个可调节高度搁架；2个水果蔬菜盒；4层门搁架；1个鸡蛋盒（x12）； 冷冻区：净容积70L；快速冷冻抽屉；2个存放实物的抽屉；1个冰块容器
+                </p>
+            </div>
+        </div>
+    </div>
+    <!--商品详情部分结束-->
+    <!--商品详情评价部分-->
+    <!--<div class="evaluate">
+
+
+    <div class="tabbedPanels">
+        <ul class="tabs">
+            <li><a href="#panel01">商品详情</a></li>
+            <li><a href="#panel02" class="active">累计评价</a></li>
+            <li><a href="#panel03">商品推荐</a></li>
+        </ul>
+
+        <div class="panelContainer">
+
+
+        </div>
+
+    </div>
+
+</div>-->
+    <!--商品详情评价部结束分-->
+    <!--bottom_页脚部分-->
+    <div class="footer">
+        <div class="container">
+            <div class="copywrite">
+                <p>Copyright © 2017 Furnyish All rights reserved | Design by <a href="http://www.pinza.com.cn" title="上海品宅装饰科技有限公司" target="_blank">上海品宅装饰科技有限公司</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/common.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    var showproduct = {
+        "boxid": "showbox",
+        "sumid": "showsum",
+        "boxw": 418,
+        "boxh": 418,
+        "sumw": 60, //列表每个宽度,该版本中请把宽高填写成一样
+        "sumh": 60, //列表每个高度,该版本中请把宽高填写成一样
+        "sumi": 7, //列表间隔
+        "sums": 5, //列表显示个数
+        "sumsel": "sel",
+        "sumborder": 1, //列表边框，没有边框填写0，边框在css中修改
+        "lastid": "showlast",
+        "nextid": "shownext"
+    }; //参数定义
+    $.ljsGlasses.pcGlasses(showproduct); //方法调用，务必在加载完后执行
+
+    $(function() {
+
+        $('.tabs a').click(function() {
+
+            var $this = $(this);
+            $('.panel').hide();
+            $('.tabs a.active').removeClass('active');
+            $this.addClass('active').blur();
+            var panel = $this.attr("href");
+            $(panel).show();
+            // return fasle;  //告诉浏览器  不要纸箱这个链接
+        }) //end click
+
+
+        $(".tabs li:first a").click() //web 浏览器，单击第一个标签吧
+
+
+    }) //end ready
+
+    $(".centerbox li").click(function() {
+        $("li").removeClass("now");
+        $(this).addClass("now")
+
+    });
+
+
+});
+</script>

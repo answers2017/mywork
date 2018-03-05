@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="js/jquery-1.11.3.min.js" type="text/javascript" language="javascript"></script>
+    <title>无标题文档</title>
+
+</head>
+
+<body>
+<div>
+    <input type="checkbox" id="checkAll" class="px">全选
+
+    <input type="checkbox" class="px subCheckbox" >
+    <input type="checkbox" class="px subCheckbox" >
+    <input type="checkbox" class="px subCheckbox" >
+    <input type="checkbox" class="px subCheckbox" >
+    <input type="checkbox" class="px subCheckbox" >
+    <input type="checkbox" class="px subCheckbox" >
+    <input type="checkbox" class="px subCheckbox" >
+
+
+
+</div>
+</body>
+</html>
+<script>
+    // 全选
+    $("#checkAll").click(function () {
+        var isChecked = $(this).prop("checked");
+        $(".subCheckbox").prop("checked", isChecked);
+    })
+
+
+    $(".subCheckbox").click(function() {
+        if($("#checkAll").prop('checked')) {
+            $(".subCheckbox").each(function(i, ck) {
+                if (!$(ck).prop('checked')) {
+                    $("#checkAll").prop("checked",false);
+                }
+            });
+        }else{
+            var i = 0;
+            $(".subCheckbox").each(function() {
+                if ($(this).prop('checked')) {
+                    i++;
+                }
+            });
+            if ($(".subCheckbox").length==i) {
+                $("#checkAll").prop("checked",true);
+            }
+        }
+    })
+
+</script>

@@ -1,0 +1,760 @@
+@charset "utf-8";
+
+/*通用样式*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 12px;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+    font-size: 12px;
+}
+
+ul, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, form, p {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+img {
+    border: 0px;
+}
+
+.clear {
+    clear: both;
+}
+
+/*header*/
+.top_bg {
+    background: #026466;
+}
+
+.header_top-sec {
+    padding: 15px 0 8px;
+}
+
+.logo img {
+    width: 100%;
+}
+
+.header_top {
+    padding: 2em 0;
+}
+
+.login a {
+    font-size: 13px;
+    font-weight: 500;
+    border: 1px solid #E4E4E4;
+    padding: 10px 15px;
+}
+
+.login a:hover {
+    color: #026466;
+}
+
+.top_left {
+    float: right;
+    color: #fff;
+}
+
+.top_right {
+    float: left;
+    color: #ffffff;
+    margin-top: 3px;
+}
+
+.top_right ul, .top_left ul {
+    padding: 0;
+    list-style: none;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.top_left ul li.top_link {
+    margin-right: 10px;
+}
+
+.copyrights {
+    text-indent: -9999px;
+    height: 0;
+    line-height: 0;
+    font-size: 0;
+    overflow: hidden;
+}
+
+.top_right ul li, .top_left ul li {
+    display: inline-block;
+}
+
+.social {
+    display: inline-block;
+}
+
+.top_right ul li:last-child {
+    margin-right: 0;
+}
+
+.top_right ul li a {
+    text-align: center;
+    padding: 0px 4px;
+    text-transform: uppercase;
+    font-size: 12px;
+    display: block;
+    color: #ffffff;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.top_left ul li {
+    font-size: 13px;
+}
+
+.top_left ul li a {
+    text-align: center;
+    padding: 0px 4px;
+    font-size: 13px;
+    color: #ffffff;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.top_right ul li a:hover, .top_left ul li a:hover {
+    color: #cfdc00;
+    text-decoration: none;
+}
+
+/*导航部分*/
+.header .bottom {
+    width: 1200px;
+    height: 39px;
+    margin: 0 auto;
+    line-height: 39px;
+    background-image: url(../images/index_img/backmenuimg.jpg);
+    padding: 0;
+    position: relative;
+}
+
+.header .bottom .nav {
+    position: absolute;
+    top: 0px;
+    width: 990px;
+    height: 39px;
+    margin: 0 auto;
+    margin-left: 210px;
+    float: left;
+    display: inline;
+}
+
+.header .bottom .nav a {
+    width: 100px;
+    height: 39px;
+    line-height: 39px;
+    color: #fff;
+    margin: 0 10px;
+    font-size: 16px;
+    font-weight: bold;
+    float: left;
+    text-align: center;
+}
+
+.header .bottom .nav a.now {
+    width: 100px;
+    height: 39px;
+    background: #9ada62;
+}
+
+.header .bottom .nav a:hover {
+    width: 100px;
+    height: 39px;
+    background: #9ada62;
+}
+
+.header .bottom .menu {
+    width: 206px;
+    height: 39px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(../images/index_img/backmenuimg.jpg);
+
+}
+
+.header .bottom .menu a {
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 39px;
+    padding-left: 20px;
+}
+
+/*商品详情部分*/
+.shopdetails {
+    width: 1100px;
+    min-height: 540px;
+    margin: 0 auto;
+    margin-top: 20px;
+    position: relative;
+
+}
+
+.crumb {
+    padding: 15px 0;
+    border-bottom: 1px solid;
+}
+
+.links {
+    width: 1100px;
+    margin: auto;
+
+}
+
+.links a {
+    margin-right: 10px;
+}
+
+/*放大镜*/
+#leftbox {
+    width: 418px;
+    z-index: 999;
+    position: absolute;
+}
+
+#showbox {
+    width: 418px;
+    background: #eee;
+}
+
+#showbox img {
+    width: 100%;
+}
+
+#showbox span {
+    background: url(../images/shopdetail/whitebg.png) repeat;
+}
+
+#showsum {
+    left: 25px;
+    margin-top: 10px;
+}
+
+#showsum span {
+    border: 1px solid #ddd;
+}
+
+#showsum span.sel {
+    border: 2px solid #000;
+}
+
+.showpage {
+    width: 418px;
+    position: relative;
+}
+
+.showpage a {
+    display: block;
+    width: 15px;
+    border: 1px solid #eeeeee;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 18px;
+    position: absolute;
+    left: 0;
+    top: -62px;
+    text-decoration: none;
+    color: #999;
+}
+
+.showpage a#shownext {
+    left: auto;
+    right: 0;
+}
+
+.showpage a:hover {
+    background: #ccc;
+    color: #eee;
+}
+
+/*右边*/
+
+.centerbox {
+    width: 640px;
+    /*height: 575px;*/
+    position: relative;
+    top: 0px;
+    left: 438px;
+    z-index: 1;
+    padding-left: 40px;
+    font-weight: 300;
+}
+
+.pib-title {
+    padding-left: 10px;
+}
+
+.pib-title-detail {
+    font-size: 16px;
+    color: #333;
+    max-height: 40px;
+    overflow: hidden;
+    line-height: 20px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.goods-description-title {
+    font-size: 14px;
+    color: #999;
+    max-height: 85px;
+    overflow: hidden;
+}
+
+.pib-content {
+    padding: 8px 0;
+    background: #f3f3f3;
+    padding-left: 10px;
+    margin-top: 10px;
+}
+
+.pib-price {
+    color: #e4393c;
+    font-size: 16px;
+}
+
+.pib-price span {
+    font-size: 22px;
+}
+
+.summary-line {
+    height: 0;
+    overflow: hidden;
+    border-bottom: 1px dotted #dfdfdf;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.pib-attr-box {
+    padding-left: 10px;
+}
+
+.pib-attr-box p {
+    padding: 2px 0;
+}
+
+.icon-dot {
+    width: 17px;
+    height: 17px;
+    float: left;
+    background: url("../images/dot_icon.png") no-repeat 0 7px;
+}
+
+.product-img {
+    width: 400px;
+    height: 400px;
+    overflow: hidden
+}
+
+#firstbuy {
+    background-color: #f00;
+    color: #fff;
+}
+
+/*右边*/
+.rightbox {
+    width: 150px;
+    height: 632px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-left: 1px solid #ccc;
+}
+
+.rightbox .name {
+    height: 30px;
+    width: 150px;
+    color: #666;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: left;
+    font-family: "黑体";
+}
+
+.rightbox img {
+    margin-left: 20px;
+}
+
+.rightbox p {
+    width: 150px;
+    height: 20px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 20px;
+}
+
+/*下边商品评价及其他*/
+.evaluate {
+    width: 1200px;
+    height: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.classify {
+    width: 198px;
+    height: 1500px;
+}
+
+.classify .shopim {
+    width: 198px;
+    height: 210px;
+    border: 1px solid #ccc;
+
+}
+
+.classify .shopim .name {
+    height: 55px;
+    width: 198px;
+    background: rgba(232, 232, 232, 0.5);
+    color: #000;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 55px;
+    text-align: center;
+
+}
+
+.classify .shopim .name img {
+    margin-left: 0;
+    margin-bottom: -8px;
+}
+
+.classify .shopim img {
+    margin-left: 21px;
+    margin-top: 15px;
+}
+
+.classify .shopim .sc {
+    float: left;
+    width: 67px;
+    height: 20px;
+    border: 1px solid #CCC;
+    margin-left: 20px;
+    margin-top: 10px;
+    text-align: center;
+    line-height: 20px;
+
+}
+
+.classify .shopim .sc a {
+    color: #666;
+}
+
+.classify .shopfl {
+    width: 198px;
+    height: 400px;
+    border: 1px solid #ccc;
+    margin-top: 30px;
+}
+
+.classify .shopfl ul li {
+    width: 198px;
+    height: 40px;
+}
+
+.classify .shopfl ul {
+    margin-top: 15px;
+}
+
+.classify .shopfl ul li a {
+    width: 150px;
+    height: 40px;
+    font-size: 12px;
+    font-family: "黑体";
+    margin-left: 20px;
+    color: #666;
+    line-height: 40px;
+}
+
+.classify .shopfl ul li a:hover {
+    color: #9F3;
+    font-size: 16px;
+}
+
+.classify .shopfl .name {
+    height: 40px;
+    width: 198px;
+    background: rgba(232, 232, 232, 0.5);
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 40px;
+    text-align: center;
+
+}
+
+.classify .shopsee {
+    width: 198px;
+    height: 3330px;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+}
+
+.classify .shopsee .name {
+    height: 40px;
+    width: 198px;
+    background: rgba(232, 232, 232, 0.5);
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 40px;
+    text-align: center;
+
+}
+
+.classify .shopsee a {
+    width: 170px;
+    margin: 0;
+    margin-top: 10px;
+    margin-left: 14px;
+    border: 0;
+
+}
+
+.classify .shopsee img {
+    margin-top: 10px;
+}
+
+.classify .shopsee .ex01 p {
+    margin-top: 0;
+    width: 170px;
+    height: 20px;
+    margin-left: 14px;
+    line-height: 20px;
+    font-size: 14px;
+}
+
+.search {
+    width: 168px;
+    height: 22px;
+    background: url(../images/shopdetail/search_bg_24.gif) no-repeat;
+    margin: 15px 15px;
+    float: left;
+    display: inline;
+
+}
+
+.search .left {
+    width: 92px;
+    height: 22px;
+    line-height: 31px;
+    background: url(../images/shopdetail/sea_bg.gif) no-repeat;
+    border: none;
+    float: left;
+
+}
+
+.search .right {
+    width: 68px;
+    height: 22px;
+    float: left;
+    background: url(../images/shopdetail/search.png) no-repeat;
+    border: none;
+}
+
+/*tab部分*/
+.tabbedPanels {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    margin: 10px auto;
+}
+
+.tabbedPanels .tabs {
+    height: 50px;
+    border-bottom: 2px solid #000;
+    margin-bottom: 20px;
+}
+
+.tabbedPanels .tabs li {
+    float: left;
+}
+
+.tabbedPanels .tabs li a {
+    width: 100px;
+    height: 40px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 80px;
+    text-decoration: none;
+    color: #000;
+    line-height: 40px;
+    text-align: center;
+}
+
+.tabs li a.active {
+    border-bottom: 3px solid #F30;
+
+}
+
+.panelContainer {
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.panel .sell {
+    font-weight: bold;
+    font-size: 20px;
+    color: #000;
+    text-decoration: underline;
+}
+
+.panel p {
+    margin-bottom: 20px;
+}
+
+.panel img {
+    margin-left: 10px;
+}
+
+.panel .judge {
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+
+}
+
+.panel .judge span {
+    font-size: 14px;
+    margin-left: 15px;
+}
+
+.panel .judge01 {
+    height: 200px;
+    position: relative;
+}
+
+.panel .judge01 .idimg {
+    width: 80px;
+}
+
+.panel .judge01 .write {
+    position: absolute;
+    top: 20px;
+    left: 80px;
+}
+
+.panel .judge01 .write .which {
+    color: #666;
+    font-size: 12px;
+}
+
+.panel .com {
+    width: 720px;
+}
+
+.panel .com .ex01 {
+    width: 218px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 30px;
+    border: solid 1px #c4c4c4;
+    float: left;
+}
+
+.panel .com figure {
+    width: 218px;
+    margin-left: 3px;
+    margin-top: 3px;
+    position: relative;
+}
+
+.panel .com img {
+    margin: 0;
+}
+
+.panel .com figcaption {
+    position: absolute;
+    bottom: 3px;
+    width: 212px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.4);
+    line-height: 40px;
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+}
+
+.panel .com a:hover figure figcaption {
+    display: block;
+    width: 212px;
+    height: 193px;
+    line-height: 193px;
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+}
+
+.panel .ex01 p {
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 13px;
+    margin-bottom: 0;
+    text-decoration: none;
+    color: #836e5d;
+}
+
+.panel .ex01 .bottom {
+    height: 20px;
+    line-height: 20px;
+    margin-bottom: 5px;
+    margin-top: 0;
+}
+
+.panel .ex01 .bottom samp {
+    width: 146px;
+    text-align: left;
+    padding-left: 10px;
+    color: #5d9b1e;
+    font-size: 12px;
+    float: left;
+}
+
+.panel .ex01 .bottom input {
+    width: 50px;
+    height: 20px;
+    background: #78ab00;
+    color: #fff;
+    float: left;
+    margin-left: 0px;
+    border: none;
+    text-align: center;
+}
+
+/* bottom_页脚部分*/
+.footer {
+    position: relative;
+    top: 0;
+    padding-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.copywrite p {
+    color: #999;
+    font-size: 0.8em;
+}

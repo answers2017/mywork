@@ -1,0 +1,1729 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="icon" href="/Mvc/image/icon/logo.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="/Mvc/image/icon/logo.ico"/>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="/Mvc/js/jquery/jquery.cookie.min.js"></script>
+    <script type="text/javascript" src="lib/bootstrap/bootstrap.min.js"></script>
+    <script src="lib/lay/layer.js"></script>
+    <script type="text/javascript">
+        Date.prototype.toLocaleString = function (fmt) {
+            var format = "yyyy-MM-dd hh:mm:ss";
+            if (fmt != undefined) {
+                format = fmt;
+            }
+            var o = {
+                "M+": this.getMonth() + 1, // month
+                "d+": this.getDate(), // day
+                "h+": this.getHours(), // hour
+                "m+": this.getMinutes(), // minute
+                "s+": this.getSeconds(), // second
+                "q+": Math.floor((this.getMonth() + 3) / 3),
+                "S": this.getMilliseconds()
+                // millisecond
+            }
+            if (/(y+)/.test(format))
+                format = format.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+            for (var k in o)
+                if (new RegExp("(" + k + ")").test(format))
+                    format = format.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k] : ("00" + o[k])
+                        .substr(("" + o[k]).length));
+            return format;
+        };
+    </script>
+    <style>
+        body {
+            font-family: Microsoft YaHei
+        }
+    </style>
+</head>
+<body>
+</body>
+</html>
+<link href="/Mvc/js/bootstrap/bootstrap-glyphicons.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/Mvc/js/jquery/jquery.fs.boxer.css">
+<link href="/Mvc/style/iCheck/flat/red.css" rel="stylesheet" type="text/css">
+<link href="/Mvc/style/iCheck/square/orange.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="/Mvc/style/iCheck/icheck.js"></script>
+<script type="text/javascript" src="/Mvc/js/jquery/jquery.fs.boxer.min.js"></script>
+<script type="text/javascript" src="/Mvc/js/jquery/jquery.fs.boxer.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/Mvc/js/webuploader-0.1.5/webuploader.css">
+<script type="text/javascript" src="/Mvc/js/webuploader-0.1.5/webuploader.js"></script>
+<script type="text/javascript" src="/Mvc/js/upload.js?version=3"></script>
+<script type="text/javascript" src="/Mvc/js/Math.uuid.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>品宅定制</title>
+<style>
+    @font-face {
+        font-family: "FB";
+        src: url("/Mvc/image/web/BRLNSDB.TTF");
+    }
+
+    .headSelct {
+        color: #ffffff;
+        background-color: #71757E;
+        border-color: #ffffff;
+        padding: 10px 15px;
+        display: block;
+        font-family: Arial;
+        font-weight: bold;
+    }
+
+    .headSelct a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .headSelct1 {
+        color: #000000;
+        background-color: #ffffff;
+        border-color: #ffffff;
+        padding: 10px 15px;
+        display: block;
+        font-family: Arial;
+        font-weight: bold;
+    }
+
+    .programHead {
+        color: #ffffff;
+        background-color: #f5f5f5;
+        border-color: #ffffff;
+        padding: 10px 15px;
+        display: block;
+        font-family: Arial;
+        font-weight: bold;
+        width: 100%;
+    }
+
+    #btn_close {
+        z-index: 12;
+        width: 30px;
+        height: 30px;
+        border: 0;
+        display: inline-block;
+        overflow: hidden;
+        vertical-align: middle;
+        line-height: 30px;
+        font-size: 16px;
+        font-weight: 700;
+        color: #ffffff;
+        background: #ff5815;
+        border-radius: 3px;
+        cursor: pointer;
+        zoom: 1;
+        float: right;
+        _position: relative;
+    }
+
+    .ck {
+        background-image: url("/Mvc/image/custom/max.png");
+        position: absolute;
+        display: block;
+        opacity: 0.8;
+        bottom: 20px;
+        right: 20px;
+        background-repeat: no-repeat;
+        width: 26px;
+        height: 26px;
+        text-align: right;
+    }
+
+    @font-face {
+        font-family: "iconfont";
+        src: url('/Mvc/style/iconfont/iconfont.eot?t=1477279920'); /* IE9*/
+        src: url('/Mvc/style/iconfont/iconfont.eot?t=1477279920#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('/Mvc/style/iconfont/iconfont.woff?t=1477279920') format('woff'), /* chrome, firefox */ url('/Mvc/style/iconfont/iconfont.ttf?t=1477279920') format('truetype'),
+            /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/ url('/Mvc/style/iconfont/iconfont.svg?t=1473732471#iconfont') format('svg'); /* iOS 4.1- */
+    }
+
+    .iconfont {
+        font-family: "iconfont" !important;
+        font-size: 16px;
+        font-style: normal;
+        -webkit-font-smoothing: antialiased;
+        -webkit-text-stroke-width: 0.2px;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    .collapse-down:after {
+        font-family: "iconfont" !important;
+        font-size: 16px;
+        font-style: normal;
+        content: "\e65f";
+        position: absolute;
+        cursor: pointer;
+        right: 30px;
+    }
+
+    .headSelct:after {
+        font-family: "iconfont" !important;
+        font-size: 16px;
+        font-style: normal;
+        content: "\e65f";
+        position: absolute;
+        cursor: pointer;
+        right: 30px;
+    }
+
+    .collapse-up:after {
+        font-family: "iconfont" !important;
+        font-size: 16px;
+        font-style: normal;
+        content: "\e65b";
+        position: absolute;
+        cursor: pointer;
+        right: 30px;
+    }
+
+    .box-shadow-3 {
+        position: fixed;
+        background-color: white;
+        z-index: 1
+    }
+
+    .icheckbox_square-orange {
+        float: left;
+        margin-left: 20px;
+        position: relative;
+        top: 8px;
+    }
+
+    }
+    .titleRow {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    div {
+        font-family: Arial, sans-serif;
+    }
+
+    .productName {
+        color: #161a20;
+        font-size: 18px;
+        font-family: "黑体";
+        small;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        height: 35px
+    }
+
+    .fff {
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 100%;
+        line-height: 1.75rem;
+        background-color: #fff;
+        color: #222427;
+        height: 1.75rem;
+        width: 1.75rem;
+        text-align: center;
+        cursor: pointer;
+        font-family: inherit;
+    }
+
+    .ff4f:before {
+        content: "\e617";
+        font-size: 1.4em;
+    }
+
+    .toSummery {
+        width: 100px;
+        height: 40px;
+        border: 0;
+        display: inline-block;
+        overflow: hidden;
+        vertical-align: middle;
+        line-height: 40px;
+        font-size: 16px;
+        font-weight: 700;
+        color: #ffffff;
+        background: #CC0001;
+        cursor: pointer;
+        zoom: 1;
+        text-align: center;
+        margin-left: 175px;
+    }
+
+    .carousel-control.right {
+        margin-top: 88px;
+        margin-bottom: 88px;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, .0001) 100%,
+        rgba(153, 153, 153, 0.5) 100%);
+    }
+
+    .carousel-control.left {
+        margin-top: 88px;
+        margin-bottom: 88px;
+        background-image: linear-gradient(to right, rgba(153, 153, 153, .5) 0,
+        rgba(0, 0, 0, .0001) 0);
+    }
+
+    .glyphicon:hover {
+        color: red;
+    }
+
+    .colorli {
+        display: inline-block;
+        margin-right: .2857em;
+        margin-top: .18em;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .colorBlock {
+        width: 1.5rem;
+        height: 1.5rem;
+        display: block;
+        opacity: 0.4;
+        border: 1.5px solid black;
+    }
+
+    .select {
+        opacity: 1.0;
+        border: 2.5px solid black;
+    }
+
+    .ul {
+        list-style: none;
+        width: 100px;
+        height: 200px;
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        line-height: 60px;
+        text-align: center;
+        z-index: 222;
+    }
+
+    .li:after {
+        font-family: 'iconfont';
+        content: "\e655";
+        padding-right: .85714285714285714285714285714286em;
+        vertical-align: bottom;
+        position: absolute;
+        right: 0;
+    }
+
+    /* #firstLi ul li:before{
+                    content:"";
+                    border-bottom:1px solid #ccc;
+                    width:160px;
+                    position:absolute;
+                    left:20px;
+                    bottom:0;
+                } */
+    .ul .li {
+        cursor: pointer;
+        width: 200px;
+        background: #ffffff;
+        height: 60px;
+        position: relative;
+        border-right: 1px solid white;
+        z-index: 222;
+    }
+
+    /* #firstLi>ul li:hover{
+                    color:white
+                } */
+    #firstLi ul li a {
+        color: black;
+        text-decoration: none;
+    }
+
+    .changePro:after {
+        /* width:0 !important; */
+
+    }
+
+    .ul .li:hover {
+        background: #cc0000;
+    }
+
+    .lihov:before {
+        content: "";
+        border-bottom: 1px solid #ccc;
+        width: 160px;
+        position: absolute;
+        left: 20px;
+        bottom: 0;
+    }
+
+    .li > .ul {
+        height: 260px;
+        position: absolute;
+        left: 200px;
+        top: 0px;
+        display: none;
+        z-index: 222;
+    }
+
+    .first {
+        display: none;
+    }
+
+    .li:nth-child(2n) {
+        background: WHITE;
+    }
+
+    .activeTool {
+        background-color: #cc0000;
+    }
+
+    .bgRed {
+        background-color: #cc0000 !important;
+    }
+
+    .activeTool:before {
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        left: 50%;
+        border-color: transparent transparent #fff;
+        border-style: solid;
+        border-width: .575em;
+        bottom: -1px;
+        margin-left: -0.575em;
+    }
+
+    .navbar-inverse .navbar-nav > li > a:hover {
+        /* color: #c00; */
+        background-color: #cc0000;
+    }
+
+    /* .activeTool:hover {
+        background-color: #cc0000;
+        color: #ffffff;
+    } */
+
+    .navbar-inverse .navbar-nav > li > a {
+        font-size: 18px;
+        font-family: "微软雅黑";
+        color: #ffffff
+    }
+
+    .breadcrumb {
+        background-color: #ffffff
+    }
+
+    .breadcrumb > li > a {
+        color: #000000;
+        text-decoration: none;
+        font-size: 15px;
+        font-family: "微软雅黑";
+    }
+
+    .breadcrumb > li > a:before {
+        font-family: 'iconfont';
+        content: "\e655";
+        padding-right: .85714285714285714285714285714286em;
+        vertical-align: bottom;
+        font-size: 14px;
+        position: relative;
+        top: -1px;
+    }
+
+    .breadcrumb > li > a:hover {
+        color: #cc0000;
+    }
+
+    .breadcrumb > li + li:before {
+        content: "|";
+    }
+
+    .mask {
+        position: fixed;
+        left: 0;
+        top: 53px;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        background: black;
+        opacity: 0.6;
+        filter: alpha(opacity=60)
+    }
+
+    .modal_wrapper {
+        display: table;
+        height: 100%;
+        margin: 0px auto;
+    }
+
+    .modal-dialog {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .panel-title {
+        font-size: 19px;
+        font-family: "微软雅黑";
+    }
+
+    .panel-title:hover {
+        color: white;
+        text-decoration: none;
+    }
+
+    .panel-default > .panel-heading {
+        cursor: pointer;
+        color: #161a20;
+        font-size: 20px;
+        font-family: "微软雅黑";
+        position: relative;
+    }
+
+    .collapse-up:after {
+        top: 20%;
+    }
+
+    .col-xs-9 {
+        font-size: 18px;
+        font-family: "黑体";
+        color: #161a20;
+    }
+
+    #tip_mask {
+        display: none;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.6);
+        top: 0;
+        left: 0;
+        z-index: 100;
+    }
+
+    #tip_mask .tip_div {
+        background-color: white;
+        width: 70%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+
+    #tip_mask .tip_div h1 {
+        height: 82px;
+        background-color: #71757E;
+        margin-top: -1px;
+    }
+
+    .maskH1 {
+        height: 82px;
+        background-color: #71757E;
+        margin-top: -1px;
+        line-height: 82px;
+    }
+
+    .maskH1 span {
+        float: right;
+        cursor: pointer;
+        margin-right: 30px;
+        /* margin-top:22px; */
+        color: white;
+        font-size: 35px;
+    }
+
+    #tip_mask .tip_div div {
+        padding: 15px 0 15px 110px;
+        background-color: #F5F5F5;
+    }
+
+    #tip_mask .tip_div h2 {
+        font-size: 16px;
+        background-color: white;
+        padding: 10px 0 20px 110px;
+    }
+
+    #tip_mask .tip_div div button {
+        display: inline-block;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+        padding: 10px 18px;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-color: #3e4146;
+        color: white;
+        margin-right: 6px;
+    }
+
+    #tip_mask .tip_div div button:last-of-type {
+        color: black;
+        background-color: #DDDDDD;
+    }
+
+    #tip_mask .tip_div h1 span {
+        float: right;
+        cursor: pointer;
+        margin-right: 30px;
+        margin-top: 22px;
+        color: white;
+        font-size: 35px;
+    }
+
+    .first_r {
+        margin:
+    }
+
+    .first_r > li {
+        height: 40px;
+        background-color: red;
+    }
+
+    /* .first_r >li>ul>.li_r{
+                     height:40px;
+                     background-color:blue;
+                 } */
+    .m_div img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .m_div {
+        padding-bottom: 20px;
+    }
+
+    .fir, .sec, .thi {
+        border: none;
+        box-shadow: none;
+    }
+
+    .fir div:first-of-type, .sec div:first-of-type, .thi div:first-of-type {
+        cursor: pointer;
+    }
+
+    .fir div:first-of-type {
+        position: relative;
+        /* border-bottom:1px solid #ccc; */
+        /* padding: 5px 0 10px 5px; */
+    }
+
+    .panel-default {
+        border: none !important;
+    }
+
+    .panel-default, .collapse-down, .collapse-up {
+        background-color: #F5F5F5;
+    }
+
+    .ch {
+        position: relative;
+        padding: 10px 15px;
+    }
+
+    .sec div.ch:hover {
+        color: red;
+    }
+
+    .list_info_title {
+        padding: 10px 0 !important;
+    }
+
+    .modal-header {
+        width: 1000px;
+        height: 80px;
+    }
+
+    .modal-title {
+        position: relative;
+        top: 15px;
+    }
+
+    #btn_close {
+        position: relative;
+        top: 10px;
+    }
+
+    .panel_h1 {
+        background-color: #ccc;
+        font-size: 20px;
+        font-family: "微软雅黑";
+        color: #161a20;
+        padding: 10px;
+    }
+
+    .modal-body, .modal-footer {
+        width: 1000px;
+        background-color: white;
+    }
+
+    .chfirsthead {
+        background-color: #71757E !important;
+        color: #fff !important;
+    }
+
+    .proWrap {
+        width: 100%;
+        position: relative;
+        height: 100px;
+        padding: 10px 15px;
+        margin-bottom: 35px;
+    }
+
+    .proWrap div {
+        display: inline-block;
+    }
+
+    .proWrap .proImgdiv {
+        position: absolute;
+        /* width:80px;
+                     height:80px; */
+        top: 50px;
+    }
+
+    .proWrap .proImgdiv img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .proWrap .con {
+        position: relative;
+        width: 80%;
+        height: 100%;
+        left: 110px;
+    }
+
+    .proWrap .con h5 {
+        position: relative;
+        left: 40px;
+        font-size: 18px;
+        font-family: 黑体;
+        float: left;
+        color: 161 a20;
+    }
+
+    .proWrap .proPrice {
+        position: absolute;
+        top: 60px;
+        font-size: 18px;
+        left: 42px;
+        font-family: "黑体";
+    }
+
+    .proWrap .proxlxh {
+        position: absolute;
+        top: 35px;
+        font-size: 18px;
+        left: 42px;
+        font-family: "黑体";
+    }
+
+    .proWrap .proPrice span {
+        color: #b9b9b9;
+        margin-left: 6px;
+    }
+
+    .proWrap h2 {
+        font-size: 18px;
+        font-family: "黑体";
+        color: #161a20;
+        margin: 5px 0;
+    }
+
+    .modal-footer {
+        position: relative;
+    }
+
+    .checxDiv {
+        width: 22px;
+        height: 22px;
+        display: inline-block;
+        border: 1px solid #ccc;
+        position: absolute;
+        left: 0;
+        top: 12px;
+        background: url("/Mvc/image/web/red.png") no-repeat;
+    }
+
+    .check_checked {
+        /* background-color:#CC0001; */
+        background-position: -48px 0;
+    }
+
+    .yuan {
+        border-radius: 50%;
+    }
+
+    .checxDiv input {
+        cursor: pointer;
+        opacity: 0;
+        width: 22px;
+        height: 22px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 0;
+    }
+
+    .proInfoMask {
+        display: none;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .6);
+        z-index: 5;
+    }
+
+    .proInfoMask .container .proCon {
+        position: relative;
+        overflow-y: scroll;
+        max-height: 560px;
+    }
+
+    .proInfoMask .container {
+        padding: 0;
+        max-height: 730px;
+        background-color: white;
+        position: relative;
+        top: 100px;
+    }
+
+    .proInfoMask .container .header {
+        height: 80px;
+        position: relative;
+        background-color: #71757E;
+        padding: 1.75rem 0 .75rem 13%;
+    }
+
+    .container .header .header-bar {
+        position: relative;
+        font-size: 24px;
+        color: white;
+        font-family: "黑体";
+    }
+
+    .closeX {
+        display: inline-block;
+        position: absolute;
+        right: 20px;
+        top: -10px;
+        color: white;
+        font-size: 34px;
+        cursor: pointer;
+    }
+
+    .proCon {
+        position: relative;
+        padding: 1.75rem 13% .75rem 13%;
+    }
+
+    .proCon .tip {
+        font-size: 18px;
+        padding: 1rem 0;
+        border-bottom: 1px solid #ccc;
+        font-family: "黑体";
+        font-weight: 500;
+    }
+
+    .nowProInfo, .newProInfo ul li, .addProInfo ul li {
+        line-height: 60px;
+        position: relative;
+    }
+
+    .nowProInfo strong, .newProInfo ul li strong, .addProInfo ul li strong {
+        font-size: 50px;
+        float: left;
+        margin-right: 18px;
+        color: #666;
+    }
+
+    .nowProInfo span:nth-child(2), .newProInfo ul li span:nth-child(2),
+    .addProInfo ul li span:nth-child(2) {
+        font-size: 18px;
+    }
+
+    .nowProInfo span:nth-child(3), .newProInfo ul li span:nth-child(3),
+    .addProInfo ul li span:nth-child(3) {
+        font-size: 18px;
+        position: absolute;
+        right: 50px;
+    }
+
+    .nowProInfo a, .newProInfo ul li a, .addProInfo ul li a {
+        position: absolute;
+        right: 10px;
+        top: 18px;
+    }
+
+    .newProInfo {
+        position: relative;
+        padding: 0 0 30px 0;
+        border-bottom: 1px solid #ccc;
+        display: none;
+    }
+
+    .newProInfo ul, .addProInfo ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .tipPrice {
+        position: relative;
+        font-size: 18px;
+        padding: 1rem 0;
+    }
+
+    .tipPrice span {
+        position: absolute;
+        right: 70px;
+    }
+
+    .proInfoFooter {
+        position: relative;
+        padding: 2rem 13%;
+        background-color: #F5F5F5;
+    }
+
+    .proInfoFooter div {
+        display: inline-block;
+        padding: .75rem 1rem .75rem .5rem;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        font-size: 18px;
+        margin-right: 6px;
+        cursor: pointer;
+    }
+
+    .proInfoFooter div span {
+        margin-right: 6px;
+    }
+
+    .proInfoFooter div:first-child {
+        background-color: #3E4146;
+        color: #fff;
+    }
+
+    .proInfoFooter div:last-child {
+        background-color: #DDDDDD;
+        color: #000;
+    }
+
+    .addProInfo {
+        display: none;
+    }
+
+    #toSummeryBtn:hover {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .maskSecond {
+        display: none;
+        top: 0;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .secondContent {
+        width: 70%;
+        height: 80%;
+        background-color: #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .modal-body, .modal-footer {
+        width: 100%
+    }
+
+    .panel-body {
+        padding: 0
+    }
+</style>
+<script>
+    var urlJson;
+    $(function () {
+        $(".maskSecond").click(function () {
+            $(this).hide();
+        });
+
+
+        $(".secondContent").click(function (e) {
+            e.stopPropagation();
+        });
+
+        $('.ck').boxer();
+        /* $('input').iCheck({
+            checkboxClass: 'icheckbox_square-orange',
+            radioClass: 'iradio_square-orange'
+          }); */
+        $('input').on('ifChecked', function (event) {
+            $(event.currentTarget).trigger("select");
+        });
+        $('input').on('ifUnchecked', function (event) {
+            $(event.currentTarget).trigger("click");
+        });
+
+        var groupUrl = '[{"groupNo":"1005","urls":[]},{"groupNo":"1001","urls":[]},{"groupNo":"1002","urls":[]},{"groupNo":"1003","urls":[]},{"groupNo":"1004","urls":[]},{"groupNo":"1008","urls":[]}]';
+        urlJson = eval("(" + groupUrl + ")");
+
+
+        $(".ch").each(function (i) {
+            $(this).click(function () {
+                var i = $(this).attr("i");
+
+                if (i == 0) {
+                    $(this).addClass("collapse-up");
+                    $(this).removeClass("collapse-down");
+                    $(this).attr("i", "1");
+                } else {
+                    $(this).addClass("collapse-down");
+                    $(this).removeClass("collapse-up");
+                    $(this).attr("i", "0");
+                }
+            })
+        })
+        $(".ch_img").each(function () {
+            $(this).click(function () {
+                var arr = [];
+                $(this).siblings("div").find("input[type=hidden]").each(function () {
+                    arr.push($(this).val());
+                })
+                if (arr.length > 0) {
+                    $("#indicators").empty();
+                    $("#inner").empty();
+                    for (var j = 0; j < arr.length; j++) {
+                        var indic = '<li ';
+                        if (j == 0) {
+                            indic += ' class="active" ';
+                        }
+                        indic += ' data-slide-to=' + j + ' data-target="#carousel-910584" > </li> '
+                        $("#indicators").append(indic);
+
+                        var inn = '<div ';
+                        if (j == 0) {
+                            inn += ' class="item active" ';
+                        }
+                        inn += ' class="item" style="height: 100% !important;"> ';
+                        inn += '  <a class="ck" href="' + arr[j] + '"></a> ';
+                        inn += ' <img style="height: 100% !important; margin:auto" src="' + arr[j] + '" /></div> ';
+                        $("#inner").append(inn);
+                    }
+                    $('.ck').boxer();
+                }
+
+            })
+        })
+
+    });
+
+    function formatCurrency(num) {
+        if (num || num == 0) {
+            //将num中的$,去掉，将num变成一个纯粹的数据格式字符串
+            num = num.toString().replace(/$|\,/g, '');
+            //如果num不是数字，则将num置0，并返回
+            if ('' == num || isNaN(num)) {
+                return 'Not a Number ! ';
+            }
+            //如果num是负数，则获取她的符号
+            var sign = num.indexOf("-") > 0 ? '-' : '';
+            //如果存在小数点，则获取数字的小数部分
+            var cents = num.indexOf(".") > 0 ? num.substr(num.indexOf(".")) : '';
+            cents = cents.length > 1 ? cents : '';//注意：这里如果是使用change方法不断的调用，小数是输入不了的
+            //获取数字的整数数部分
+            num = num.indexOf(".") > 0 ? num.substring(0, (num.indexOf("."))) : num;
+            //如果没有小数点，整数部分不能以0开头
+            if ('' == cents) {
+                if (num.length > 1 && '0' == num.substr(0, 1)) {
+                    return 'Not a Number ! ';
+                }
+            }
+            //如果有小数点，且整数的部分的长度大于1，则整数部分不能以0开头
+            else {
+                if (num.length > 1 && '0' == num.substr(0, 1)) {
+                    return 'Not a Number ! ';
+                }
+            }
+            //针对整数部分进行格式化处理，这是此方法的核心，也是稍难理解的一个地方，逆向的来思考或者采用简单的事例来实现就容易多了
+            /*
+                          也可以这样想象，现在有一串数字字符串在你面前，如果让你给他家千分位的逗号的话，你是怎么来思考和操作的?
+                          字符串长度为0/1/2/3时都不用添加
+                          字符串长度大于3的时候，从右往左数，有三位字符就加一个逗号，然后继续往前数，直到不到往前数少于三位字符为止
+             */
+            for (var i = 0; i < Math.floor((num.length - (1 + i)) / 3); i++) {
+                num = num.substring(0, num.length - (4 * i + 3)) + ',' + num.substring(num.length - (4 * i + 3));
+            }
+            //将数据（符号、整数部分、小数部分）整体组合返回
+            return (sign + num + cents);
+        }
+
+    }
+
+    function selectChoice(price, amount, pid) {
+        var oldTotal = parseFloat($('#totalChoice-' + pid).text().replace(/,/g, ''));
+        var selecttotal = parseFloat(price * amount);
+        $('#totalChoice-' + pid).text(formatCurrency(oldTotal + selecttotal))
+        //合计价格计算
+        var oldSummery = parseFloat($('#summeryPrice').text().replace(/,/g, ''));
+        var addPrice = parseFloat($('#addPrice').text().replace(/,/g, ''));
+        $('#addPrice').text(formatCurrency(addPrice + selecttotal));
+        $('#summeryPrice').text(formatCurrency(oldSummery + selecttotal));
+    }
+
+    function unSelectChoice(price, amount, pid) {
+        var oldTotal = parseFloat($('#totalChoice-' + pid).text().replace(/,/g, ''));
+        var selecttotal = parseFloat(price * amount);
+        $('#totalChoice-' + pid).text(formatCurrency(oldTotal - selecttotal));
+        //合计价格计算
+        var oldSummery = parseFloat($('#summeryPrice').text().replace(/,/g, ''));
+        var addPrice = parseFloat($('#addPrice').text().replace(/,/g, ''));
+        $('#addPrice').text(formatCurrency(addPrice - selecttotal));
+        $('#summeryPrice').text(formatCurrency(oldSummery - selecttotal));
+    }
+
+    function selectMultiple(price, amount, pid, gid, cid) {
+        $('input[groupId=' + gid + ']').each(function (rs) {
+            if (cid != $(this).val()) {
+                if ($(this).is(':checked')) {
+                    $(this).click();
+                    $(this).attr('checked', false);
+                    $(this).parent().removeClass('checked');
+                }
+            }
+        });
+        var oldTotal = parseFloat($('#totalMultiple-' + pid).text().replace(/,/g, ''));
+
+        var selecttotal = parseFloat(price * amount);
+        $('#totalMultiple-' + pid).text(formatCurrency(oldTotal + selecttotal));
+        //合计价格计算
+        var oldSummery = parseFloat($('#summeryPrice').text().replace(/,/g, ''));
+        var addPrice = parseFloat($('#addPrice').text().replace(/,/g, ''));
+        $('#addPrice').text(formatCurrency(addPrice + selecttotal));
+        $('#summeryPrice').text(formatCurrency(oldSummery + selecttotal));
+    }
+
+    function unSelectMultiple(price, amount, pid) {
+
+        var oldTotal = parseFloat($('#totalMultiple-' + pid).text().replace(/,/g, ''));
+        var selecttotal = parseFloat(price * amount);
+        $('#totalMultiple-' + pid).text(formatCurrency(oldTotal - selecttotal));
+        //合计价格计算
+        var oldSummery = parseFloat($('#summeryPrice').text().replace(/,/g, ''));
+        var addPrice = parseFloat($('#addPrice').text().replace(/,/g, ''));
+        $('#addPrice').text(formatCurrency(addPrice - selecttotal));
+        $('#summeryPrice').text(formatCurrency(oldSummery - selecttotal));
+    }
+
+    function summery() {
+        var spCodesTemp = "";
+        $('input:checkbox[name=selectProduct]:checked').each(function (i) {
+            if (0 == i) {
+                spCodesTemp = $(this).attr('refId');
+            } else {
+                spCodesTemp += ("," + $(this).attr('refId'));
+            }
+        });
+        /*  $(".select").each(function(i){
+             if(0==i){
+                 selectColor = $(this).attr("selectValue");
+                }else{
+                selectColor += (","+$(this).attr("selectValue"));
+                }
+               }); */
+        var url = '/Mvc/web/custom/customSummery?ids=' + spCodesTemp + '&programId=' + 269 + "&houseNo=FW201706230000000024";
+        if ($("[name='salesOrderNo']").val() != '') {
+            url += '&salesOrderNo=' + $("[name='salesOrderNo']").val();
+        }
+        if ($("#ownerId").val() != '') {
+            url += '&ownerId=' + $("#ownerId").val();
+        }
+        if ($("#houseId").val() != '') {
+            url += '&houseId=' + $("#houseId").val();
+        }
+        $('#toSummery').attr('href', url);
+        $('#toSummeryBtn').attr('href', url);
+        return true;
+    }
+
+    function openHouseType() {
+        $("#openHouseType")
+        if ($("#openHouseType").hasClass("collapsed")) {
+            $(".bgRed").removeClass('bgRed');
+            $("#openHouseType").addClass('bgRed');
+            $("#openHouseType").click();
+
+            $(".houseTypeEx").removeClass('collapsed');
+            $(".houseTypeEx").next().addClass('in');
+        }
+    }
+
+    function collapse(pid, ele) {
+        var f = $("#panel-element-" + pid).prev();
+        if (!f.hasClass("collapse-up")) {
+            $(".bgRed").removeClass('bgRed');
+            f.addClass('bgRed');
+            f.click();
+        }
+        $(".activeTool").each(function () {
+            $(this).removeClass('activeTool');
+        });
+        $(ele).parent().addClass('activeTool');
+        $('body').animate({
+            scrollTop: $(f).offset().top - 100
+        }, 1000);
+        //$("#panel-element-"+pid).addClass("in");
+    }
+
+    function collapseFun(value) {
+        var groupNo = $(value).attr("groupNo");
+        switchGroupUrl(groupNo);
+        var values = $('.panel-heading');
+        for (var i = 0; i < values.length; i++) {
+            var a = values[i];
+            $(a).removeClass('collapse-up');
+            $(a).addClass('collapse-down');
+            //console.log($(value));
+            if (!($(value).attr('class').indexOf('collapsed') == -1)) {
+                if (!$(a).hasClass('expand_flag')) {
+                    $(a).addClass('collapsed');
+                    $(a).next().removeClass('in');
+                } else {
+                    $(a).removeClass('collapsed');
+                    $(a).next().addClass('in');
+                }
+
+            }
+            if (i == (values.length - 1)) {
+                if ($(value).attr('class').indexOf('collapsed') == -1) {
+                    $(value).removeClass('collapse-up');
+                    $(value).addClass('collapse-down');
+
+                } else {
+                    $(value).removeClass('collapse-down');
+                    $(value).addClass('collapse-up');
+                    $(".bgRed").removeClass('bgRed');
+                    $(value).addClass('bgRed');
+                }
+            }
+        }
+
+    }
+
+    function switchGroupUrl(groupNo) {
+        for (var i = 0; i < urlJson.length; i++) {
+            if (urlJson[i].groupNo == groupNo) {
+                if (urlJson[i].urls.length > 0) {
+                    $("#indicators").empty();
+                    $("#inner").empty();
+                    for (var j = 0; j < urlJson[i].urls.length; j++) {
+                        var indic = '<li ';
+                        if (j == 0) {
+                            indic += ' class="active" ';
+                        }
+                        indic += ' data-slide-to=' + j + ' data-target="#carousel-910584" > </li> '
+                        $("#indicators").append(indic);
+
+                        var inn = '<div ';
+                        if (j == 0) {
+                            inn += ' class="item active" ';
+                        }
+                        inn += ' class="item" style="height: 100% !important;"> ';
+                        inn += '  <a class="ck" href="' + urlJson[i].urls[j].url + '"></a> ';
+                        inn += ' <img style="height: 100% !important; margin:auto" src="' + urlJson[i].urls[j].url + '" /></div> ';
+                        $("#inner").append(inn);
+                    }
+                }
+                break;
+            }
+        }
+        $('.ck').boxer();
+    }
+
+    function replacePpt(houseTypeNo, type) {
+        //type 0 毛坯
+        $.ajax({
+            type: "get",
+            url: "/Mvc/web/custom/getHouseTypePpts",
+            data: {
+                houseTypeNo: houseTypeNo,
+                type: type
+            },
+            success: function (d) {
+                d = JSON.parse(d);
+                if (d.success) {
+                    if (d.obj.length >= 1) {
+                        $("#indicators").empty();
+                        $("#inner").empty();
+                        for (var j = 0; j < d.obj.length; j++) {
+                            var indic = '<li ';
+                            if (j == 0) {
+                                indic += ' class="active" ';
+                            }
+                            indic += ' data-slide-to=' + j + ' data-target="#carousel-910584" > </li> '
+                            $("#indicators").append(indic);
+
+                            var inn = '<div ';
+                            if (j == 0) {
+                                inn += ' class="item active" ';
+                            }
+                            inn += ' class="item" style="height: 100% !important;"> ';
+                            inn += '  <a class="ck" href="' + d.obj[j] + '"></a> ';
+                            inn += ' <img style="height: 100% !important; margin:auto" src="' + d.obj[j] + '" /></div> ';
+                            $("#inner").append(inn);
+                        }
+                        $('.ck').boxer();
+                    }
+                }
+            }
+        });
+    }
+
+    function changeSize() {
+        if ($("#col_pic").attr('class').indexOf('col-xs-4') == -1) {
+            $("#col_pic").addClass('col-xs-4');
+            $("#col_pic").removeClass('col-xs-8');
+            $("#col_con").addClass('col-xs-8');
+            $("#col_con").removeClass('col-xs-4');
+        } else {
+            $("#col_pic").addClass('col-xs-8');
+            $("#col_pic").removeClass('col-xs-4');
+            $("#col_con").addClass('col-xs-4');
+            $("#col_con").removeClass('col-xs-8');
+        }
+
+    }
+
+    function addSelect(id) {
+        if (!$("#input-" + id).is(":checked")) {
+            $("#input-" + id).click();
+        }
+
+        //	$("#input-"+id).prop("checked",true);
+        //	$("#input-"+id).parent().addClass("check_checked");
+        caculatePrice();
+        //	$("#inp-"+id).iCheck('check');
+        //	$("#inp-"+id).attr('checked',true);
+    }
+
+    function choooseColor(oneClass, curr) {
+        //console.log($("req-"+oneClass));
+        $(".req-" + oneClass).removeClass('select');
+        $(curr).addClass('select');
+    }
+
+    function keep() {
+        /*  var spCodesTemp = "";
+        $('input:checkbox[name=selectProduct]:checked').each(function(i){
+         if(0==i){
+          spCodesTemp = $(this).attr('refId');
+         }else{
+          spCodesTemp += (","+$(this).attr('refId'));
+         }
+        }); */
+        var id = $("#tip_mask").attr('pid');
+        var programNo = $("#tip_mask").attr('programNo');
+        window.location.href = "/Mvc/web/custom/customHouse?id=" + id + "&houseNo=FW201706230000000024&programNo=" + programNo/* +"&selectIds="+spCodesTemp */;
+    }
+
+    function restart() {
+        var id = $("#tip_mask").attr('pid');
+        var programNo = $("#tip_mask").attr('programNo');
+        window.location.href = "/Mvc/web/custom/customHouse?id=" + id + "&houseNo=FW201706230000000024&programNo=" + programNo;
+    }
+
+    function selectProgram(id, programNo) {
+        window.location.href = "/Mvc/web/custom/customHouse?id=" + id + "&houseNo=FW201706230000000024&programNo=" + programNo;
+    }
+</script>
+</head>
+
+<body style="overflow: scroll;">
+<div id="tip_mask">
+    <div class="tip_div">
+        <h1>
+            <span>&times;</span>
+        </h1>
+        <h2>您是否保留当前已选的产品当作下次新选装的首选项，还是重新开始下次新配置？</h2>
+        <div>
+
+            <button onclick="keep()">&gt;保留</button>
+            <button onclick="restart()">&gt;重新开始</button>
+            <button class="cancel">&gt;取消</button>
+        </div>
+    </div>
+</div>
+<div class="container" style="min-width: 1080px;">
+    <div id="mask"></div>
+    <div class="row clearfix"
+         style="position: fixed; top: 0; left: 0; right: 0; z-index: 1">
+        <div class="col-xs-12 column">
+            <nav class="navbar navbar-default navbar-inverse" role="navigation">
+                <div class="navbar-header" style="margin-left: 100px">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span><span
+                            class="icon-bar"></span><span class="icon-bar"></span><span
+                            class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand"
+                       style="color: #ffffff; font-size: 18px; font-family: '微软雅黑'"
+                       href="/Mvc">首页</a>
+                </div>
+
+                <div class="collapse navbar-collapse"
+                     id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav" style="padding: 0 1.4286em;">
+                        <li id="firstLi"><a href="#" class="cart" onclick="openHouseType()">选择装修平面</a>
+                        </li>
+
+                        <li><a class="activeTool" href="#" onclick="collapse(73,this)">1.系统设备</a></li>
+
+                        <li><a href="#" onclick="collapse(66,this)">2.风格色系</a></li>
+                        <li><a href="#" onclick="collapse(67,this)">3.厨卫设备</a></li>
+                        <li><a href="#" onclick="collapse(68,this)">4.背景收纳</a></li>
+                        <li><a href="#" onclick="collapse(99,this)">5.地下室整体包</a></li>
+                        <li><a id="toSummery" href="#" onclick="return summery();">汇总</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="clearfix">
+        <div id="col_pic"
+             style="position: fixed; top: 53px; left: 100px; right: 550px; bottom: 120px">
+            <div class="row clearfix">
+                <div class="col-xs-12 column" style="margin-top: 10px">
+                    <h3
+                            style="margin-top: 0px; font-size: 34px; font-family: FB; font-weight: bolder; color: #212326">
+                        （1#2#）(YB-3户型)144</h3>
+                    <ul class="breadcrumb">
+                        <li><a href="#" data-toggle="modal" data-target="#myModal-base">基础配置</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#myModal-spe">特色亮点</a></li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="carousel slide" id="carousel-910584"
+                 style="position: fixed; top: 153px; left: 100px; right: 550px; bottom: 120px">
+                <ol class="carousel-indicators" id="indicators">
+
+                    <li class="active" data-slide-to="0" data-target="#carousel-910584">
+                    </li>
+
+                    <li data-slide-to="1" data-target="#carousel-910584"></li>
+
+                </ol>
+                <div class="carousel-inner"
+                     style="height: 100% !important; text-align: center;" id="inner">
+
+                    <div class="item active" style="height: 100% !important;">
+                        <a class="ck"
+                           href="/files/pictures/2017/07/10/16/9b2b3aa8e09b4f9f9d49d4228094e3a4/original.jpg"></a> <img
+                            style="height: 100% !important; margin: auto"
+                            src="/files/pictures/2017/07/10/16/9b2b3aa8e09b4f9f9d49d4228094e3a4/original.jpg"/>
+                    </div>
+
+                    <div
+                            class="item" style="height: 100% !important;">
+                        <a class="ck"
+                           href="/files/pictures/2017/07/10/16/1ebf74367b7e4e4991e219855e750f6d/original.jpg"></a> <img
+                            style="height: 100% !important; margin: auto"
+                            src="/files/pictures/2017/07/10/16/1ebf74367b7e4e4991e219855e750f6d/original.jpg"/>
+                    </div>
+
+                </div>
+                <div style="height: 100%;">
+                    <a class="left carousel-control" href="#carousel-910584"
+                       data-slide="prev"> <span
+                            class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                </div>
+                <div style="height: 100%; margin-top: 88px; margin-bottom: 88px;">
+
+                    <a class="right carousel-control" data-slide="next"
+                       href="#carousel-910584"> <span
+                            class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        <div style="position: fixed; left: 100px; right: 550px; bottom: 5px">
+            <hr/>
+            <div
+                    style="color: black; float: right; _position: relative; font-size: 14px; width: 280px">
+                <div
+                        style="margin-top: 0px; font-size: 18px; font-family: '黑体'; color: #212326;">
+                    <span>基础价格： </span><span style="padding-left: 50px; float: right"
+                                             id="basePrice">0￥</span>
+                </div>
+                <div
+                        style="margin-top: 5px; font-size: 18px; font-family: '黑体'; color: #212326;">
+                    <span>选配价格： </span><span style="padding-left: 50px; float: right"
+                                             id="addPrice">0￥</span>
+                </div>
+                <div
+                        style="margin-top: 5px; font-size: 18px; font-family: '黑体'; color: #212326; font-weight: 600">
+                    <span>总价：</span><span style="padding-left: 75px; float: right"
+                                          id="summeryPrice">0￥</span>
+                </div>
+            </div>
+        </div>
+        <div id="whiteBlock"
+             style="position: fixed; top: 52px; right: 50px; width: 450px !important; height: 50px; background-color: white; z-index: 1;"></div>
+        <div id="col_con"
+             style="position: absolute; top: 103px; right: 50px; width: 450px !important;">
+            <div class="panel-group" id="panel-qqq">
+                <div class="panel panel-default" style="border: none;">
+                    <div id="openHouseType" class="headSelct panel-heading  ch huxing collapsed" i="0"
+                         aria-expanded="true" data-toggle="collapse"
+                         style="color: #ffffff;background-color: #71757E;" data-parent="panel-qqq"
+                         href="#panel-element-111-0">选择装修平面
+                    </div>
+                    <div id="panel-element-111-0" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <div class="panel-group" id="panel-aaa">
+                                <div class="fir panel panel-default">
+                                    <div class="panel-group" id="panel-bbb">
+                                        <div class="sec panel panel-default">
+                                            <div class="panel-heading collapse-down ch ch_img houseTypeEx" i="0"
+                                                 style="border-bottom: 1px solid #ccc;"
+                                                 onclick="replacePpt('JR06/MH00601',1)"
+                                                 aria-expanded="true" data-toggle="collapse"
+                                                 data-parent="#panel-bbb" href="#panel-element-10000075">
+
+                                                <!-- 户型 -->
+                                                <span>（1#2#）(YB-3户型)144</span>
+                                            </div>
+                                            <div id="panel-element-10000075"
+                                                 class="panel-collapse collapse ">
+                                                <div class="panel-body" style="padding: 6px;">
+
+                                                    <input type="hidden"
+                                                           value="/files/pictures/2017/07/10/16/9b2b3aa8e09b4f9f9d49d4228094e3a4/original.jpg"
+                                                           class="input_hid"/>
+                                                    <div class="panel-group" id="panel-ccc">
+                                                        <div class="thi panel panel-default">
+
+                                                            <div class="list_info">
+                                                                <!-- 方案 -->
+                                                                <div class="list_info_title">
+                                                                    <div onclick="selectProgram('269','FA-JR06/MH00601-04')"
+                                                                         class="checxDiv check_checked"
+                                                                         style="top: 6px;"></div>
+                                                                    <span style=" font-size: 18px;font-family: '黑体' ;">(YB-3户型)144</span>
+                                                                    <a href="#"
+                                                                       data-toggle="modal"
+                                                                       data-target="#typeModal-269"
+                                                                       style="position: absolute; right: 20px;">
+                                                                        <div class="fff">i</div>
+                                                                    </a>
+                                                                </div>
+                                                                <div>
+                                                                    <a href="#" data-toggle="modal" title="显示更多信息"
+                                                                       data-target="#typeModal-269">
+                                                                        <img src="/files/pictures/2017/07/10/16/9b2b3aa8e09b4f9f9d49d4228094e3a4/original.jpg"
+                                                                             style="width: 60px; height: 60px;">
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal fade" id="typeModal-269"
+                                                         tabindex="-1" role="dialog"
+                                                         aria-labelledby="myModalLabel" aria-hidden="true">
+                                                        <div class="modal_wrapper">
+                                                            <div class="modal-dialog">
+                                                                <div class="modal-content"
+                                                                     style="width: 1002px; height: 655px;">
+                                                                    <div class="modal-header"
+                                                                         style="background-color: #9d9d9d">
+                                                                        <button id="btn_close" type="button"
+                                                                                data-dismiss="modal" aria-hidden="true"
+                                                                                style="">&times;
+                                                                        </button>
+                                                                        <h4 class="modal-title" id="myModalLabel">
+                                                                            (YB-3户型)144</h4>
+                                                                    </div>
+                                                                    <div class="modal-body" style="height: 480px;">
+                                                                        <div class="carousel slide"
+                                                                             id="carousel-269"
+                                                                             style="height: 100% !important;">
+
+                                                                            <div class="carousel-inner"
+                                                                                 style="height: 100% !important; text-align: center; padding-bottom: 45px;">
+
+                                                                                <div
+                                                                                        class="item active"
+                                                                                        class="item"
+                                                                                        style="height: 100% !important;">
+                                                                                    <img
+                                                                                            style="height: 100% !important; width: 65%; margin: auto"
+                                                                                            src="/files/pictures/2017/07/10/16/9b2b3aa8e09b4f9f9d49d4228094e3a4/original.jpg"/>
+                                                                                    <div
+                                                                                            style="width: 65%; text-align: left; margin: 20px auto 0;"></div>
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <div
+                                                                                    style="height: 100%; width: 100%; position: absolute; top: 0">
+                                                                                <a class="left carousel-control"
+                                                                                   href="#carousel-269"
+                                                                                   data-slide="prev">
+																											<span
+                                                                                                                    class="glyphicon glyphicon-chevron-left"></span>
+                                                                                </a>
+                                                                            </div>
+                                                                            <div
+                                                                                    style="height: 100%; width: 100%; position: absolute; top: 0">
+                                                                                <a class="right carousel-control"
+                                                                                   data-slide="next"
+                                                                                   href="#carousel-269">
+																											<span
+                                                                                                                    class="glyphicon glyphicon-chevron-right"></span>
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <div style="text-align: left;">
+                                                                            <span style="color: #666666; font-size: 20px;"></span>
+                                                                        </div>
+
+                                                                        <!-- <button type="button" class="btn btn-default" data-dismiss="modal" style="background-color:firebrick;color: #ffffff">已经在选择中</button> -->
+                                                                    </div>
+                                                                </div>
+                                                                <!-- /.modal-content -->
+                                                            </div>
+                                                            <!-- /.modal -->
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- 	</div>
+                                    </div> -->
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <a id="toSummeryBtn" class="toSummery" href="#" onclick="return summery();">显示汇总</a>
+        </div>
+    </div>
+</div>
+
+<input type="hidden" name="salesOrderNo" value=""/>
+<input type="hidden" id="ownerId" value=""/>
+<input type="hidden" id="houseId" value=""/>
+<div class="modal fade" id="myModal-spe" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal_wrapper">
+        <div class="modal-dialog">
+            <div class="modal-content" style="width: 1002px">
+                <div class="modal-header" style="background-color: #9d9d9d">
+                    <button id="btn_close" type="button" data-dismiss="modal"
+                            aria-hidden="true" style="">&times;
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">特色亮点：(YB-3户型)144</h4>
+                </div>
+                <div class="modal-body" style="height: 500px">
+                    <div style="height: 100% !important; overflow: auto;">
+                    </div>
+
+                </div>
+                <div class="modal-footer"></div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal -->
+    </div>
+</div>
+<div class="modal fade" id="myModal-base" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal_wrapper">
+        <div class="modal-dialog">
+            <div class="modal-content" style="width: 1002px">
+                <div class="modal-header" style="background-color: #9d9d9d">
+                    <button id="btn_close" type="button" data-dismiss="modal"
+                            aria-hidden="true" style="">&times;
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">基础配置：宁波海志府</h4>
+                </div>
+                <div class="modal-body" style="height: 500px">
+                    <div style="height: 100% !important; overflow: auto;">
+                    </div>
+
+                </div>
+                <div class="modal-footer"></div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal -->
+    </div>
+</div>
+<div class="proInfoMask">
+    <div class="container">
+        <div class="header">
+            <div class=header-bar>
+                要求适应您的选择
+                <div class="closeX">&times;</div>
+            </div>
+        </div>
+        <div class="proCon">
+            <div class="tip">您想增加：</div>
+            <div class="nowProInfo"></div>
+            <div class="addProInfo">
+                <div class="tip">以下选装配置将会被选中：</div>
+                <ul>
+
+                </ul>
+            </div>
+            <div class="newProInfo">
+                <div class="tip">以下选装配置将会被移除：</div>
+                <ul>
+
+                </ul>
+            </div>
+
+            <div class="tipPrice">
+                当前选项的价格更新：<span id="changePrice">0￥</span>
+            </div>
+        </div>
+        <div class=proInfoFooter>
+            <div class="accept">
+                <span>></span>接受更改
+            </div>
+            <div class="cancel">
+                <span>></span>取消选择
+            </div>
+        </div>
+    </div>
+</div>
+<div id="productMask">
+    <div class="maskSecond" style="z-index: 999999">
+        <div class="secondContent"></div>
+    </div>
+</div>
+
+</body>
+</html>

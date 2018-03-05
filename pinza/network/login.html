@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="css/app.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-weight: 300;
+            background: #ffffff;
+        }
+
+        /*
+        button input i a{
+            webkit-font-smoothing: antialiased;
+        }
+*/
+        .home-template {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .header {
+            width: 100%;
+            height: 40%;
+            background-image: url(img/bg-login.jpg);
+
+            background-repeat: no-repeat;
+            background-position: center 0;
+            -webkit-background-size: cover;
+            background-size: cover;
+            /*padding: 138px 0 0;*/
+            text-align: center;
+            position: relative;
+        }
+
+        .window {
+            width: 324px;
+            margin: auto;
+            margin-top: 24px;
+        }
+
+        .input-addon {
+            width: 38px;
+            height: 36px;
+            background-color: #4c59a8;
+            line-height: 40px;
+            border: 1px solid #4c59a8;
+            text-align: center;
+            border-right: none;
+        }
+
+        .input-addon i {
+            font-size: 22px;
+            color: white;
+            font-weight: 400;
+        }
+
+        .input-group {
+            display: inline-flex;
+            width: 100%;
+            margin-top: 20px;
+        }
+        .input-group button:active{
+            box-shadow: 0 3px 16px  #353e75 inset;
+        }
+        .form-control {
+            display: block;
+            width: 100%;
+            height: 34px;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #555;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+            -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s
+        }
+
+
+
+
+        .form-control {
+            border-radius: 0;
+            height: 36px;
+            box-shadow: none;
+            transition: .6s all;
+        }
+        .form-control:hover{
+            border-color: #5867c3;
+        }
+
+        /* 通用 */
+        ::-webkit-input-placeholder {
+            color: #aab2bd;
+        !important;
+        }
+
+        ::-moz-placeholder {
+            color: #aab2bd;
+        !important;
+        }
+
+        /* firefox 19+ */
+        :-ms-input-placeholder {
+            color: #aab2bd;
+        !important;
+        }
+
+        /* ie */
+        input:-moz-placeholder {
+            color: #aab2bd;
+        !important;
+        }
+
+        input::-webkit-input-placeholder {
+            font-size: 12px;
+            color: #bbc4d0;
+        !important;
+            font-weight: 300;
+        }
+
+        .msk {
+            width: 100%;
+            height: 100%;
+            background: #4c59a8;
+            opacity: .9;
+        }
+
+        .load-btn {
+            width: 100%;
+            padding: 8px;
+            background: #4c59a8;
+            color: white;
+            font-size: 16px;
+            box-shadow: none;
+            border-style: none;
+            outline: none;
+            font-weight: 300;
+        !important;
+        }
+
+        .msk-center {
+            width: 100%;
+            position: absolute;
+            top: 20%;
+            text-align: center;
+        }
+
+        .msk-center img {
+            top: 20%;
+            width: 50px;
+        }
+
+        .msk-center span {
+            margin-top: 20px;
+            color: white;
+            font-size: 18px;
+        }
+
+    </style>
+
+<body class="home-template">
+
+
+<div class="header">
+    <div class="msk"></div>
+</div>
+
+<div class="msk-center">
+    <img src="img/logo.png">
+    <span style="display: block">PT后台系统管理</span>
+</div>
+<div class="window">
+
+    <div class="input-group ">
+        <span class="input-addon"><i class="fa fa-user-circle-o"></i></span>
+        <input type="text" style="padding-left: 10px" class="form-control" name="" placeholder="请输入您的用户名">
+
+    </div>
+    <div class="input-group ">
+        <span class="input-addon"><i class="fa fa-unlock-alt"></i></span>
+        <input type="password" style="padding-left: 10px" class="form-control" name="" placeholder="请输入您的密码">
+    </div>
+
+
+    <div class="input-group ">
+        <button id="submit" class="load-btn">登录</button>
+
+    </div>
+
+
+</div>
+</body>
+</html>

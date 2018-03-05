@@ -1,0 +1,277 @@
+/*------------------------------------------
+Template Name: AdminEx Dashboard
+Author: ThemeBucket
+-------------------------------------------*/
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic);
+@import url('bootstrap.min.css');
+
+body {
+    /*background: #424f63;*/
+    font-family: 'Open Sans', sans-serif;
+    /*color: #7a7676;*/
+    line-height: 20px;
+    overflow-x: hidden;
+    font-size: 14px;
+}
+
+.sticky-header {
+    background-color: #F0F0F0;
+}
+
+input, select, textarea {
+    font-family: 'Open Sans', sans-serif;
+    color: #767676;
+}
+
+a {
+    color: #e01b30;
+}
+
+a:focus, a:active, a:hover {
+    outline: none;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    color: #353F4F;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.mtop10 {
+    margin-top: 10px;
+}
+
+hr {
+    border-color: #ddd;
+}
+
+/*HEADER SECTION*/
+
+.header-section {
+    background: #fff;
+    border-bottom: 1px solid #eff0f4;
+}
+
+.header-section::after {
+    clear: both;
+    display: block;
+    content: '';
+}
+
+.sticky-header .header-section {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    height: 60px;
+}
+
+.sticky-header.left-side-collapsed .header-section {
+    left: 52px;
+}
+
+/*logo*/
+
+.header-section .logo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 190px;
+    z-index: 100;
+
+}
+
+.logo {
+    padding-top: 5px;
+    height: 50px;
+}
+
+/*header*/
+
+/*header*/
+#top-navigation {
+    font-size: 12px;
+    position: fixed;
+    right: 20px;
+    white-space: nowrap;
+    color: #555;
+    padding: 15px 24px 2px 0;
+}
+
+.inlineBlock {
+    display: inline-block;
+}
+.inlineTable{
+    display: inline-table;
+}
+.m-top {
+    margin-top: 8px;
+}
+
+.input-addon {
+    padding: 6.5px 12px;
+    margin-right: -4px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    color: #555;
+    text-align: center;
+    background-color: #eee;
+    border: 1px solid rgb(169, 169, 169);
+    border-right: none;
+}
+
+.font-tb {
+    font-size: 12px;
+}
+
+.input-group {
+    position: relative;
+    display: inline-table;
+    border-collapse: separate;
+    vertical-align: middle;
+
+}
+
+/*footer*/
+footer {
+    background: #fff;
+    padding: 15px;
+    color: #7A7676;
+    font-size: 12px;
+    /* position: static; */
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #eff0f4;
+    position: fixed;
+    text-align: center;
+}
+
+/*table*/
+
+.main-body {
+    /*padding: 15px;*/
+    margin-right: auto;
+    margin-left: auto;
+
+}
+
+.main-wrapper {
+    background: #ffffff;
+}
+
+.card-head {
+    position: relative;
+    font-weight: bold;
+    border-bottom: 1px solid #e9eaec;
+    padding: 14px 16px;
+    line-height: 1;
+}
+.card-body{
+    padding: 5px;
+}
+.table-border table thead tr th{
+    background-color: #f8f8f9 ;
+}
+.table-border table thead tr td{
+    font-weight:600 ;
+}
+
+.card-bordered{
+    border: 1px solid #dddee1;
+}
+.fileInput{
+    position: relative;
+    overflow: hidden;
+}
+.btnHt-ab{
+    border: 1px solid rgb(169, 169, 169);
+    border-right: none;
+}
+.fileInput .upfile {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer;
+    z-index: 11;
+    font-size: 100px;
+}
+
+.fileInput  .upfileResult {
+    vertical-align: middle;
+    padding: 5px 10px;
+    color: #999999;
+    background: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.label-cell-info {
+    display: inline;
+    padding: .3em .6em;
+    font-size: 75%;
+    line-height: 1;
+    color: #fff;
+    border: 1px solid #5bc0de;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+}
+.label-td-info {
+    color: #5bc0de;
+    border-color: #5bc0de;
+}
+.label-cell-danger {
+    display: inline;
+    padding: .3em .6em;
+    font-size: 75%;
+    line-height: 1;
+    color: #fff;
+    border: 1px solid #d9534f;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+}
+.label-td-danger {
+    color: #d9534f;
+    border-color: #d9534f;
+}
+.label-cell-success {
+    display: inline;
+    padding: .3em .6em;
+    font-size: 75%;
+    line-height: 1;
+    color: #fff;
+    border: 1px solid #419641;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+}
+.label-td-success {
+    color: #419641;
+    border-color: #419641;
+}
+.dc-hover:hover{
+    color: red;
+    text-decoration:underline
+}
+
+.container-hover {
+    transition:all .8s;
+}
+.container-hover:hover{
+    box-shadow:0 0 12px 3px #ccc;
+}
+
+
+

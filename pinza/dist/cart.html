@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>品宅-购物清单</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="msapplication-tap-highlight" content="no">
+    <link rel="stylesheet" href="lib/frozenui/css/frozen.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        (function (doc, win) {
+            // 取得html的引用
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth
+                    if (!clientWidth) return
+                    clientWidth = (clientWidth > 2800) ? 2800 : clientWidth
+                    clientWidth = (clientWidth < 768) ? 768 : clientWidth
+                    docEl.style.fontSize = 100 * (clientWidth / 1024) + 'px'
+                }
+            if (!doc.addEventListener) return
+            win.addEventListener(resizeEvt, recalc, false)
+            recalc()
+
+        })(document, window)
+    </script>
+</head>
+<body>
+
+    <!--header-->
+    <header>
+        <a href="index.html"><img src="images/logo.png" class="fl" alt=""></a>
+        <div class="menu fr">
+            <a href="quickBuy.html"><i class="icon icon-order"></i>快速下单</a>
+            <a href="cart.html">
+                <i class="icon icon-cart"></i>
+                <i class="cart-total">2</i>
+                购物清单
+            </a>
+            <a href="my.html"><i class="icon icon-user"></i>个人中心</a>
+        </div>
+    </header>
+
+    <!--section-->
+    <section class="cart-wrapper">
+        <div class="title">户型名称>方案名称>购物清单</div>
+        <div class="thead">
+            <ul>
+                <li>操作</li>
+                <li>产品编号</li>
+                <li>产品名称</li>
+                <li>使用位置</li>
+                <li>品牌</li>
+                <li>单位</li>
+                <li>数量</li>
+                <li>单价</li>
+                <li>合计</li>
+            </ul>
+        </div>
+        <!--风格色系-->
+        <div class="module">
+            <h1>
+                <label class="label-group is-checked" for="attr1">
+                    <i class="icon"></i>
+                </label>
+                <input type="checkbox" id="attr1" checked="checked" hidden>
+                风格色系
+            </h1>
+            <ul>
+                <li>
+                    <label class="label-item is-checked" for="1">
+                        <i class="icon"></i>
+                    </label>
+                    <input type="checkbox" id="1" checked="checked" hidden>
+                </li>
+                <li>CP000068</li>
+                <li>卧室</li>
+                <li>卧室</li>
+                <li>尚品宅配</li>
+                <li>间</li>
+                <li>1</li>
+                <li class="primary">¥20000</li>
+                <li class="primary">¥20000</li>
+            </ul>
+        </div>
+        <!--厨卫设备-->
+        <div class="module">
+            <h1>
+                <label class="label-group" for="attr2">
+                    <i class="icon"></i>
+                </label>
+                <input type="checkbox" id="attr2" hidden>
+                厨卫设备
+            </h1>
+            <ul>
+                <li>
+                    <label class="label-item" for="2">
+                        <i class="icon"></i>
+                    </label>
+                    <input type="checkbox" id="2" hidden>
+                </li>
+                <li>CP000068</li>
+                <li>厨房高柜</li>
+                <li>厨房</li>
+                <li>尚品宅配</li>
+                <li>个</li>
+                <li>1</li>
+                <li class="primary">¥20000</li>
+                <li class="primary">¥20000</li>
+            </ul>
+        </div>
+        <!--背景收纳-->
+        <div class="module">
+            <h1>
+                <label class="label-group" for="attr3">
+                    <i class="icon"></i>
+                </label>
+                <input type="checkbox" id="attr3" hidden>
+                背景收纳
+            </h1>
+            <ul>
+                <li>
+                    <label class="label-item is-checked" for="3">
+                        <i class="icon"></i>
+                    </label>
+                    <input type="checkbox" id="3" checked="checked" hidden>
+                </li>
+                <li>CP000068</li>
+                <li>榻榻米榻榻米榻榻米榻榻米</li>
+                <li>厨房</li>
+                <li>尚品宅配</li>
+                <li>个</li>
+                <li>1</li>
+                <li class="primary">¥20000</li>
+                <li class="primary">¥20000</li>
+            </ul>
+            <ul>
+                <li>
+                    <label class="label-item" for="4">
+                        <i class="icon"></i>
+                    </label>
+                    <input type="checkbox" id="4" hidden>
+                </li>
+                <li>CP000068</li>
+                <li>榻榻米榻榻米榻榻米榻榻米</li>
+                <li>厨房</li>
+                <li>尚品宅配</li>
+                <li>个</li>
+                <li>1</li>
+                <li class="primary">¥20000</li>
+                <li class="primary">¥20000</li>
+            </ul>
+        </div>
+        <!--功能配件-->
+        <div class="module">
+            <h1>
+                <label class="label-group" for="attr4">
+                    <i class="icon"></i>
+                </label>
+                <input type="checkbox" id="attr4" hidden>
+                功能配件
+            </h1>
+            <ul>
+                <li>
+                    <label class="label-item is-checked" for="5">
+                        <i class="icon"></i>
+                    </label>
+                    <input type="checkbox" id="5" checked="checked" hidden>
+                </li>
+                <li>CP000068</li>
+                <li>榻榻米榻榻米榻榻米榻榻米</li>
+                <li>厨房</li>
+                <li>尚品宅配</li>
+                <li>个</li>
+                <li>1</li>
+                <li class="primary">¥20000</li>
+                <li class="primary">¥20000</li>
+            </ul>
+            <ul>
+                <li>
+                    <label class="label-item" for="6">
+                        <i class="icon"></i>
+                    </label>
+                    <input type="checkbox" id="6" hidden>
+                </li>
+                <li>CP000068</li>
+                <li>榻榻米榻榻米榻榻米榻榻米</li>
+                <li>厨房</li>
+                <li>尚品宅配</li>
+                <li>个</li>
+                <li>1</li>
+                <li class="primary">¥20000</li>
+                <li class="primary">¥20000</li>
+            </ul>
+            <ul>
+                <li>
+                    <label class="label-item is-checked" for="7">
+                        <i class="icon"></i>
+                    </label>
+                    <input type="checkbox" id="7" checked="checked" hidden>
+                </li>
+                <li>CP000068</li>
+                <li>榻榻米榻榻米榻榻米榻榻米</li>
+                <li>厨房</li>
+                <li>尚品宅配</li>
+                <li>个</li>
+                <li>1</li>
+                <li class="primary">¥20000</li>
+                <li class="primary">¥20000</li>
+            </ul>
+        </div>
+        <!--结算-->
+        <div class="balance-nav">
+            <div class="fl">
+                <label for="checkAll">
+                    <i class="icon"></i>全选
+                </label>
+                <input type="checkbox" id="checkAll" hidden>
+                <span class="delete">删除选中的商品</span>
+            </div>
+            <div class="info fr">
+                <span class="fl plr15">已选择<i class="primary">32</i>件商品</span>
+                <span class="fl line"></span>
+                <span class="fl plr15">总价：<i class="primary">¥20009000</i></span>
+            </div>
+            <div class="btn-submit">去结算</div>
+        </div>
+    </section>
+
+    <!--footer-->
+    <footer> Copyright© 2016 上海品宅装饰科技有限公司   2015-2016，All Rights Reserved   </footer>
+
+    <!--js-->
+    <script src="lib/frozenui/lib/zepto.min.js"></script>
+    <script src="lib/frozenui/js/frozen.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>

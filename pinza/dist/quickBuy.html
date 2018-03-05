@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>品宅-快速下单</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="msapplication-tap-highlight" content="no">
+    <link rel="stylesheet" href="lib/frozenui/css/frozen.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        (function (doc, win) {
+            // 取得html的引用
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth
+                    if (!clientWidth) return
+                    clientWidth = (clientWidth > 2800) ? 2800 : clientWidth
+                    clientWidth = (clientWidth < 768) ? 768 : clientWidth
+                    docEl.style.fontSize = 100 * (clientWidth / 1024) + 'px'
+                }
+            if (!doc.addEventListener) return
+            win.addEventListener(resizeEvt, recalc, false)
+            recalc()
+
+        })(document, window)
+    </script>
+</head>
+<body>
+    <!--header-->
+    <header>
+        <a href="index.html"><img src="images/logo.png" class="fl" alt=""></a>
+        <div class="menu fr">
+            <a href="quickBuy.html"><i class="icon icon-order"></i>快速下单</a>
+            <a href="cart.html">
+                <i class="icon icon-cart"></i>
+                <i class="cart-total">2</i>
+                购物清单
+            </a>
+            <a href="my.html"><i class="icon icon-user"></i>个人中心</a>
+        </div>
+    </header>
+
+    <!--section-->
+    <section class="cart-wrapper">
+        <div class="title">个人中心>快速下单</div>
+        <!--选择表单-->
+        <div class="form">
+            <div class="ui-row-flex ui-whitespace">
+                <div class="ui-col ui-col">
+                    <div class="input">
+                        <select name="city">
+                            <option value ="">城市</option>
+                            <option value ="1">城市1</option>
+                            <option value ="2">城市2</option>
+                            <option value="3">城市3</option>
+                            <option value="4">城市4</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="ui-col ui-col">
+                    <div class="input">
+                        <select name="program">
+                            <option value ="">项目</option>
+                            <option value ="1">项目1</option>
+                            <option value ="2">项目2</option>
+                            <option value="3">项目3</option>
+                            <option value="4">项目4</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="ui-col ui-col">
+                    <div class="input">
+                        <select name="building">
+                            <option value ="">楼栋</option>
+                            <option value ="1">楼栋1</option>
+                            <option value ="2">楼栋2</option>
+                            <option value="3">楼栋3</option>
+                            <option value="4">楼栋4</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="ui-col ui-col">
+                    <div class="input">
+                        <select>
+                            <option value ="">单元</option>
+                            <option value ="1">单元1</option>
+                            <option value ="2">单元2</option>
+                            <option value="3">单元3</option>
+                            <option value="4">单元4</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="ui-col ui-col">
+                    <div class="input">
+                        <select>
+                            <option value ="">室号</option>
+                            <option value ="1">室号1</option>
+                            <option value ="2">室号2</option>
+                            <option value="3">室号3</option>
+                            <option value="4">室号4</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="ui-col ui-col">
+                    <div class="input">
+                        <select name="houseName">
+                            <option value ="">户型名称</option>
+                            <option value ="1">户型1</option>
+                            <option value ="2">户型2</option>
+                            <option value="3">户型3</option>
+                            <option value="4">户型4</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="ui-col ui-col">
+                    <div class="input">
+                        <select name="groupName">
+                            <option value ="">方案名称</option>
+                            <option value ="1">方案1</option>
+                            <option value ="2">方案2</option>
+                            <option value="3">方案3</option>
+                            <option value="4">方案4</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="thead" style="display: none">
+            <ul>
+                <li>
+                    <label for="checkAll">
+                        <i class="icon"></i>全选
+                    </label>
+                    <input type="checkbox" id="checkAll" hidden>
+                </li>
+                <li>产品编号</li>
+                <li>产品名称</li>
+                <li>使用位置</li>
+                <li>品牌</li>
+                <li>单位</li>
+                <li>数量</li>
+                <li>单价</li>
+                <li>合计</li>
+            </ul>
+        </div>
+        <!--风格色系-->
+        <!--<div class="module">-->
+            <!--<h1>-->
+                <!--<label class="label-group is-checked" for="attr1">-->
+                    <!--<i class="icon"></i>-->
+                <!--</label>-->
+                <!--<input type="checkbox" id="attr1" checked="checked" hidden>-->
+                <!--风格色系-->
+            <!--</h1>-->
+            <!--<ul>-->
+                <!--<li>-->
+                    <!--<label class="label-item is-checked" for="1">-->
+                        <!--<i class="icon"></i>-->
+                    <!--</label>-->
+                    <!--<input type="checkbox" id="1" checked="checked" hidden>-->
+                <!--</li>-->
+                <!--<li>CP000068</li>-->
+                <!--<li>卧室</li>-->
+                <!--<li>卧室</li>-->
+                <!--<li>尚品宅配</li>-->
+                <!--<li>间</li>-->
+                <!--<li>1</li>-->
+                <!--<li class="primary">¥20000</li>-->
+                <!--<li class="primary">¥20000</li>-->
+            <!--</ul>-->
+        <!--</div>-->
+        <!--厨卫设备-->
+        <!--<div class="module">-->
+            <!--<h1>-->
+                <!--<label class="label-group" for="attr2">-->
+                    <!--<i class="icon"></i>-->
+                <!--</label>-->
+                <!--<input type="checkbox" id="attr2" hidden>-->
+                <!--厨卫设备-->
+            <!--</h1>-->
+            <!--<ul>-->
+                <!--<li>-->
+                    <!--<label class="label-item" for="2">-->
+                        <!--<i class="icon"></i>-->
+                    <!--</label>-->
+                    <!--<input type="checkbox" id="2" hidden>-->
+                <!--</li>-->
+                <!--<li>CP000068</li>-->
+                <!--<li>厨房高柜</li>-->
+                <!--<li>厨房</li>-->
+                <!--<li>尚品宅配</li>-->
+                <!--<li>个</li>-->
+                <!--<li>1</li>-->
+                <!--<li class="primary">¥20000</li>-->
+                <!--<li class="primary">¥20000</li>-->
+            <!--</ul>-->
+        <!--</div>-->
+        <!--背景收纳-->
+        <!--<div class="module">-->
+            <!--<h1>-->
+                <!--<label class="label-group" for="attr3">-->
+                    <!--<i class="icon"></i>-->
+                <!--</label>-->
+                <!--<input type="checkbox" id="attr3" hidden>-->
+                <!--背景收纳-->
+            <!--</h1>-->
+            <!--<ul>-->
+                <!--<li>-->
+                    <!--<label class="label-item is-checked" for="3">-->
+                        <!--<i class="icon"></i>-->
+                    <!--</label>-->
+                    <!--<input type="checkbox" id="3" checked="checked" hidden>-->
+                <!--</li>-->
+                <!--<li>CP000068</li>-->
+                <!--<li>榻榻米榻榻米榻榻米榻榻米</li>-->
+                <!--<li>厨房</li>-->
+                <!--<li>尚品宅配</li>-->
+                <!--<li>个</li>-->
+                <!--<li>1</li>-->
+                <!--<li class="primary">¥20000</li>-->
+                <!--<li class="primary">¥20000</li>-->
+            <!--</ul>-->
+            <!--<ul>-->
+                <!--<li>-->
+                    <!--<label class="label-item" for="4">-->
+                        <!--<i class="icon"></i>-->
+                    <!--</label>-->
+                    <!--<input type="checkbox" id="4" hidden>-->
+                <!--</li>-->
+                <!--<li>CP000068</li>-->
+                <!--<li>榻榻米榻榻米榻榻米榻榻米</li>-->
+                <!--<li>厨房</li>-->
+                <!--<li>尚品宅配</li>-->
+                <!--<li>个</li>-->
+                <!--<li>1</li>-->
+                <!--<li class="primary">¥20000</li>-->
+                <!--<li class="primary">¥20000</li>-->
+            <!--</ul>-->
+        <!--</div>-->
+        <!--功能配件-->
+        <!--<div class="module">-->
+            <!--<h1>-->
+                <!--<label class="label-group" for="attr4">-->
+                    <!--<i class="icon"></i>-->
+                <!--</label>-->
+                <!--<input type="checkbox" id="attr4" hidden>-->
+                <!--功能配件-->
+            <!--</h1>-->
+            <!--<ul>-->
+                <!--<li>-->
+                    <!--<label class="label-item" for="6">-->
+                        <!--<i class="icon"></i>-->
+                    <!--</label>-->
+                    <!--<input type="checkbox" id="6" hidden>-->
+                <!--</li>-->
+                <!--<li>CP000068</li>-->
+                <!--<li>榻榻米榻榻米榻榻米榻榻米</li>-->
+                <!--<li>厨房</li>-->
+                <!--<li>尚品宅配</li>-->
+                <!--<li>个</li>-->
+                <!--<li>1</li>-->
+                <!--<li class="primary">¥20000</li>-->
+                <!--<li class="primary">¥20000</li>-->
+            <!--</ul>-->
+        <!--</div>-->
+        <!--结算-->
+        <div class="balance-nav" style="display: none">
+            <div class="info fr">
+                <span class="fl plr15">已选择<i class="primary" id="totalNum">0</i>件商品</span>
+                <span class="fl line"></span>
+                <span class="fl plr15">总价：<i class="primary" id="totalAmount">¥0</i></span>
+            </div>
+            <div class="btn-submit">去结算</div>
+        </div>
+    </section>
+
+    <!--footer-->
+    <footer> Copyright© 2016 上海品宅装饰科技有限公司   2015-2016，All Rights Reserved   </footer>
+
+    <!--js-->
+    <script src="lib/frozenui/lib/zepto.min.js"></script>
+    <script src="lib/frozenui/js/frozen.js"></script>
+    <script src="js/quickBuy.js"></script>
+</body>
+</html>

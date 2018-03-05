@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>订单查找</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="lib/layer/css/layui.css" media="all">
+    <link rel="stylesheet" href="css/login.css" media="all">
+
+    <style>
+        .layui-form-pane {
+            padding: 10px;
+        }
+
+        .layui-form-item {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+
+</div>
+
+<form class="layui-form layui-form-pane" action="">
+    <div class="layui-form-item">
+        <label class="layui-form-label">业主姓名</label>
+        <div class="layui-input-block">
+            <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题"
+                   class="layui-input">
+        </div>
+    </div>
+
+    <div class="select dowebok">
+        <span class="select-span" style="">项目</span>
+
+        <span class="placeholder" style="width: 70%;height:38px;float: right">请选择项目</span>
+        <ul>
+            <li>城中公园</li>
+            <li>苏州</li>
+            <li>青浦</li>
+            <li>杭州</li>
+        </ul>
+        <div style="clear: both"></div>
+    </div>
+
+    <div class="select dowebok">
+        <span class="select-span" style="">楼栋号</span>
+
+        <span class="placeholder" style="width: 70%;height:38px;float: right">请选择楼栋号</span>
+        <ul>
+            <li>一号楼</li>
+            <li>二号楼</li>
+            <li>三号楼</li>
+            <li>四号楼</li>
+        </ul>
+        <div style="clear: both"></div>
+    </div>
+
+    <div class="select dowebok">
+        <span class="select-span" style="">单元号</span>
+
+        <span class="placeholder" style="width: 70%;height:38px;float: right">请选择单元号</span>
+        <ul>
+            <li>请选择单元号</li>
+            <li>一单元</li>
+            <li>二单元</li>
+            <li>三单元</li>
+            <li>四单元</li>
+        </ul>
+        <div style="clear: both"></div>
+    </div>
+
+    <div class="select dowebok">
+        <span class="select-span" style="">房号</span>
+
+        <span class="placeholder" style="width: 70%;height:38px;float: right">请选择房号</span>
+        <ul>
+            <li>201</li>
+            <li>202</li>
+            <li>301</li>
+            <li>304</li>
+        </ul>
+        <div style="clear: both"></div>
+    </div>
+    <div class="btn-serch">
+        <div class="input-group">
+            <button id="submit" type="button" class="load-btn">搜索</button>
+        </div>
+    </div>
+    <table class="layui-hide" id="test" lay-filter="demoEvent"></table>
+    <table class="layui-hide" id="test-back" lay-filter="demoEvent"></table>
+    <div class="layui-btn layui-btn-primary btn-acceptance" style="display: none">
+        <a href="acceptance.html">合并验收</a>
+    </div>
+
+</form>
+
+
+<script src="lib/layer/layui.all.js" charset="utf-8"></script>
+<script src="js/jquery.min.js" charset="utf-8"></script>
+<script>
+    $(".btn-serch").click(function () {
+        $(".btn-acceptance").show()
+    })
+</script>
+<script>
+    $('.select').on('click', '.placeholder', function (e) {
+        var parent = $(this).closest('.select');
+        if (!parent.hasClass('is-open')) {
+            parent.addClass('is-open');
+            $('.select.is-open').not(parent).removeClass('is-open');
+        } else {
+            parent.removeClass('is-open');
+        }
+        e.stopPropagation();
+    }).on('click', 'ul>li', function () {
+        var parent = $(this).closest('.select');
+        parent.removeClass('is-open').find('.placeholder').text($(this).text());
+        parent.css({"font-weight":"300","color":"#0a0a0a"})
+    });
+
+    $('body').on('click', function () {
+        $('.select.is-open').removeClass('is-open');
+    });
+</script>
+
+
+<script>
+    layui.use('table', function () {
+        var table = layui.table;
+
+
+        table.render({
+            elem: '#test'
+            , url: 'data.json'
+            , type: 'json'
+            , cellMinWidth: 80 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+            , cols: [[
+                {field: 'id', title: '订单号'}
+                , {field: 'date', title: '日期'}
+                , {field: 'sex', event: 'setSign', title: '明细', templet: '#usernameTpl'}
+
+            ]]
+
+        });
+        table.render({
+            elem: '#test-back'
+            , url: 'data-back.json'
+            , type: 'json'
+            , cellMinWidth: 80 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+            , cols: [[
+                {field: 'id', title: '退单号'}
+                , {field: 'date', title: '日期'}
+                , {field: 'sex', event: 'setSign', title: '明细', templet: '#usernameTpl'}
+
+            ]]
+
+        });
+
+
+        //监听单元格事件
+        /*      table.on('tool(demoEvent)', function (obj) {
+                  var data = obj.data;
+                  if (obj.event === 'setSign') {
+                      location.href = 'login.html';
+
+                  }
+              });
+      */
+    });
+
+
+</script>
+
+<script type="text/html" id="usernameTpl">
+
+    <a href="details.html" class="layui-table-link" style="color: #bd1d2b;">{{ d.sex }}</a>
+
+</script>
+
+</body>
+</html>
+

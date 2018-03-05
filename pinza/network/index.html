@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>品宅导航</title>
+
+    <link rel="shortcut icon" href="">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/swiper.min.css">
+
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            font-family: PingFang SC, Lantinghei SC, Helvetica Neue, Helvetica, Arial,
+            Microsoft YaHei, \\5FAE\8F6F\96C5\9ED1, STHeitiSC-Light, simsun, \\5B8B\4F53,
+            WenQuanYi Zen Hei, WenQuanYi Micro Hei, "sans-serif";
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-size-adjust: 100% !important;
+            -ms-text-size-adjust: 100% !important;
+            -webkit-text-size-adjust: 100% !important;
+        }
+
+        .swiper-container {
+            width: 100%;
+            max-height: 405px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .swiper-slide {
+            background-size: cover;
+            background-position: center;
+        }
+
+        .swiper-pagination-bullet {
+            background: white;
+            opacity: 1;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #ff8224;
+        }
+
+        .gallery-top {
+            width: 100%;
+        }
+
+        .gallery-thumbs {
+            background: #0a0a0a;
+            height: 20%;
+            box-sizing: border-box;
+            padding: 10px 0;
+        }
+
+        .gallery-thumbs .swiper-slide {
+            height: 100%;
+            opacity: 0.4;
+        }
+
+        .gallery-thumbs .swiper-slide-active {
+            opacity: 1;
+        }
+
+        /*index*/
+        .topbg {
+            width: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+            background: #F6F6F6;
+            margin-top: 70px;
+            /*max-height: 405px;*/
+        }
+
+        .topbg-right {
+            margin-top: 70px;
+            /*max-height: 405px;*/
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        .topbg-right::-webkit-scrollbar {
+            display: none
+        }
+
+        @media only screen and  (min-width: 768px) {
+            .ibox-content-right {
+                /*height: 350px;*/
+            }
+
+            .navbar-nav {
+                float: right;
+                margin: 0;
+            }
+
+            .navbar-nav > li > a {
+                padding-top: 10px;
+                padding-bottom: 10px
+            }
+        }
+
+        @media only screen and  (max-width: 1200px) {
+            .topbg-right {
+                /*max-height: 350px;*/
+            }
+        }
+
+        .topbg video {
+            position: relative;
+            width: 100%;
+            top: 0;
+            vertical-align: middle;
+            background: #F6F6F6;
+        }
+
+        /*     @media only screen and (min-width: 1200px) {
+                 .topbg video {
+                     margin-top: -80px;
+                 }
+             }
+     */
+        .swiper-container {
+            width: 100%;
+        }
+
+        .swiper-slide-active {
+            width: 100% !important;
+        }
+
+        /*非常重要的样式让背景图片100%适应整个屏幕*/
+
+        .my-navbar {
+            box-shadow: 0 1px 1px #a09f9f;
+            padding: 6px 0;
+            transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+        }
+
+        .my-navbar a {
+            background: transparent !important;
+            color: #060606
+        }
+
+        .my-navbar a:hover {
+            color: #45bcf9 !important;
+            background: transparent;
+            outline: 0
+        }
+
+        .my-navbar a {
+            transition: color 0.5s ease-in-out;
+        }
+
+        /*-webkit-transition ;-moz-transition*/
+        .top-nav {
+            padding: 0;
+            background: #000;
+        }
+
+        .top-nav a {
+            color: white;
+        }
+
+        button.navbar-toggle {
+            background-color: #020000;
+        }
+
+        /*整个背景都是transparent透明的，会看不到，所以再次覆盖一下*/
+        button.navbar-toggle > span.icon-bar {
+            background-color: #ffffff
+        }
+
+        .tx-center {
+            text-align: center;
+        }
+
+        .tx-center p {
+            margin-top: 20px;
+            font-weight: 400;
+        }
+
+        .ibox {
+            margin-top: 20px;
+        }
+
+        .box-shadow {
+            transition: .6s all;
+        }
+
+        .box-shadow:hover {
+            box-shadow: 0 3px 18px #8d8d8d;
+        }
+
+        .ibox-content-box div {
+            /*display: none;*/
+            line-height: 24px;
+        }
+
+        .list-head-left {
+            font-weight: 600;
+        }
+
+        .list-head-right {
+            float: right;
+            height: 20px;
+            line-height: 20px;
+            font-size: 12px;
+            border: 1px solid #4285f4;
+            padding: 0 12px;
+            color: #4285f4;
+        }
+
+        .ibox-content-list span {
+            margin-right: 10px;
+            cursor: pointer;
+            transition: .6s all;
+            font-weight: 600;
+        }
+
+        .ibox-content-list span:hover {
+            color: red;
+        }
+
+        .ibox-content-list {
+            display: inline-block;
+        }
+
+        .logo img {
+            max-height: 40px;
+        }
+
+        @media only screen and  (max-width: 1000px) {
+            .logo {
+                display: block;
+                width: 50px;
+                margin: 0 auto;
+            }
+
+        }
+
+        @media only screen and  (max-width: 768px) {
+            .container-fluid {
+                padding-right: 5px;
+                padding-left: 5px;
+            }
+
+            .topbg-right {
+                margin-top: 20px;
+
+            }
+        }
+
+        .navbar-toggle {
+            border-radius: 0;
+            padding: 8px 12px;
+
+        }
+
+        /*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+        select::-ms-expand {
+            display: none;
+        }
+
+        .form-control {
+            width: 100%;
+            appearance: none;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            border: 1px solid #dddddd;
+            padding: 8px;
+            background: url("http://ourjs.github.io/static/2015/arrow.png") no-repeat scroll right center transparent;
+            padding-right: 14px;
+
+            border-radius: 0;
+            transition: .6s all;
+        }
+
+        .form-control:hover {
+            border-color: #1ab394;
+        }
+
+        .form-control:focus {
+            border-color: #1ab394;
+            box-shadow: none;
+
+        }
+
+        .ibox-list-se div {
+            display: none;
+        }
+
+        .ibox-list-se span {
+            margin-right: 10px;
+            font-size: 16px;
+        }
+
+        /*list*/
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .ul-wrapper li {
+            padding: 0 0 .75rem 1rem;
+            position: relative;
+        }
+
+        .ul-wrapper .triangle {
+            position: absolute;
+            top: .3rem;
+            left: .3rem;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-color: #fff #fff #fff #4285f4;
+            -webkit-transform-origin: 25% center;
+            transform-origin: 25% center;
+            border-width: 4px;
+        }
+
+        .li-wrapper .con span a {
+            color: #3d464d;
+            cursor: pointer;
+            line-height: 1.5;
+        }
+
+        .li-wrapper .con span a:hover {
+            color: #4285f4;
+        }
+
+        .li-wrapper .time {
+            padding-top: 3px;
+            display: inline-block;
+            color: #a4abb1;
+            font-weight: 300;
+        }
+
+        .ul-system li {
+            color: #3d464d;
+            cursor: pointer;
+            line-height: 2;
+        }
+
+        .ul-system li .con i {
+            padding-right: 10px;
+        }
+
+        .row {
+            margin-right: -10px;
+            margin-left: -10px;
+        }
+    </style>
+
+</head>
+
+<body class="gray-bg container-fluid">
+
+<nav class="navbar navbar-fixed-top my-navbar" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#example-navbar-collapse">
+                <span class="sr-only">切换导航</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="logo">
+                <img src="img/logo.png">
+            </div>
+            <!-- <a class="navbar-brand" href="#">
+                 品宅导航
+             </a>-->
+        </div>
+
+
+        <div class="collapse navbar-collapse" id="example-navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active "><a href="#">登录</a></li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="topbg box-shadow">
+
+                <div class="swiper-container gallery-top">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <img src="img/_MG_6814.jpg" style="width: 100%">
+                            </a>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <img src="img/_MG_6819.jpg" style="width: 100%">
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <img src="img/_MG_6821.jpg" style="width: 100%">
+                            </a>
+                        </div>
+
+                    </div>
+                    <!-- Add Arrows -->
+                    <div class="swiper-button-next swiper-button-white"></div>
+                    <div class="swiper-button-prev swiper-button-white"></div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+
+                </div>
+
+            </div>
+            <div class="ibox float-e-margins box-shadow">
+                <div class="ibox-title">
+                    <h5>品宅导航</h5>
+                    <!--  <div class="ibox-tools">
+                          <a class="collapse-link">
+                              <i class="fa fa-chevron-up"></i>
+                          </a>
+                          <a class="close-link">
+                              <i class="fa fa-times"></i>
+                          </a>
+                      </div>-->
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-md-2 col-sm-3 col-xs-4">
+                            <div class="ibox float-e-margins tx-center">
+                                <a href="http://sale.pinza.ltd/" target="_Blank">
+                                    <img src="img/web.png" width="100%"></a>
+                                <p>PT2.0前台</p>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-3 col-xs-4">
+                            <div class="ibox float-e-margins tx-center">
+                                <a href="http://pt.pinza.ltd/login" target="_Blank">
+                                    <img src="img/admin.png" width="100%"></a>
+                                <p>PT2.0后台</p>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-3 col-xs-4">
+                            <div class="ibox float-e-margins tx-center">
+                                <a href="https://exmail.qq.com/login" target="_Blank">
+                                    <img src="img/mail.png" width="100%"></a>
+                                <p>企业邮箱</p>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-3 col-xs-4">
+                            <div class="ibox float-e-margins tx-center">
+                                <a href="http://pt.pinza.ltd/productpc" target="_Blank">
+                                    <img src="img/product.png" width="100%"></a>
+                                <p>公司产品库</p>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-3 col-xs-4">
+                            <div class="ibox float-e-margins tx-center">
+                                <a href="http://nas.pinza.ltd:5000/" target="_Blank">
+                                    <img src="img/nas.png" width="100%"></a>
+                                <p>NAS2.0</p>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-3 col-xs-4">
+                            <div class="ibox float-e-margins tx-center">
+                                <a href="http://photo.pinza.ltd:666/photo/#!Albums" target="_Blank">
+                                    <img src="img/image.png" width="100%"></a>
+                                <p>项目照片</p>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-3 col-xs-4">
+                            <div class="ibox float-e-margins tx-center">
+                                <a href="http://erp.pinza.ltd/pages/login_@del.jsp" target="_Blank">
+                                    <img src="img/AirsoftERP.png" width="100%"></a>
+                                <p>AirsoftERP</p>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-3 col-xs-4">
+                            <div class="ibox float-e-margins tx-center">
+                                <a href="http://pt.show.pinza.ltd/" target="_Blank">
+                                    <img src="img/web.png" width="100%"></a>
+                                <p>PT演示前台</p>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-3 col-xs-4">
+                            <div class="ibox float-e-margins tx-center">
+                                <a href="http://pt2.show.pinza.ltd/login" target="_Blank">
+                                    <img src="img/admin.png" width="100%"></a>
+                                <p>PT演示后台</p>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-3 col-xs-4">
+                            <div class="ibox float-e-margins tx-center">
+                                <a href="http://pt2.show.pinza.ltd/login" target="_Blank">
+                                    <img src="img/admin.png" width="100%"></a>
+                                <p>PT演示后台</p>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-3 col-xs-4">
+                            <div class="ibox float-e-margins tx-center">
+                                <a href="http://pt2.show.pinza.ltd/login" target="_Blank">
+                                    <img src="img/admin.png" width="100%"></a>
+                                <p>PT演示后台</p>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!--项目照片-->
+            <div class="ibox float-e-margins box-shadow">
+                <div class="ibox-title">
+                    <h5>项目展示</h5>
+
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-4 col-xs-6">
+                            <div class="ibox float-e-margins tx-center">
+                                <a href="https://yun.kujiale.com/design/3FO4MM94E8G3/show?fromqrcode=true&from=singlemessage&isappinstalled=0"
+                                   target="_Blank">
+                                    <img src="img/product01.png" width="100%"></a>
+                                <p>庆丰</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6">
+                            <div class="ibox float-e-margins tx-center">
+                                <a href="https://yun.kujiale.com/design/3FO4MJBTJM3X/show?from=singlemessage&fromqrcode=true"
+                                   target="_Blank">
+                                    <img src="img/product02.png" width="100%"></a>
+                                <p>常州望府</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6">
+                            <div class="ibox float-e-margins tx-center">
+                                <a href="https://yun.kujiale.com/design/3FO4MCNPFVP9/show?fromqrcode=true&from=singlemessage"
+                                   target="_Blank">
+                                    <img src="img/product03.png" width="100%"></a>
+                                <p>杭州景瑞天赋</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6">
+                            <div class="ibox float-e-margins tx-center">
+                                <a href="https://yun.kujiale.com/design/3FO4M6GURXJB/show?from=singlemessage&fromqrcode=true"
+                                   target="_Blank">
+                                    <img src="img/product04.png" width="100%"></a>
+                                <p>杭州景瑞天赋</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6">
+                            <div class="ibox float-e-margins tx-center">
+                                <a href="https://yun.kujiale.com/design/3FO4M6BLU52X/show?fromqrcode=true"
+                                   target="_Blank"> <img
+                                        src="img/product05.png" width="100%"></a>
+                                <p>杭州景瑞天赋</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6">
+                            <div class="ibox float-e-margins tx-center">
+                                <a href="https://yun.kujiale.com/design/3FO4MBTLELCG/show?fromqrcode=true&from=singlemessage"
+                                   target="_Blank">
+                                    <img src="img/product06.png" width="100%"></a>
+                                <p>上海地产</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6">
+                            <div class="ibox float-e-margins tx-center">
+                                <a href="https://yun.kujiale.com/design/3FO4MM94E8G3/show?fromqrcode=true&from=singlemessage&isappinstalled=0"
+                                   target="_Blank">
+                                    <img src="img/product01.png" width="100%"></a>
+                                <p>庆丰</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6">
+                            <div class="ibox float-e-margins tx-center">
+                                <a href="https://yun.kujiale.com/design/3FO4MJBTJM3X/show?from=singlemessage&fromqrcode=true"
+                                   target="_Blank">
+                                    <img src="img/product02.png" width="100%"></a>
+                                <p>常州望府</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6">
+                            <div class="ibox float-e-margins tx-center">
+                                <a href="https://yun.kujiale.com/design/3FO4MCNPFVP9/show?fromqrcode=true&from=singlemessage"
+                                   target="_Blank">
+                                    <img src="img/product03.png" width="100%"></a>
+                                <p>杭州景瑞天赋</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="ibox-right float-e-margins topbg-right box-shadow">
+                <div class=""></div>
+                <div class="ibox-title">
+                    <h5>公司公告</h5>
+                    <!--          <div class="ibox-content-list">
+                                  <span>人事调动</span>
+                                  <span>公示通知</span>
+                                  <span>活动项目</span>
+                              </div>-->
+
+                </div>
+                <div class="ibox-content ibox-content-right">
+                    <div class="ibox-content-box">
+                        <div class="list-head">
+                            <span class="list-head-left">公告测试（IT测试，请飘过）</span>
+                            <span class="list-head-right">组织和人事</span>
+                            <p style="font-size:12px;color: #999">2018-01-17 18:28</p>
+                        </div>
+                        <div class="content-tab" style="display: block">
+                            <p>各位宅主：</p>
+
+                            <p>为公司更好的发展，各项目顺利运营，经公司服务生讨论并在遵从员工本人意愿的基础上，特对以下人员进行调动，通知如下：
+
+                                原汇金、龙元项目施工员宋帅帅调动至青浦城中公园项目一期担任施工员。原岗位与职级不变，工作汇报给青浦城中公园项目总经理许海涛；调动时间从2018年1月2日起生效。
+
+                                特此通知！</p>
+                            <p>为公司更好的发展，各项目顺利运营，经公司服务生讨论并在遵从员工本人意愿的基础上，特对以下人员进行调动，通知如下：
+
+                                原汇金、龙元项目施工员宋帅帅调动至青浦城中公园项目一期担任施工员。原岗位与职级不变，工作汇报给青浦城中公园项目总经理许海涛；调动时间从2018年1月2日起生效。
+
+                                特此通知！</p>
+
+
+                            <p>
+                                <a href="http://nas.pinza.ltd:5000/fsdownload/9NKo0xTwh/%E6%99%AF%E7%91%9E.%E5%A4%A9%E8%B5%8B%E7%A4%BA%E8%8C%83%E5%8C%BA"
+                                   target="_blank">附件下载</a></p>
+
+
+                            <p>上海品宅装饰科技有限公司</p>
+                        </div>
+                        <!--   <div class="content-tab embed-responsive embed-responsive-4by3">
+                               <iframe class="embed-responsive-item" src=""></iframe>
+                           </div>
+                           <div class="content-tab">
+                               222222222222222222222
+                           </div>-->
+                    </div>
+
+                </div>
+            </div>
+            <div class="ibox float-e-margins box-shadow">
+                <div class="ibox-title">
+                    <h5>更多公告</h5>
+                </div>
+                <div class="ibox-content">
+                    <ul class="ul-wrapper">
+                        <li class="li-wrapper">
+                            <span class="triangle"></span>
+                            <div class="con">
+                                <span><a href="http://cloud.pinza.ltd/search/57">晒打开采集卡恒大打你卡家大到大吉大利较大 </a> </span>
+                            </div>
+                            <div class="con-time">
+                                <span class="time">3分钟前</span>
+                            </div>
+                        </li>
+                        <li class="li-wrapper">
+                            <span class="triangle"></span>
+                            <div class="con">
+                                <span><a href="http://cloud.pinza.ltd/search/57">晒对骄傲的叫嚣ID就啊的打开采集卡恒大打你卡家大到大吉大利较大 </a> </span>
+                            </div>
+                            <div class="con-time">
+                                <span class="time">一天前</span>
+                            </div>
+                        </li>
+                        <li class="li-wrapper">
+                            <span class="triangle"></span>
+                            <div class="con">
+                                <span><a href="http://cloud.pinza.ltd/search/57">晒打开采集卡恒大啊好点就啊活动拉开打开打你卡家大到大吉大利较大 </a> </span>
+                            </div>
+                            <div class="con-time">
+                                <span class="time">三天前</span>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+
+
+            </div>
+
+            <div class="ibox float-e-margins box-shadow">
+                <div class="ibox-title">
+                    <h5>员工入职指引</h5>
+                </div>
+                <div class="ibox-content">
+                    <ul class="ul-wrapper">
+                        <li class="li-wrapper">
+                            <span class="triangle"></span>
+                            <div class="con">
+                                <span><a href="search.html" target="_blank">办公指引 </a> </span>
+                            </div>
+                         <!--   <div class="con-time">
+                                <span class="time">3分钟前</span>
+                            </div>-->
+                        </li>
+                        <li class="li-wrapper">
+                            <span class="triangle"></span>
+                            <div class="con">
+                                <span><a href="search.html" target="_blank">公司系统使用指引(请自行将以下系统的IP地址保存为书签)</a> </span>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+            </div>
+
+            <div class="ibox float-e-margins box-shadow">
+                <div class="ibox-title">
+                    <h5>制度查询</h5>
+                </div>
+                <!--      <div class="ibox-content ibox-heading">
+                          <h3><i class="fa fa-envelope-o"></i> 新消息</h3>
+                          <small><i class="fa fa-tim"></i> 您有22条未读消息</small>
+                      </div>-->
+                <div class="ibox-content">
+                    <ul class="ul-system">
+                        <li class="li-wrapper">
+                            <div class="con">
+                                <span><a href="#"><i class="fa fa-folder"></i>品宅</a> </span>
+                            </div>
+
+                        </li>
+                        <li class="li-wrapper">
+                            <div class="con">
+                                <span><a href="#"><i class="fa fa-folder"></i>人力行政部</a> </span>
+                            </div>
+
+                        </li>
+                        <li class="li-wrapper">
+                            <div class="con">
+                                <span><a href="#"><i class="fa fa-folder"></i>财务部</a> </span>
+                            </div>
+
+                        </li>
+                        <li class="li-wrapper">
+                            <div class="con">
+                                <span><a href="#"><i class="fa fa-folder"></i>市场营销部</a> </span>
+                            </div>
+
+                        </li>
+                        <li class="li-wrapper">
+                            <div class="con">
+                                <span><a href="#"><i class="fa fa-folder"></i> 信息化中心</a> </span>
+                            </div>
+                        </li>
+                        <li class="li-wrapper">
+                            <div class="con">
+                                <span><a href="#"><i class="fa fa-folder"></i> 供应链中心</a> </span>
+                            </div>
+                        </li>
+                        <li class="li-wrapper">
+                            <div class="con">
+                                <span><a href="#"><i class="fa fa-folder"></i> 产品研发中心</a> </span>
+                            </div>
+                        </li>
+                        <li class="li-wrapper">
+                            <div class="con">
+                                <span><a href="#"><i class="fa fa-folder"></i> 技术研发中心</a> </span>
+                            </div>
+                        </li>
+                        <li class="li-wrapper">
+                            <div class="con">
+                                <span><a href="#"><i class="fa fa-folder"></i> 集栋工程</a> </span>
+                            </div>
+                        </li>
+                        <li class="li-wrapper">
+                            <div class="con">
+                                <span><a href="#"><i class="fa fa-folder"></i> 品装设计</a> </span>
+                            </div>
+                        </li>
+                        <li class="li-wrapper">
+                            <div class="con">
+                                <span><a href="#"><i class="fa fa-folder"></i> 品装项目部</a> </span>
+                            </div>
+                        </li>
+                        <li class="li-wrapper">
+                            <div class="con">
+                                <span><a href="#"><i class="fa fa-folder"></i> 品装市场部</a> </span>
+                            </div>
+                        </li>
+                        <li class="li-wrapper">
+                            <div class="con">
+                                <span><a href="#"><i class="fa fa-folder"></i> 品装品控中心</a> </span>
+                            </div>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+
+<script src="js/jquery.min.js?v=2.1.4"></script>
+<script src="js/bootstrap.min.js?v=3.3.6"></script>
+
+<!--滚动条样式-->
+<script src="js/jquery.nicescroll.min.js"></script>
+<!-- Swiper JS -->
+<script src="js/swiper.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+    /*
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    */
+
+
+    var mySwiper2 = new Swiper('.swiper-container', {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        autoplay: {
+            delay: 2000,
+            stopOnLastSlide: false,
+            disableOnInteraction: true,
+        },
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+
+        autoplayDisableOnInteraction: false,
+        paginationClickable: true,
+    });
+    var jj = document.getElementsByClassName('swiper-slide')
+    var gg = jj.length;
+    if (gg == 3) {
+        mySwiper2.destroy(false);
+        mySwiper2.autoplay.stop();
+        ;
+    }
+
+    $('.swiper-container').mouseenter(function () {
+        mySwiper2.autoplay.stop();
+        ;//停止轮播
+    })
+    $('.swiper-container').mouseleave(function () {
+        if (gg == 3) {
+            mySwiper2.lockSwipes();//阻止左右滑动
+            mySwiper2.autoplay.stop();
+            ;
+        } else {
+            mySwiper2.autoplay.start();//释放轮播
+        }
+    });
+
+</script>
+</body>
+
+
+</html>
+
+
+<script>
+    $(window).scroll(function () {
+        if ($(".navbar").offset().top > 50) {
+            $(".navbar-fixed-top").addClass("top-nav");
+        } else {
+            $(".navbar-fixed-top").removeClass("top-nav");
+        }
+    })
+
+
+</script>
+
+<script>
+    $('.ibox-content-list span').click(function () {
+        $(".ibox-content-box div").hide().eq($(this).index()).show()
+    })
+
+
+</script>
+
+<script>
+    $("#selected").on("change", function () {
+        var aaa = $("option:selected", this).index();
+        $(".ibox-list-se div").hide();
+
+        $(".ibox-list-se div").eq(aaa).show();
+
+
+    });
+
+
+</script>
+
+
+<script>
+    $('.topbg-right,body').niceScroll({
+        cursorcolor: "#86919b",//滚动条的颜色
+        cursoropacitymax: 1, //滚动条的透明度，从0-1
+        touchbehavior: false, //使光标拖动滚动像在台式电脑触摸设备
+        cursorwidth: "8px", //滚动条的宽度
+        // cursorheight:"30px",
+        cursorborder: "0", // 游标边框css定义
+        cursorborderradius: "0",//以像素为光标边界半径  圆角
+        autohidemode: true, //是否隐藏滚动条  true的时候默认不显示滚动条，当鼠标经过的时候显示滚动条
+        zindex: "auto",//给滚动条设置z-index值
+        railpadding: {top: 0, right: 5, left: 0, bottom: 0}//滚动条的位置
+    });
+</script>

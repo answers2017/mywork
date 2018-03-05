@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>公告</title>
+    <style>
+        body, html {
+            font-size: 62.5%;
+            font-family: PingFang SC, Lantinghei SC, Helvetica Neue, Helvetica, Arial,
+            Microsoft YaHei, \\5FAE\8F6F\96C5\9ED1, STHeitiSC-Light, simsun, \\5B8B\4F53,
+            WenQuanYi Zen Hei, WenQuanYi Micro Hei, "sans-serif";
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+
+        }
+
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box
+        }
+
+        p {
+            padding: 0;
+            margin: 0;
+        }
+
+        input, select, i {
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .fl {
+            float: left;
+        }
+
+        .fr {
+            float: right;
+        }
+
+        :before,
+        :after {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box
+        }
+
+        .head {
+            display: flex;
+            display: -webkit-flex; /* Safari */
+            font-size: 1.4rem;
+            height: 5rem;
+            line-height: 5rem;
+        }
+
+        .list-left {
+            width: 50%;
+            text-align: center;
+            border-right: 1px solid #cbcbcb;
+            border-bottom: 1px solid #cbcbcb;
+        }
+
+        .list-right {
+            width: 50%;
+            text-align: center;
+            border-bottom: 1px solid #999;
+
+        }
+
+        .content-box {
+            border-bottom: 1px solid #d6d6d6;
+            overflow: hidden;
+        }
+
+        .content-box div {
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .content_text p:first-child {
+            font-size: 1.6rem;
+        }
+
+        .content_text p:last-child {
+            font-size: 1.2rem;
+            color: #999;
+
+        }
+
+        .content_img {
+            width: 12rem;
+            height: 9rem;
+            padding: 1rem;
+        }
+
+        .content_img img {
+            width: 100%;
+        }
+
+        .content_text {
+            width: 60%;
+            margin-top: 1rem;
+        }
+
+        p {
+            margin-bottom: .5rem;
+            line-height: 2rem;
+        }
+
+        /*index*/
+        .form-content {
+            padding: 10px;
+        }
+
+        input, select {
+            -webkit-appearance: none;
+            outline: none;
+
+        }
+
+        select::-ms-expand {
+            display: none;
+        }
+
+        .form-input-wrap {
+        }
+
+        .select {
+            position: relative;
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            color: #cccccc;
+            vertical-align: middle;
+            text-align: left;
+            user-select: none;
+            -webkit-touch-callout: none;
+            height: 36px;
+        }
+
+        .select-span {
+            width: 30%;
+            height: 38px;
+            line-height: 38px;
+            text-align: center;
+            float: left;
+            border: 1px solid #d2d2d2;
+            border-right: none;
+            color: #0a0a0a;
+
+        }
+
+        .select-fr {
+            width: 70%;
+            height: 38px;
+            line-height: 38px;
+            float: right
+        }
+
+        .select-control {
+            width: 100%;
+            height: 100%;
+            border: 1px solid #d2d2d2;
+            border-radius: 0;
+            color: #666;
+        }
+
+        input::-webkit-input-placeholder {
+            font-size: 14px;
+            color: #bdbdbd;
+        }
+
+        input::-moz-placeholder {
+            font-size: 14px;
+
+            color: #bdbdbd;
+        }
+
+        input:-ms-input-placeholder {
+            font-size: 14px;
+
+            color: #bdbdbd;
+        }
+
+        /*baidu*/
+        body, h1, h2, h3, p, div, ol, ul, input, button {
+            margin: 0;
+            padding: 0;
+        }
+
+        input, button, textarea {
+            border: 0;
+            border-radius: 0;
+            background: transparent;
+            -webkit-appearance: none;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        button, input {
+            outline: 0;
+        }
+        #index-card{
+            margin-top: 20px;
+        }
+
+        .searchbox-exp #index-form {
+            margin: 0 10px;
+            height: 44px;
+            background: #fff;
+            border: 1px solid #363636;
+            -webkit-box-shadow: initial;
+            box-shadow: initial;
+            -webkit-border-radius: 0;
+            border-radius: 0;
+        }
+
+        #index-form {
+            margin: 0 16px;
+            height: 44px;
+            background: #fff;
+            border: 1px solid #d2d2d2;
+            -webkit-box-shadow: 0 2px 0 0 rgba(0, 0, 0, .03);
+            box-shadow: 0 2px 0 0 rgba(0, 0, 0, .03);
+            -webkit-border-radius: 2px;
+            border-radius: 2px;
+        }
+
+        #index-form .con-wrap {
+            display: -moz-box;
+            display: -webkit-box;
+            width: 100%;
+        }
+
+        #index-card .se-input {
+            height: 44px;
+        }
+
+        #index-card .se-input {
+            -webkit-border-radius: 0;
+            border-radius: 0;
+            margin: 0;
+            padding: 7px 42px 7px 6px;
+            height: 44px;
+            line-height: 28px;
+            resize: none;
+            overflow: hidden;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #index-card .se-inner {
+            width: 82px;
+            position: relative;
+        }
+
+        #index-card .se-input, #index-card .se-encode {
+            -webkit-appearance: none;
+            display: block;
+            -moz-box-flex: 1;
+            -webkit-box-flex: 1;
+            box-flex: 1;
+            margin: 2px 0;
+            padding: 6px 35px 6px 6px;
+            font-size: 18px;
+            line-height: 24px;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+
+        /*默认的X*/
+        /*  input[type="search"]::-webkit-search-cancel-button{
+              display: none;
+          }*/
+        #index-cross {
+            position: absolute;
+            top: 0;
+            left: -35px;
+            width: 35px;
+            height: 42px;
+            display: none;
+            background: url(//m.baidu.com/static/search/clear.png) no-repeat center;
+            -webkit-background-size: 16px;
+            background-size: 16px;
+            z-index: 2;
+        }
+
+        .searchbox-exp #index-bn {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60px;
+            height: 42px;
+            line-height: 46px;
+            padding: 0 10px;
+            font-size: 16px;
+            border: 0;
+            border-left: 1px solid #e8e8e8;
+            background: #fff;
+            color: #38f;
+            white-space: nowrap;
+            letter-spacing: -1px;
+            -webkit-user-select: none;
+            user-select: none;
+            box-sizing: inherit;
+            -webkit-border-top-right-radius: initial;
+            border-top-right-radius: initial;
+            -webkit-border-bottom-right-radius: initial;
+            border-bottom-right-radius: initial;
+            text-shadow: none;
+        }
+
+        #index-bn {
+            position: absolute;
+            top: -1px;
+            right: -1px;
+            width: 82px;
+            height: 44px;
+            background: #38f;
+            color: #fff;
+            white-space: nowrap;
+            line-height: 44px;
+            letter-spacing: -1px;
+            font-size: 16px;
+            border-top: 1px solid #38f;
+            border-bottom: 1px solid #38f;
+            box-sizing: inherit;
+            -webkit-border-top-right-radius: 2px;
+            border-top-right-radius: 2px;
+            -webkit-border-bottom-right-radius: 2px;
+            border-bottom-right-radius: 2px;
+            text-shadow: none;
+        }
+
+    </style>
+
+</head>
+<body>
+
+
+<div id="index-card">
+    <div id="" class="searchbox-exp">
+        <form data-formposition="i" class="se-form focus" id="index-form"
+              action="" method="get" autocomplete="off">
+            <div class="con-wrap">
+                <input type="search" autocomplete="off" autocorrect="off" maxlength="64" id="index-kw"
+                       name="word" class="se-input" data-placeholder="" data-sug="1" placeholder="请输入关键字">
+                <div class="se-inner">
+                    <div id="index-cross" class="cross" style="display: none;"></div>
+                    <div class="callicon-wrap" style="display: block;">
+                        <div class="baiduapp-icon"></div>
+                        <div class="baiduappcall-wrap">
+                            <div class="voice call" data-ac="active"></div>
+                            <div class="qrcode call" data-ac="active"></div>
+                        </div>
+                        <button id="index-bn" class="se-bn" type="submit">搜索</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<div class="content">
+    <div class="content-box">
+        <div class="content_img">
+            <img src="img/notice.jpg">
+        </div>
+        <div class="content_text">
+            <p>关于报销系统上线及培训的通知关于报销系统上线及培训的通知</p>
+            <p><span>上海品宅装饰科技有限公司</span><span>2018-1-26</span></p>
+        </div>
+    </div>
+    <div class="content-box">
+        <div class="content_img">
+            <img src="img/notice.jpg">
+        </div>
+        <div class="content_text">
+            <p>关于报销系统上线及培训的通知关于报销系统上线及培训的通知</p>
+            <p><span>上海品宅装饰科技有限公司</span><span>2018-1-26</span></p>
+        </div>
+    </div>
+
+</div>
+
+
+</body>
+</html>
+<script src="../order/js/jquery.min.js"></script>
+<script>
+    container.on('submit', '.input-kw-form', function (event) {
+        event.preventDefault();
+    })
+</script>

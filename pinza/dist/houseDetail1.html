@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>品宅-户型-方案</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="msapplication-tap-highlight" content="no">
+    <link rel="stylesheet" href="lib/frozenui/css/frozen.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script>
+        (function (doc, win) {
+            // 取得html的引用
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth
+                    if (!clientWidth) return
+                    clientWidth = (clientWidth > 2800) ? 2800 : clientWidth
+                    clientWidth = (clientWidth < 768) ? 768 : clientWidth
+                    docEl.style.fontSize = 100 * (clientWidth / 1024) + 'px'
+                }
+            if (!doc.addEventListener) return
+            win.addEventListener(resizeEvt, recalc, false)
+            recalc()
+
+        })(document, window)
+    </script>
+</head>
+<body>
+    <!--header-->
+    <header>
+        <a href="index.html"><img src="images/logo.png" class="fl" alt=""></a>
+        <div class="menu fr">
+            <a href="quickBuy.html"><i class="icon icon-order"></i>快速下单</a>
+            <a href="cart.html">
+                <i class="icon icon-cart"></i>
+                <i class="cart-total">2</i>
+                购物清单
+            </a>
+            <a href="my.html"><i class="icon icon-user"></i>个人中心</a>
+        </div>
+    </header>
+
+    <!--section-->
+    <section class="house-wrapper">
+        <div class="fixed-nav">
+            <ul>
+                <li class="active" id="1">风格色系</li>
+                <li id="2">厨卫设备</li>
+                <li id="3">背景收纳</li>
+                <li id="4">功能配件</li>
+            </ul>
+        </div>
+        <div class="prod-box">
+            <div class="ui-scroller">
+                <ul>
+                    <li>
+                        <a href="detail.html"><img src="images/prod-1.png" width="100%" height="80%" alt=""></a>
+                        <p class="ui-nowrap pt5">品牌+产品名称品牌+产品名称</p>
+                        <p class="pt15">
+                            <span class="primary">¥<i class="money">1500</i></span>
+                            <i class="icon icon-cart-primary fr"></i>
+                        </p>
+                    </li>
+                    <li>
+                        <a href="detail.html"><img src="images/prod-1.png" width="100%" alt=""></a>
+                        <p class="ui-nowrap pt5">品牌+产品名称</p>
+                        <p class="pt15">
+                            <span class="primary">¥<i class="money">1500</i></span>
+                            <i class="icon icon-cart-primary fr"></i>
+                        </p>
+                    </li>
+                    <li>
+                        <a href="detail.html"><img src="images/prod-1.png" width="100%" alt=""></a>
+                        <p class="ui-nowrap pt5">品牌+产品名称</p>
+                        <p class="pt15">
+                            <span class="primary">¥<i class="money">1500</i></span>
+                            <i class="icon icon-cart-primary fr"></i>
+                        </p>
+                    </li>
+                    <li>
+                        <a href="detail.html"><img src="images/prod-1.png" width="100%" alt=""></a>
+                        <p class="ui-nowrap pt5">品牌+产品名称</p>
+                        <p class="pt15">
+                            <span class="primary">¥<i class="money">1500</i></span>
+                            <i class="icon icon-cart-primary fr"></i>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="house-type">
+            <div class="desc">
+                <h1>
+                    93户型方案一（舒适型）
+                    <a href="#" class="fr">查看3D效果图></a>
+                </h1>
+            </div>
+            <div class="ui-slider">
+                <ul class="ui-slider-content" style="width: 300%">
+                    <li class="current">
+                        <img src="images/prod.jpg" width="100%" alt="">
+                    </li>
+                    <li>
+                        <img src="images/prod.jpg" width="100%" alt="">
+                    </li>
+                    <li>
+                        <img src="images/prod.jpg" width="100%" alt="">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!--js-->
+    <script src="lib/frozenui/lib/zepto.min.js"></script>
+    <script src="lib/frozenui/js/frozen.js"></script>
+    <script src="js/houseDetail1.js"></script>
+</body>
+</html>

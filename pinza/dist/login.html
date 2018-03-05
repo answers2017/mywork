@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>品宅-登录</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="msapplication-tap-highlight" content="no">
+    <link rel="stylesheet" href="lib/frozenui/css/frozen.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        (function (doc, win) {
+            // 取得html的引用
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth
+                    if (!clientWidth) return
+                    clientWidth = (clientWidth > 2800) ? 2800 : clientWidth
+                    clientWidth = (clientWidth < 768) ? 768 : clientWidth
+                    docEl.style.fontSize = 100 * (clientWidth / 1024) + 'px'
+                }
+            if (!doc.addEventListener) return
+            win.addEventListener(resizeEvt, recalc, false)
+            recalc()
+
+        })(document, window)
+    </script>
+</head>
+<body>
+    <!--login-->
+    <section class="login-wrapper">
+        <form>
+            <a href="index.html"><img src="images/login-logo.png" width="80%" alt=""></a>
+            <h1>销售员登录</h1>
+            <ul>
+                <li><input type="text" name="name" placeholder="请输入账号"></li>
+                <li><input type="password" name="password" placeholder="请输入密码"></li>
+                <li>
+                    <span class="c6 fl"><i class="icon icon-check-on" id="rememberPwd"></i>记住密码</span>
+                    <a class="c6 fr" href="#">忘记密码？</a>
+                </li>
+                <li><button class="btn btn-primary" type="button" id="login">登录</button></li>
+            </ul>
+        </form>
+    </section>
+    <!--js-->
+    <script src="lib/frozenui/lib/zepto.min.js"></script>
+    <script src="lib/frozenui/js/frozen.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>

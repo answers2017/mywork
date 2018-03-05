@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>品宅导航</title>
+
+    <link rel="shortcut icon" href="">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC",
+            "WenQuanYi Micro Hei", "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC",
+            "WenQuanYi Micro Hei", sans-serif;
+        }
+
+        .topbg {
+            position: relative;
+            width: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+            background: #F6F6F6;
+            top: 70px;
+            max-height: 405px;
+        }
+
+        .topbg-right {
+            position: relative;
+            top: 70px;
+            max-height: 405px;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        .topbg-right::-webkit-scrollbar {
+            display: none
+        }
+
+        @media only screen and  (min-width: 768px) {
+            .ibox-content-right {
+                height: 350px;
+            }
+            .navbar-nav {
+                float: right;
+                margin: 0;
+            }
+        }
+
+        @media only screen and  (max-width: 1200px) {
+            .topbg-right {
+
+                max-height: 350px;
+            }
+        }
+
+        .topbg video {
+            position: relative;
+            width: 100%;
+            top: 0;
+            vertical-align: middle;
+            background: #F6F6F6;
+        }
+
+        /*     @media only screen and (min-width: 1200px) {
+                 .topbg video {
+                     margin-top: -80px;
+                 }
+             }
+     */
+        .swiper {
+            position: relative;
+            top: -160px;
+            width: 680px;
+            height: 300px;
+            z-index: 20;
+            margin: 0 auto;
+        }
+
+        /*非常重要的样式让背景图片100%适应整个屏幕*/
+
+        .my-navbar {
+            box-shadow: 0 1px 1px #a09f9f;
+            padding: 6px 0;
+            transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+        }
+
+        .my-navbar a {
+            background: transparent !important;
+            color: #060606
+        }
+
+        .my-navbar a:hover {
+            color: #45bcf9 !important;
+            background: transparent;
+            outline: 0
+        }
+
+        .my-navbar a {
+            transition: color 0.5s ease-in-out;
+        }
+
+        /*-webkit-transition ;-moz-transition*/
+        .top-nav {
+            padding: 0;
+            background: #000;
+        }
+
+        .top-nav a {
+            color: white;
+        }
+
+        button.navbar-toggle {
+            background-color: #020000;
+        }
+
+        /*整个背景都是transparent透明的，会看不到，所以再次覆盖一下*/
+        button.navbar-toggle > span.icon-bar {
+            background-color: #ffffff
+        }
+
+        .tx-center {
+            text-align: center;
+        }
+
+        .tx-center p {
+            margin-top: 20px;
+        }
+
+        .box-shadow {
+            transition: .6s all;
+        }
+
+        .box-shadow:hover {
+            box-shadow: 0 3px 18px #8d8d8d;
+        }
+
+        .ibox-content-box div {
+            display: none;
+            line-height: 24px;
+        }
+
+        .ibox-content-list span {
+            margin-right: 10px;
+            cursor: pointer;
+            transition: .6s all;
+            font-weight: 600;
+        }
+
+        .ibox-content-list span:hover {
+            color: red;
+        }
+
+        .ibox-content-list {
+            display: inline-block;
+        }
+
+        .logo img {
+            max-height: 60px;
+        }
+
+        @media only screen and  (max-width: 1000px) {
+            .logo {
+                display: block;
+                width: 50px;
+                margin: 0 auto;
+            }
+        }
+
+        .navbar-toggle {
+            border-radius: 0;
+            padding: 8px 12px;
+
+        }
+
+        /*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+        select::-ms-expand {
+            display: none;
+        }
+
+        .form-control {
+            width: 100%;
+            appearance: none;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            border: 1px solid #dddddd;
+            padding: 8px;
+            background: url("http://ourjs.github.io/static/2015/arrow.png") no-repeat scroll right center transparent;
+            padding-right: 14px;
+
+            border-radius: 0;
+            transition: .6s all;
+        }
+
+        .form-control:hover {
+            border-color: #1ab394;
+        }
+
+        .form-control:focus {
+            border-color: #1ab394;
+            box-shadow: none;
+
+        }
+
+        .ibox-list-se div {
+            display: none;
+        }
+        .ibox-list-se span{
+            margin-right: 10px ;
+            font-size: 16px;
+        }
+
+    </style>
+
+</head>
+
+<body class="gray-bg container-fluid">
+
+<nav class="navbar navbar-fixed-top my-navbar" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#example-navbar-collapse">
+                <span class="sr-only">切换导航</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="logo">
+                <img src="img/logo.png">
+            </div>
+            <!-- <a class="navbar-brand" href="#">
+                 品宅导航
+             </a>-->
+        </div>
+
+
+        <div class="collapse navbar-collapse" id="example-navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active "><a href="#">登录</a></li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="topbg box-shadow">
+                <video id="bgvideo" class="masthead-video" preload="metadata" controls="controls" autoplay loop>
+                    <source src="http://pinzafile.oss-cn-shanghai.aliyuncs.com/movie/pinza.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="ibox float-e-margins topbg-right box-shadow">
+                <div class=""></div>
+                <div class="ibox-title">
+                    <div class="ibox-content-list">
+                        <span>人事调动</span>
+                        <span>公示通知</span>
+                        <span>活动项目</span>
+                    </div>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content ibox-content-right">
+                    <div class="ibox-content-box">
+                        <div class="content-tab" style="display: block">
+                            <p>各位宅主：</p>
+
+                            <p>为公司更好的发展，各项目顺利运营，经公司服务生讨论并在遵从员工本人意愿的基础上，特对以下人员进行调动，通知如下：
+
+                                原汇金、龙元项目施工员宋帅帅调动至青浦城中公园项目一期担任施工员。原岗位与职级不变，工作汇报给青浦城中公园项目总经理许海涛；调动时间从2018年1月2日起生效。
+
+                                特此通知！</p>
+
+                            <p>
+                                <a href="http://nas.pinza.ltd:5000/fsdownload/9NKo0xTwh/%E6%99%AF%E7%91%9E.%E5%A4%A9%E8%B5%8B%E7%A4%BA%E8%8C%83%E5%8C%BA"
+                                   target="_blank">附件下载</a></p>
+
+
+                            <p>上海品宅装饰科技有限公司</p>
+                        </div>
+                        <div class="content-tab embed-responsive embed-responsive-4by3">
+                            <iframe class="embed-responsive-item" src=""></iframe>
+                        </div>
+                        <div class="content-tab">
+                            222222222222222222222
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="wrapper wrapper-content">
+
+    <div class="row" style="margin-top: 70px">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins box-shadow">
+                <div class="ibox-title">
+                    <h5>品宅导航</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                        <!--    <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>-->
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-sm-2 col-xs-4">
+                            <div class="ibox float-e-margins tx-center">
+                                <a href="http://sale.pinza.ltd/" target="_Blank"> <img src="img/web.png"
+                                                                                       width="100%"></a>
+                                <p>PT2.0前台</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-2 col-xs-4">
+                            <div class="ibox float-e-margins tx-center">
+                                <a href="http://pt.pinza.ltd/login" target="_Blank"> <img src="img/admin.png"
+                                                                                          width="100%"></a>
+                                <p>PT2.0后台</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-2 col-xs-4">
+                            <div class="ibox float-e-margins tx-center">
+                                <a href="https://exmail.qq.com/login" target="_Blank"><img src="img/mail.png"
+                                                                                           width="100%"></a>
+                                <p>企业邮箱</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-2 col-xs-4">
+                            <div class="ibox float-e-margins tx-center">
+                                <a href="http://pt.pinza.ltd/productpc" target="_Blank"> <img src="img/product.png"
+                                                                                              width="100%"></a>
+                                <p>公司产品库</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-2 col-xs-4">
+                            <div class="ibox float-e-margins tx-center">
+                                <a href="http://nas.pinza.ltd:5000/" target="_Blank"> <img src="img/nas.png"
+                                                                                           width="100%"></a>
+                                <p>NAS2.0</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-2 col-xs-4">
+                            <div class="ibox float-e-margins tx-center">
+                                <a href="http://photo.pinza.ltd:666/photo/#!Albums" target="_Blank"><img
+                                        src="img/image.png" width="100%"></a>
+                                <p>项目照片</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-2 col-xs-4">
+                            <div class="ibox float-e-margins tx-center">
+                                <a href="http://erp.pinza.ltd/pages/login_@del.jsp" target="_Blank"> <img
+                                        src="img/AirsoftERP.png" width="100%"></a>
+                                <p>AirsoftERP</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-2 col-xs-4">
+                            <div class="ibox float-e-margins tx-center">
+                                <a href="http://pt.show.pinza.ltd/" target="_Blank"> <img src="img/web.png"
+                                                                                          width="100%"></a>
+                                <p>PT演示前台</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-2 col-xs-4">
+                            <div class="ibox float-e-margins tx-center">
+                                <a href="http://pt2.show.pinza.ltd/login" target="_Blank"><img src="img/admin.png"
+                                                                                               width="100%"></a>
+                                <p>PT演示后台</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins box-shadow">
+                <div class="ibox-title">
+                    <h5>报表信息</h5>
+                    <!--  <div class="pull-right">
+                          <div class="btn-group">
+                              <button type="button" class="btn btn-xs btn-white active">天</button>
+                              <button type="button" class="btn btn-xs btn-white">月</button>
+                              <button type="button" class="btn btn-xs btn-white">年</button>
+                          </div>
+                      </div>-->
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-sm-9">
+                            <div class="flot-chart">
+                                <div class="flot-chart-content" id="flot-dashboard-chart"></div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <ul class="stat-list">
+                                <li>
+                                    <h2 class="no-margins">2,346</h2>
+                                    <small>订单总数</small>
+                                    <div class="stat-percent">48% <i class="fa fa-level-up text-navy"></i>
+                                    </div>
+                                    <div class="progress progress-mini">
+                                        <div style="width: 48%;" class="progress-bar"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h2 class="no-margins ">4,422</h2>
+                                    <small>最近一个月订单</small>
+                                    <div class="stat-percent">60% <i class="fa fa-level-down text-navy"></i>
+                                    </div>
+                                    <div class="progress progress-mini">
+                                        <div style="width: 60%;" class="progress-bar"></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h2 class="no-margins ">9,180</h2>
+                                    <small>最近一个月销售额</small>
+                                    <div class="stat-percent">22% <i class="fa fa-bolt text-navy"></i>
+                                    </div>
+                                    <div class="progress progress-mini">
+                                        <div style="width: 22%;" class="progress-bar"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="ibox float-e-margins box-shadow">
+                <div class="ibox-title">
+                    <!--<h5>公司新闻</h5>-->
+                    <div class="">
+                        <select class="form-control select-ch" id="selected">
+                            <option value="0">信息化中心</option>
+                            <option value="1">财务与人力行政</option>
+                            <option value="2">品装</option>
+                            <option value="3">集栋</option>
+                            <option value="4">供应链</option>
+                            <option value="5">研发中心</option>
+                            <option value="6">市场营销</option>
+                        </select>
+                    </div>
+
+                </div>
+                <!--      <div class="ibox-content ibox-heading">
+                          <h3><i class="fa fa-envelope-o"></i> 新消息</h3>
+                          <small><i class="fa fa-tim"></i> 您有22条未读消息</small>
+                      </div>-->
+                <div class="ibox-list-se ibox-content" style="min-height: 320px">
+                    <div style="display: block">
+                        <p><span>●</span>工作</p>
+                        <p><span>●</span>文档</p>
+                        <p><span>●</span>社交</p>
+                        <p><span>●</span>广告</p>
+                        <p><span>●</span>客户端</p>
+                    </div>
+                    <div>人事制度</div>
+                    <div>3333</div>
+                    <div>4444</div>
+                    <div>5555</div>
+                    <div>6666</div>
+                    <div>7777</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-8">
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="ibox float-e-margins box-shadow">
+                        <div class="ibox-title">
+                            <h5>项目展示</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+                                <!--    <a class="close-link">
+                                        <i class="fa fa-times"></i>
+                                    </a>-->
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+                            <div class="row">
+                                <div class="col-sm-3 col-xs-6">
+                                    <div class="ibox float-e-margins tx-center">
+                                        <a href="https://yun.kujiale.com/design/3FO4MM94E8G3/show?fromqrcode=true&from=singlemessage&isappinstalled=0"
+                                           target="_Blank">
+                                            <img src="img/product01.png" width="100%"></a>
+                                        <p>庆丰</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <div class="ibox float-e-margins tx-center">
+                                        <a href="https://yun.kujiale.com/design/3FO4MJBTJM3X/show?from=singlemessage&fromqrcode=true"
+                                           target="_Blank">
+                                            <img src="img/product02.png" width="100%"></a>
+                                        <p>常州望府</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <div class="ibox float-e-margins tx-center">
+                                        <a href="https://yun.kujiale.com/design/3FO4MCNPFVP9/show?fromqrcode=true&from=singlemessage"
+                                           target="_Blank">
+                                            <img src="img/product03.png" width="100%"></a>
+                                        <p>杭州景瑞天赋</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <div class="ibox float-e-margins tx-center">
+                                        <a href="https://yun.kujiale.com/design/3FO4M6GURXJB/show?from=singlemessage&fromqrcode=true"
+                                           target="_Blank">
+                                            <img src="img/product04.png" width="100%"></a>
+                                        <p>杭州景瑞天赋</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <div class="ibox float-e-margins tx-center">
+                                        <a href="https://yun.kujiale.com/design/3FO4M6BLU52X/show?fromqrcode=true"
+                                           target="_Blank"> <img
+                                                src="img/product05.png" width="100%"></a>
+                                        <p>杭州景瑞天赋</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <div class="ibox float-e-margins tx-center">
+                                        <a href="https://yun.kujiale.com/design/3FO4MBTLELCG/show?fromqrcode=true&from=singlemessage"
+                                           target="_Blank">
+                                            <img src="img/product06.png" width="100%"></a>
+                                        <p>上海地产</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery.min.js?v=2.1.4"></script>
+<script src="js/bootstrap.min.js?v=3.3.6"></script>
+<script src="js/plugins/flot/jquery.flot.js"></script>
+
+<!--控制自适应-->
+<script src="js/plugins/flot/jquery.flot.resize.js"></script>
+<!--<script src="js/plugins/flot/jquery.flot.pie.js"></script>-->
+<!--<script src="js/plugins/flot/jquery.flot.symbol.js"></script>-->
+
+<script src="js/content.min.js?v=1.0.0"></script>
+<script src="js/plugins/jquery-ui/jquery-ui.min.js"></script>
+
+<script src="js/plugins/easypiechart/jquery.easypiechart.js"></script>
+<!--滚动条样式-->
+<script src="js/jquery.nicescroll.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $(".chart").easyPieChart({barColor: "#f8ac59", scaleLength: 5, lineWidth: 4, size: 80});
+        $(".chart2").easyPieChart({barColor: "#1c84c6", scaleLength: 5, lineWidth: 4, size: 80});
+        var data2 = [[gd(2012, 1, 1), 7], [gd(2012, 1, 2), 6], [gd(2012, 1, 3), 4], [gd(2012, 1, 4), 8], [gd(2012, 1, 5), 9], [gd(2012, 1, 6), 7], [gd(2012, 1, 7), 5], [gd(2012, 1, 8), 4], [gd(2012, 1, 9), 7], [gd(2012, 1, 10), 8], [gd(2012, 1, 11), 9], [gd(2012, 1, 12), 6], [gd(2012, 1, 13), 4], [gd(2012, 1, 14), 5], [gd(2012, 1, 15), 11], [gd(2012, 1, 16), 8], [gd(2012, 1, 17), 8], [gd(2012, 1, 18), 11], [gd(2012, 1, 19), 11], [gd(2012, 1, 20), 6], [gd(2012, 1, 21), 6], [gd(2012, 1, 22), 8], [gd(2012, 1, 23), 11], [gd(2012, 1, 24), 13], [gd(2012, 1, 25), 7], [gd(2012, 1, 26), 9], [gd(2012, 1, 27), 9], [gd(2012, 1, 28), 8], [gd(2012, 1, 29), 5], [gd(2012, 1, 30), 8], [gd(2012, 1, 31), 25]];
+        var data3 = [[gd(2012, 1, 1), 800], [gd(2012, 1, 2), 500], [gd(2012, 1, 3), 600], [gd(2012, 1, 4), 700], [gd(2012, 1, 5), 500], [gd(2012, 1, 6), 456], [gd(2012, 1, 7), 800], [gd(2012, 1, 8), 589], [gd(2012, 1, 9), 467], [gd(2012, 1, 10), 876], [gd(2012, 1, 11), 689], [gd(2012, 1, 12), 700], [gd(2012, 1, 13), 500], [gd(2012, 1, 14), 600], [gd(2012, 1, 15), 700], [gd(2012, 1, 16), 786], [gd(2012, 1, 17), 345], [gd(2012, 1, 18), 888], [gd(2012, 1, 19), 888], [gd(2012, 1, 20), 888], [gd(2012, 1, 21), 987], [gd(2012, 1, 22), 444], [gd(2012, 1, 23), 999], [gd(2012, 1, 24), 567], [gd(2012, 1, 25), 786], [gd(2012, 1, 26), 666], [gd(2012, 1, 27), 888], [gd(2012, 1, 28), 900], [gd(2012, 1, 29), 178], [gd(2012, 1, 30), 555], [gd(2012, 1, 31), 993]];
+        var dataset = [{
+            label: "订单数",
+            data: data3,
+            color: "#1ab394",
+            bars: {show: true, align: "center", barWidth: 24 * 60 * 60 * 600, lineWidth: 0}
+        }, {
+            label: "付款数",
+            data: data2,
+            yaxis: 2,
+            color: "#464f88",
+            lines: {lineWidth: 1, show: true, fill: true, fillColor: {colors: [{opacity: 0.2}, {opacity: 0.2}]}},
+            splines: {show: false, tension: 0.6, lineWidth: 1, fill: 0.1},
+        }];
+        var options = {
+            xaxis: {
+                mode: "time",
+                tickSize: [3, "day"],
+                tickLength: 0,
+                axisLabel: "Date",
+                axisLabelUseCanvas: true,
+                axisLabelFontSizePixels: 12,
+                axisLabelFontFamily: "Arial",
+                axisLabelPadding: 10,
+                color: "#838383"
+            },
+            yaxes: [{
+                position: "left",
+                max: 1070,
+                color: "#838383",
+                axisLabelUseCanvas: true,
+                axisLabelFontSizePixels: 12,
+                axisLabelFontFamily: "Arial",
+                axisLabelPadding: 3
+            }, {
+                position: "right",
+                clolor: "#838383",
+                axisLabelUseCanvas: true,
+                axisLabelFontSizePixels: 12,
+                axisLabelFontFamily: " Arial",
+                axisLabelPadding: 67
+            }],
+            legend: {noColumns: 1, labelBoxBorderColor: "#000000", position: "nw"},
+            grid: {hoverable: false, borderWidth: 0, color: "#838383"}
+        };
+
+        function gd(year, month, day) {
+            return new Date(year, month - 1, day).getTime()
+        }
+
+        var previousPoint = null, previousLabel = null;
+        $.plot($("#flot-dashboard-chart"), dataset, options);
+        var mapData = {
+            "US": 298,
+            "SA": 200,
+            "DE": 220,
+            "FR": 540,
+            "CN": 120,
+            "AU": 760,
+            "BR": 550,
+            "IN": 200,
+            "GB": 120,
+        };
+    });
+</script>
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+</body>
+
+
+</html>
+
+
+<script>
+    $(window).scroll(function () {
+        if ($(".navbar").offset().top > 50) {
+            $(".navbar-fixed-top").addClass("top-nav");
+        } else {
+            $(".navbar-fixed-top").removeClass("top-nav");
+        }
+    })
+
+
+</script>
+
+<script>
+    $('.ibox-content-list span').click(function () {
+        $(".ibox-content-box div").hide().eq($(this).index()).show()
+    })
+
+
+</script>
+
+<script>
+    $("#selected").on("change", function () {
+        var aaa = $("option:selected", this).index();
+        $(".ibox-list-se div").hide();
+
+        $(".ibox-list-se div").eq(aaa).show();
+
+
+    });
+
+
+</script>
+
+
+<script>
+    $('.topbg-right').niceScroll({
+        cursorcolor: "black",//滚动条的颜色
+        cursoropacitymax: 0, //滚动条的透明度，从0-1
+        touchbehavior: false, //使光标拖动滚动像在台式电脑触摸设备
+        cursorwidth: "3px", //滚动条的宽度
+        cursorborder: "0", // 游标边框css定义
+        cursorborderradius: "5px",//以像素为光标边界半径  圆角
+        autohidemode: true, //是否隐藏滚动条  true的时候默认不显示滚动条，当鼠标经过的时候显示滚动条
+        zindex: "auto",//给滚动条设置z-index值
+        railpadding: {top: 0, right: 0, left: 0, bottom: 0}//滚动条的位置
+    });
+</script>
